@@ -16,7 +16,7 @@ const App = (props) => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Instant Keys</title>
         <meta charSet="utf-8" />
         <meta
           name="description"
