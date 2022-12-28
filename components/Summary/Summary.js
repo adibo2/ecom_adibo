@@ -73,8 +73,8 @@ const onClear=(id)=>{
           <h3 className={css.h3_4}>Subtotal</h3>
         </div>
         <hr className={css.hr}></hr>
-        {items.map((item)=>(
-        <div className={css.summary__product_details}>
+        {items.map((item,index)=>(
+        <div key={index} className={css.summary__product_details}>
           <div className={css["summary__product_details-image"]}>
             <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item.id)}></AiFillCloseCircle>
             <Image src={item.img} width={90} height={80} alt="windows Keys"></Image>           
@@ -103,8 +103,8 @@ const onClear=(id)=>{
         ))}
         {/**************$$$$$$$$$$  Productmobile $$$$$$$$$$$$$$$$$$$********** */}
         <div className={css.summary__productmobile}>
-          {items.map((item)=>(
-            <div className={css.summary__productmobile}>
+          {items.map((item,index)=>(
+            <div key={index} className={css.summary__productmobile}>
             <div className={css["summary__productmobile-image"]}>
             <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item.id)}></AiFillCloseCircle>           
             <Image src={item.img} width={90} height={80} alt="windows Keys"></Image>

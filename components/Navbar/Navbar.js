@@ -58,7 +58,7 @@ const Navbar = () => {
 
   return (
     <nav className={css.Navbar}>
-      <a href="/" className={css["Navbar__logo"]}>
+      <Link href="/" className={css["Navbar__logo"]}>
         <Image
           src={logo}
           width={130}
@@ -66,7 +66,7 @@ const Navbar = () => {
           alt="instant windows keys"
         ></Image>
         {/* <span className={css["Navbar__logo-text"]}>InstantLiscence</span> */}
-      </a>
+      </Link>
       <ul className={css["Navbar__nav"]}>
         <li className={css["Navbar__nav-item"]}>
           <div className={css.search}>
@@ -123,8 +123,8 @@ const Navbar = () => {
                   </div>
                   <div className={css.dropdown__overflow}>
                     
-                  {CartCtx.items.map((item)=>(
-                  <div className={css.dropdown__liste}>
+                  {CartCtx.items.map((item,index)=>(
+                  <div key={index} className={css.dropdown__liste}>
                     <div className={css.dropdown__liste_item}>
                       <div className={css.dropdown__liste_item_image}>
                         <div className={css.dropdown__closeicon} onClick={()=>onClear(item.id)}>

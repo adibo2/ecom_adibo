@@ -16,7 +16,7 @@ import Productoff from '../components/Office/Productoff';
 import Count from '../components/UI/Count';
 import { useRouter } from 'next/router';
 
-const search = (props) => {
+const Searchx = (props) => {
   const router = useRouter();
 
   const { query } = router;
@@ -63,6 +63,6 @@ export async function getServerSideProps({query}) {
     };
     console.log(props.products);
   }
-export default search;
+export default Searchx;
 
 
