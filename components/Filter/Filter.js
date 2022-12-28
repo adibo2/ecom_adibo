@@ -142,10 +142,13 @@ const Filter = (props) => {
                         <p className={css1.p}>SUBTOTAL</p>
                         <p className={css1.p}>234$</p>
                       </div>
+                      <Link href="checkout">
+
                       <div className={css1.padd}>
                       <button className={css1.button}>CHECKOUT</button>
 
                       </div>
+                      </Link>
                     </div>
                     
                 </>

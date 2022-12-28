@@ -2,7 +2,7 @@ import React from "react";
 import css from "./info.module.scss";
 import { data_info } from "../data";
 
-const Info = () => {
+const Infox = () => {
   return (
     <div className={css.info}>
         <div className={css["info__title"]}>
@@ -31,4 +31,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default Infox;

@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from "../styles/Home.module.scss";
 import Filter from "../components/Filter/Filter";
-import Info from "../components/info/info";
 import Navbar from "../components/Navbar/Navbar";
 import Productw from "../components/Product/Productw";
 import Footer from "../components/Footer/Footer";

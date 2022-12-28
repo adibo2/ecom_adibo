@@ -155,10 +155,13 @@ const Navbar = () => {
                         <p className={css.p}>SUBTOTAL</p>
                         <p className={css.p}>{CartCtx.totalamount}$</p>
                       </div>
+                      <Link href="checkout">
+
                       <div className={css.padd}>
                       <button className={css.button}>CHECKOUT</button>
 
                       </div>
+                      </Link>
                     </div>
                     
                 </>
