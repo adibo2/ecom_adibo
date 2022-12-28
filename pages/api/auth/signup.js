@@ -1,5 +1,5 @@
 import db from "./../../../utils/db";
-import User from "../../../model/user";
+import User from "../../../model/User";
 // const twilio=require('twilio')(process.env.Account_SID, process.env.Auth_Token)
 
 
