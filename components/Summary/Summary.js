@@ -26,8 +26,8 @@ const Summary = (props) => {
     Cartctx.removeItem(id);
 
 }
-const onClear=(id)=>{
-  Cartctx.clear(id)
+const onClear=(item,id)=>{
+  Cartctx.clear(item,id)
 }
 
   return (
@@ -76,7 +76,7 @@ const onClear=(id)=>{
         {items.map((item,index)=>(
         <div key={index} className={css.summary__product_details}>
           <div className={css["summary__product_details-image"]}>
-            <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item.id)}></AiFillCloseCircle>
+            <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item,item.id)}></AiFillCloseCircle>
             <Image src={item.img} width={90} height={80} alt="windows Keys"></Image>           
               <p className={css.p}>{item.name}</p>
 
@@ -97,7 +97,7 @@ const onClear=(id)=>{
               </p>
             </div>
           </div>
-          <div className={css["summary__product_details-sub"]}>${item.price}</div>
+          <div className={css["summary__product_details-sub"]}>${item.price * item.amount}</div>
         </div>
           
         ))}
@@ -117,7 +117,7 @@ const onClear=(id)=>{
             <hr className={css.hrmobile}></hr>
             <div className={css["summary__productmobile-product"]}>
             <h3 className={css.h3_2}>Price</h3>
-            <div className={css["summary__product_details-price"]}>12$</div>
+            <div className={css["summary__product_details-price"]}>{item.price}$</div>
 
             </div>
             <hr className={css.hrmobile}></hr>
@@ -144,7 +144,7 @@ const onClear=(id)=>{
 
             <div className={css["summary__productmobile-product"]}>
             <h3 className={css.h3_4}>Subtotal</h3>
-            <div className={css["summary__product_details-sub"]}>34$</div>
+            <div className={css["summary__product_details-sub"]}>{item.price * item.amount}$</div>
 
 
             </div>

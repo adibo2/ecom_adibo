@@ -20,6 +20,7 @@ const Reducer=(state,action)=>{
         }
         else{
             action.payload.amount=1;
+            
             updateitems=state.items.concat(action.payload)
         }
         return{
@@ -68,11 +69,11 @@ const Reducer=(state,action)=>{
     if(action.type==='CLEAR'){
         const existingCartindex=state.items.findIndex((item)=>item.id === action.payload);
         const existingCartitem=state.items[existingCartindex];
-        let updatetotalamount=state.totalamount - parseInt(existingCartitem.price + 0.01);
+        let updatetotalamount=state.totalamount - (parseInt(existingCartitem.price + 0.01) * parseInt(action.payload1.amount));
         let updateitems=state.items.filter((item)=>item.id !== action.payload);
         return({
             items:updateitems,
-            totalamount:updatetotalamount,
+            totalamount: updatetotalamount,
         })
         
 
@@ -101,8 +102,8 @@ const Reducer=(state,action)=>{
     const removeitemcart=(id)=>{
         dispatch({type:'REMOVE',payload:id})
     }
-    const clear=(id)=>{
-        dispatch({type:'CLEAR',payload:id})
+    const clear=(item,id)=>{
+        dispatch({type:'CLEAR',payload:id,payload1:item})
     }
 
     const Cart={
