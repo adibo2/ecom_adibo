@@ -37,7 +37,7 @@ const App = (props) => {
       <div className={styles.container}>
         <Navbar></Navbar>
         <Filter></Filter>
-        <Info></Info>
+        <Infox></Infox>
         <Productw products={props.products}></Productw>
         <Footer></Footer>
       </div>
