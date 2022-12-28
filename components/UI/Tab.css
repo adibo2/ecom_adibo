@@ -1,0 +1,134 @@
+.container {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* width: 500px;
+    height: 300px; */
+    /* background: #f1f1f1; */
+    /* margin: 100px auto 0; */
+    word-break: keep-all;
+    overflow: auto;
+    /* border: 1px solid rgba(0, 0, 0, 0.274); */
+  }
+  
+  .bloc-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap:7rem;
+    /* display: grid;
+    grid-template-columns: repeat(5,minmax(0,1fr)); */
+    padding-left: 13rem;
+    padding-right: 13rem;
+    border-bottom: 1px solid rgb(209 213 219 / 2);
+    overflow: auto;
+
+  
+
+  }
+  .tabs {
+    grid-column: span 1 / span 1;
+
+  
+    padding: 10px;
+    justify-self: center;
+    /* background: rgba(128, 128, 128, 0.075); */
+    cursor: pointer;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.274); */
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
+  }
+  .tabs:not(:last-child){
+    /* border-right: 1px solid rgba(0, 0, 0, 0.274); */
+  }
+  
+  .active-tabs  {
+    background: white;
+    /* border-bottom: 1px solid transparent; */
+    grid-column: span 1 / span 1;
+    /* justify-self: center;
+    border-bottom:2px solid rgb(31 41 55 / 1) ;
+    width: 100%; */
+    width: max-content;
+    position: relative;
+  }
+  
+  .active-tabs::before {
+    /* content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 50%; */
+    /* transform: translateX(-0%); */
+    /* grid-column: span 1 / span 1; */
+    /* width: calc(100% + 20px); */
+    /* width: 100%; */
+    /* height: 2px;
+    background: rgb(88, 147, 241); */
+    content: '';
+    border-bottom:2px solid rgb(31 41 55 / 1) ;
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 100%;
+
+
+
+  }
+  
+  
+  
+  button {
+    border: none;
+    background-color: white;
+    
+  }
+  .content-tabs {
+    flex-grow : 1;
+  }
+  .content {
+    background: white;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    min-height: 50vh;
+   
+
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+  .content p {
+    /* width: 100%;
+    height: 100%; */
+  }
+  .active-content {
+    display: block;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+  @media (max-width:37.5em) {
+    .bloc-tabs {
+
+      padding-left: 36rem;
+      padding-right: 3rem;  
+    }
+    .content {
+      padding: 7px;
+      padding-right: 0px;
+    
+  
+    }
+    
+}

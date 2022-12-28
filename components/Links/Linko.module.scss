@@ -1,0 +1,34 @@
+.Linko{
+    grid-column: 1/-1;
+    padding: 1rem 0rem 0rem 4rem;
+    &__flex{
+        display: flex;
+        gap: .5rem;
+        font-size: 1.275rem;
+        line-height: 1.45rem;
+    }
+}
+.span{
+    // color: rgb(55 65 81 / 1);
+    text-decoration-line: underline;
+    // &:hover{
+    //     color: rgb(92, 203, 133);
+
+    // }
+}
+.svgs{
+    transform: translateY(1.5px);
+    // color:rgb(55 65 81 / 1);
+    // &:hover{
+    //     color: rgb(92, 203, 133);
+
+    // }
+}
+.link{
+    color:rgb(55 65 81 / 1);
+    &:hover{
+        color: rgb(78, 191, 120);
+
+    }
+
+}

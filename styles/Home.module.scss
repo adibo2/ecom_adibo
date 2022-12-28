@@ -1,0 +1,39 @@
+@import "./respon.module.scss";
+.container {
+  display: grid;
+  grid-template-columns: minmax(6rem,1fr) repeat(12,minmax(min-content,14rem)) minmax(6rem,1fr) ;
+  // grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 10rem)) minmax(6rem, 1fr);
+
+  grid-template-rows:12vh 10vh repeat(3, min-content);
+  @include respons(medium){
+    grid-template-rows:8vh 8vh repeat(4, min-content);
+
+  }
+  
+
+
+
+}
+.container2 {
+  display: grid;
+  grid-template-columns: minmax(6rem,1fr) repeat(12,minmax(min-content,14rem)) minmax(6rem,1fr) ;
+  grid-template-rows:12vh 10vh repeat(3, min-content);
+
+
+
+
+
+}
+
+.container_detail{
+  display: grid;
+  grid-template-columns: minmax(6rem,1fr) repeat(12,minmax(min-content,14rem)) minmax(6rem,1fr) ;
+  grid-template-rows:12vh 10vh repeat(3, min-content);
+  @include respons(medium){
+    grid-template-rows:9vh 10vh repeat(4, min-content);
+
+  }
+
+
+
+}

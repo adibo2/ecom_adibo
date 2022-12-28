@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Dancing+Script:wght@700&family=Nunito:wght@200;300&family=Poppins&display=swap');
+@import "./respon.module.scss"; 
+@import url('https://fonts.googleapis.com/css6?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Dancing+Script:wght@700&family=Mukta&family=Nunito:wght@200;300&family=Poppins&display=swap');
+::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    box-sizing: border-box;
+
+    font-size: 68.5%; //  10/16=62.5%  -> 1rem=10px
+    @include respons (medium){
+      font-size: 62%;
+
+    }
+    @include respons(small){
+      font-size: 50%;
+    }
+
+  
+}
+[type="text"], [type="email"], [type="url"], [type="password"], 
+[type="number"], [type="date"], [type="datetime-local"], [type="month"]{
+  appearance: none;
+background-color: #fff;
+border-color: #6b7280;
+border-width: 1px;
+border-radius: 0;
+padding: .95rem 1.25rem;
+font-size: 1.3rem;
+line-height: 1.5rem;
+}
+h2{
+  font-family: 'PT Sans', sans-serif;
+}
+h3{
+  font-family: 'Work Sans', sans-serif;
+}
+h4{
+  font-family: 'Inconsolata', monospace;
+}
+li{
+  font-family: 'Inconsolata', monospace;
+
+
+}
+input,textarea{
+  font-family: inherit;
+font-size: 100%;
+font-weight: inherit;
+line-height: inherit;
+color: inherit;
+margin: 0;
+  margin-top: 0px;
+}
+input::placeholder{
+  font-size: 1.2rem;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+li{
+  text-decoration: none;
+  list-style: none;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+

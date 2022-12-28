@@ -1,0 +1,46 @@
+@mixin respons($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width:600px) {
+            @content
+        }
+  
+    }
+  
+    @else if $breakpoint==large {
+        //1200px
+        @media (max-width:75em) {
+            @content
+        }
+    }
+    @else if $breakpoint==largex {
+        //1200px
+        @media (min-width:75em) {
+            @content
+        }
+    }
+  
+    @else if $breakpoint==medium {
+        //1000PX
+        @media (max-width:62.5em) {
+            @content
+        }
+    }
+    @else if $breakpoint==small {
+        //800PX
+        @media (max-width:50em) {
+            @content
+        }
+    }
+  
+    @else if $breakpoint==phone {
+        //600PX/16
+        @media (max-width:37.5em) {
+            @content
+        }
+    }
+  
+  
+  
+  
+  
+  }

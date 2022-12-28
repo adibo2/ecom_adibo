@@ -1,0 +1,230 @@
+@import "./../../styles/respon.module.scss";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400&family=Dancing+Script:wght@700&family=Mukta:wght@200;400&family=Nunito:wght@500;600&family=Poppins&display=swap');
+
+.tab{
+    position: relative;
+    height: 23rem;
+    display: block;
+    max-width: 98%;
+    width: 100%;
+    @include respons(medium){
+        height: 18rem;
+
+    }
+    @include respons(small){
+        height: 15rem;
+
+    }
+    @include respons(phone){
+        height: 10rem;
+
+    }
+
+}
+.h2{
+    font-size: 2.475rem;
+line-height: 2.25rem;
+color: rgb(31 41 55 / 1);
+font-weight: 700;
+margin-top:2rem
+}
+.h3{
+    font-size: 1.375rem;
+    line-height: 2.25rem;
+    color: rgb(31 41 55 / 1);
+    margin-top: 1.4rem;
+
+}
+.p{
+    color: rgb(55 65 81 / 1);
+    font-size: 1.525rem;
+    line-height: 2.25rem;
+    margin-top: 1.2rem;
+    word-break:keep-all;
+}
+.h4{
+    font-size: 1.9rem;
+line-height: 2rem;
+margin-top: 3rem;
+color: rgb(31 41 55 / .9)
+
+}
+.ol{
+    padding-left: 0px;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    margin-left: 1.2rem;
+}
+.li{
+    list-style: auto;
+    font-size: 1.4rem;
+}
+.ab{
+    text-decoration: underline;
+    color: rgb(66, 96, 207);
+    font-size: 1.4rem;
+    &_text{
+        color: rgb(55 65 81 / 1)
+    }
+}
+.details{
+    padding: .8rem;
+    word-break: keep-all;
+
+   
+&_title{
+    font-size: 2.575rem;
+    margin-top: 2rem;
+    line-height: 2.25rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(31 41 55 / 1);
+    font-weight: 700;
+    margin-bottom: 4rem;
+
+}
+&_text{
+    color: rgb(55 65 81 / 1);
+    font-family: Poppins,sans-serif;
+    margin-top: 4rem;
+    line-height: 2rem;
+    font-size: 1.8rem;
+    &:last-child{
+        margin-bottom: 4rem;
+    }
+
+}
+}
+.spano{
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.sous{
+    font-size: 1.825rem;
+line-height: 1.75rem;
+margin-top: 1.8rem;
+font-weight: 400;
+margin-bottom: 4.9rem;
+
+}
+.link{
+    font-size: 1.825rem;
+line-height: 1.75rem;
+margin-top: 1.8rem;
+text-decoration: underline;
+color: rgb(66, 96, 207);
+margin-top: 2.2rem;
+
+
+
+
+}
+.details_dow{
+    padding: .8rem;
+    padding-right: 19rem;
+    @include respons(small){
+        padding: 0rem;
+    padding-right: 0rem;
+    }
+
+
+
+}
+.reviews{
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+    &_client{
+        grid-column: span 3 / span 3;
+        @include respons(small){
+            grid-column: 1 / -1;
+
+    
+        }
+        &_title{
+            font-weight: 700;
+            color: rgb(31 41 55 / 1);
+            font-size: 1.9rem;
+            line-height: 2.3rem;
+        }
+        &_revue{
+            display: flex;
+            margin-top: 1.6rem;
+            margin-right: 3rem;
+            gap: 2rem;
+
+        }
+
+    }
+    &_form{
+        grid-column: span 2 / span 2;
+        align-content: start;
+        @include respons(small){
+            grid-column: 1 / -1;
+
+    
+        }
+
+
+    }
+}
+.bloc{
+    color: rgb(75 85 99 / 1);
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding-top: .9rem;
+padding-bottom: .9rem;
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+border: 1px solid rgb(209 213 219 / 1);
+border-radius: .4rem;
+width: 100%;
+&_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_left{
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+    }
+}
+&_content{
+    margin-top: 2rem;
+    color: rgb(107 114 128 / 1);
+    line-height: 2;
+    font-size: 1.6rem;
+    font-weight: 400;
+
+
+
+}
+  
+}
+.hreview{
+    font-size: 2.2rem;
+line-height: 2rem;
+
+color: rgb(31, 41, 55);
+font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+font-weight: 580;
+margin-bottom: 3rem;
+margin-top: 0rem;
+@include respons(small){
+    margin-top: 5rem;
+
+
+}
+}
+.add{
+    font-size: 1.9rem;
+    margin-top: 2rem;
+    line-height: 1.5rem;
+    margin-bottom: .8rem;
+
+}
+.h6{
+    font-size: 1.5rem;
+    font-family: 'Cairo', sans-serif;
+
+}

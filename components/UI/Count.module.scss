@@ -1,0 +1,40 @@
+.titre{
+    grid-column: 2/14;
+    margin: 3rem 0;
+
+    &_2{
+      font-size: 2.275rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  
+    }
+    &_3{
+      font-size: 1.275rem;
+      display: block;
+      line-height: 1.25rem;
+      font-family: 'Nunito', sans-serif;
+  
+    }
+  
+  }
+  .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+
+  }
+  .hro{
+   
+    margin-bottom: 2rem;
+   
+    height: 0px;
+    color: inherit;
+  color: inherit;
+  border-top-width: 1px;
+  margin-top: .3rem;
+  border: 1px solid #e7e7e7;
+  
+  
+  }
