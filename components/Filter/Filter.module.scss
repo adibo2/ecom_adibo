@@ -247,3 +247,9 @@
 
 
 }
+.dropdown__overflow{
+    min-height: 42px;
+    max-height: 20rem;
+    overflow-x: hidden;
+overflow-y: auto;
+}

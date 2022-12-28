@@ -117,19 +117,22 @@ const Filter = (props) => {
                     <span>{CartCtx.items.length} Items</span>
                     <Link href="CartP">View Cart</Link>
                   </div>
-                  <div className={css1.dropdown__liste}>
+                  <div className={css.dropdown__overflow}>
+
+                  {CartCtx.items.map((item,index)=>(
+                  <div key={index} className={css1.dropdown__liste}>
                     <div className={css1.dropdown__liste_item}>
                       <div className={css1.dropdown__liste_item_image}>
                       <AiFillCloseCircle></AiFillCloseCircle>
-                      <Image src={logo} width={80} height={60}></Image>
+                      <Image src={item.img} width={80} height={60}></Image>
 
                       </div>
                       <div className={css1.dropdown__liste_item_id}>
                         <p className={css1["dropdown__liste_item_id-name"]}>
-                          Windows 10 Profesional keyy smls
+                        {item.name}
                         </p>
                         <p className={css1["dropdown__liste_item_id-price"]}>
-                          12$
+                        {item.price}$
                         </p>
                       </div>
                     </div>
@@ -137,10 +140,13 @@ const Filter = (props) => {
                     
                     
                   </div>
+
+                  ))}
+                  </div>
                     <div className={css1.dropdown__total}>
                       <div className={css1.dropdown__total_price}>
                         <p className={css1.p}>SUBTOTAL</p>
-                        <p className={css1.p}>234$</p>
+                        <p className={css1.p}>{CartCtx.totalamount}$</p>
                       </div>
                       <Link href="checkout">
 
