@@ -29,7 +29,7 @@ const Reducer=(state,action)=>{
 
     }
     if(action.type==='ADDDETAIL'){
-        const updatetotalamount=state.totalamount + parseInt(action.payload.price);
+        const updatetotalamount=state.totalamount + parseInt(action.payload.price + 0.01 ) * parseInt(action.payload.amount);
         let updateitems;
         if(state.items.find((item)=>item.id===action.payload.id)){
             updateitems=state.items.map((item)=>(

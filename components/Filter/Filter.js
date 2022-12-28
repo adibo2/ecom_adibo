@@ -131,8 +131,7 @@ const Filter = (props) => {
                         <p className={css1["dropdown__liste_item_id-name"]}>
                         {item.name}
                         </p>
-                        <p className={css1["dropdown__liste_item_id-price"]}>
-                        {item.price}$
+                        <p className={css1["dropdown__liste_item_id-price"]}>{item.amount} x {item.price}$
                         </p>
                       </div>
                     </div>
