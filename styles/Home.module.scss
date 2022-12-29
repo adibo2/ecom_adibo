@@ -6,7 +6,7 @@
 
   grid-template-rows:12vh 10vh repeat(3, min-content);
   @include respons(medium){
-    grid-template-rows:12vh 12vh repeat(4, min-content);
+    grid-template-rows:14vh 12vh repeat(4, min-content);
 
   }
   
