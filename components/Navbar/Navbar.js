@@ -54,6 +54,11 @@ const Navbar = () => {
       { opacity: 1, y: 0, ease: "back(3)", duration: 0.7 }
     );
   }, [open]);
+  const searchhandler=()=>{
+    router.push(`/search?query=${query}`);
+
+
+  }
 
 
   return (
@@ -89,7 +94,7 @@ const Navbar = () => {
                 placeholder="Search..."
                 onChange={(e)=>setQuery(e.target.value)}
               />
-              <FaSearch className={css.search__input}></FaSearch>
+              <FaSearch onClick={()=>searchhandler()} className={css.search__input}></FaSearch>
             </form>
           </div>
         </li>

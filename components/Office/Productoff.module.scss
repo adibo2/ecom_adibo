@@ -129,6 +129,14 @@ padding-top: 1.125rem;
 padding-bottom: 1.125rem;
     background-color:#006A6A ;
     transition: transform 400ms ease;
+    @include respons(medium){
+      padding-left: 1.3rem;
+      font-size: 1.9rem;
+      padding-right: 1.3rem;
+      padding-top: 1.55rem;
+      padding-bottom: 1.555rem;
+
+    }
 
     // 064439
     &:hover{
