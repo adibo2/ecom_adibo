@@ -106,7 +106,7 @@ const onClear=(item,id)=>{
           {items.map((item,index)=>(
             <div key={index} className={css.summary__productmobile}>
             <div className={css["summary__productmobile-image"]}>
-            <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item.id)}></AiFillCloseCircle>           
+            <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item,item.id)}></AiFillCloseCircle>           
             <Image src={item.img} width={90} height={80} alt="windows Keys"></Image>
             </div>
             <hr className={css.hrmobile}></hr>
