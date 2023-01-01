@@ -12,6 +12,10 @@ import paypal from "/public/img/paypal.svg"
 import css1 from "./../Footer/Footer.module.scss"
 import { useRouter } from "next/router";
 import { avantage_office } from "./avantages";
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 import { AiOutlineMinus, AiOutlinePlus,AiOutlineShoppingCart } from 'react-icons/ai';
 import Cartcontext from "../Cartctx/Cartcontext";
@@ -25,24 +29,39 @@ const Detail = (props) => {
   // console.log("router"+id);
 
 
-   const clickhandler=(product)=>{
+   const clickhandler= async (product)=>{
+
     console.log("heloo from the cart");
     Cartctx.addDetail({
-      id:product.id,
+      id:product.slug,
+
       name:product.name,
       price:product.price,
       amount:count,
       // count:count,
       img:product.img,
-    })
+      stock:props.stock
+    },count)
     router.push('/CartP')
     
 
 
   }
+  const addhandler=()=>{
+    Setcount(count+1);
+    if (props.stock < count + 1) {
+       toast.error('Sorry. Product is out of stock');
+       Setcount(props.stock)
+    }
+
+  }
+  
 
 
   return (
+    <>
+      <ToastContainer style={{ fontSize: "1.3rem" }} position="bottom-center" limit={1} />
+
     <div className={css.details}>
       <div className={css.image}>
         <Image
@@ -105,7 +124,7 @@ const Detail = (props) => {
             {/* Cartctx.items.length===0 ? props.addhandler() :()=>onAddCart(Cartctx.items) */}
               <span className={css.minus} onClick={()=>{count > 1 ? Setcount(count-1) : 1}}><AiOutlineMinus /></span>
               <span className={css.num}>{count}</span>
-              <span className={css.plus} onClick={()=>Setcount(count+1)}><AiOutlinePlus /></span>
+              <span className={css.plus} onClick={()=>addhandler()}><AiOutlinePlus /></span>
             </p>
           </div>
             <span className={css.stock}>Stock : {props.stock}</span>
@@ -138,6 +157,7 @@ const Detail = (props) => {
             </div>
       </div>
     </div>
+    </>
   );
 };
 

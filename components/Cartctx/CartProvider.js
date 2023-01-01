@@ -30,7 +30,7 @@ const Reducer=(state,action)=>{
 
     }
     if(action.type==='ADDDETAIL'){
-        const updatetotalamount=state.totalamount + parseInt(action.payload.price + 0.01 ) * parseInt(action.payload.amount);
+        const updatetotalamount=state.totalamount + (parseInt(action.payload.price + 0.01 ) * parseInt(action.payload.amount));
         let updateitems;
         if(state.items.find((item)=>item.id===action.payload.id)){
             updateitems=state.items.map((item)=>(
@@ -39,7 +39,7 @@ const Reducer=(state,action)=>{
             ))
         }
         else{
-            // action.payload.amount=1;
+            action.payload.amount=action.payloadcount;
             updateitems=state.items.concat(action.payload)
         }
         return{
@@ -92,8 +92,8 @@ const Reducer=(state,action)=>{
         //   });
 
     }
-    const additemcartDetail=(item)=>{
-        dispatch({type:'ADDDETAIL',payload:item})
+    const additemcartDetail=(item,count)=>{
+        dispatch({type:'ADDDETAIL',payload:item,payloadcount:count})
         // setItems((prevExpenses) => {
         //     return [item, ...prevExpenses];
         //   });

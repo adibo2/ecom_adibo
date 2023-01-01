@@ -43,9 +43,10 @@ const Navbar = () => {
     e.preventDefault();
     router.push(`/search?query=${query}`);
   };
-  const onClear=(id)=>{
-    CartCtx.clear(id)
+  const onClear=(item,id)=>{
+    CartCtx.clear(item,id)
   }
+
 
   useEffect(() => {
     gsap.fromTo(
@@ -132,7 +133,7 @@ const Navbar = () => {
                   <div key={index} className={css.dropdown__liste}>
                     <div className={css.dropdown__liste_item}>
                       <div className={css.dropdown__liste_item_image}>
-                        <div className={css.dropdown__closeicon} onClick={()=>onClear(item.id)}>
+                        <div className={css.dropdown__closeicon} onClick={()=>onClear(item,item.id)}>
                       <AiFillCloseCircle size="1.5rem"></AiFillCloseCircle>
 
                         </div>

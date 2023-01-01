@@ -47,6 +47,10 @@ const Filter = (props) => {
     // 👇️ passed function to setState
     Setactive((active) => !active);
   };
+
+  const onClear=(item,id)=>{
+    CartCtx.clear(item,id)
+  }
   const router = useRouter();
 
   useEffect(() => {
@@ -123,7 +127,7 @@ const Filter = (props) => {
                   <div key={index} className={css1.dropdown__liste}>
                     <div className={css1.dropdown__liste_item}>
                       <div className={css1.dropdown__liste_item_image}>
-                      <AiFillCloseCircle></AiFillCloseCircle>
+                      <AiFillCloseCircle onClick={()=>onClear(item,item.id)}></AiFillCloseCircle>
                       <Image src={item.img} width={80} height={60}></Image>
 
                       </div>

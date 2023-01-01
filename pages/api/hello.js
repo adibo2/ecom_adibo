@@ -26,10 +26,10 @@ export default async function handler(req, res) {
   await db.connect();
   // await Admin.deleteMany();
   // await Admin.insertMany(data.users);
-  // await Product.deleteMany();
-  // await Product.insertMany(data_windows);
-  await Productoffice.deleteMany();
-  await Productoffice.insertMany(data_office);
+  await Product.deleteMany();
+  await Product.insertMany(data_windows);
+  // await Productoffice.deleteMany();
+  // await Productoffice.insertMany(data_office);
   // await Product.find().populate({ path: 'reviews', model: Review });
   // await Fetch.deleteMany();
   // await Fetch.insertMany(search);

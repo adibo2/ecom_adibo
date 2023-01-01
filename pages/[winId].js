@@ -1,7 +1,5 @@
 import React, { useContext, useState,useEffect,useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { data_windows } from '../components/data';
-import Image from 'next/image';
 import Filter from "../components/Filter/Filter";
 import styles from "../styles/Home.module.scss";
 import Head from 'next/head'
@@ -16,6 +14,12 @@ import Footer from '../components/Footer/Footer';
 import Product from '../model/Product';
 import Cartcontext from '../components/Cartctx/Cartcontext';
 import axios from 'axios';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+
+
 
 
 const WindowsDetails =  ({product,descrp}) => {
@@ -117,7 +121,9 @@ const WindowsDetails =  ({product,descrp}) => {
         <Image src={windows.img} width={230} height={270} alt="windows Keys" />
         <h1>{windows.name}</h1> */}
         <Detail id={winId}  img={product.img} name={product.title} product={product} alt={product.alt}
-        notprice={product.notprice} price={product.price} stock={product.stock} ></Detail>
+        notprice={product.notprice} price={product.price} stock={product.stock}></Detail>
+        {/* <ToastContainer position="bottom-center" limit={1} /> */}
+
         <Tabo data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} onReview={reviewhandler} alt={product.alt} reviews={reviews}></Tabo>
 
         <Footer></Footer>

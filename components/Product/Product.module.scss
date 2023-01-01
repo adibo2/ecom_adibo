@@ -3,6 +3,11 @@
 .product {
   grid-column: 2/14;
   margin: 10rem 0;
+  @include respons(phone){
+    grid-column: 1/14;
+
+
+  }
 
   &__grid {
     display: grid;
@@ -11,6 +16,7 @@
     row-gap: 4rem;
     justify-content: center;
     @include respons(phone){
+
       grid-template-columns: repeat(auto-fit, minmax(36rem, min-content));
 
     }

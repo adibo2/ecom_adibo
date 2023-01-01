@@ -39,6 +39,7 @@ const Productw = (props) => {
         price:product.price,
         amount:1,
         img:product.img,
+        stock:product.stock
       })
       console.log(Cartctx.items.name)
 
@@ -62,7 +63,7 @@ const Productw = (props) => {
         <div className={css["product__grid"]}>
             {props.products.map(product=>(
                 <Item key={product.id} slug={product.slug} img={product.img} 
-                name={product.name} notprice={product.notprice} price={product.price} alt={product.alt}
+                name={product.name} notprice={product.notprice} stock={product.stock} price={product.price} alt={product.alt}
                 onClick={()=>clickhandler(product)}></Item>
              
             ))}

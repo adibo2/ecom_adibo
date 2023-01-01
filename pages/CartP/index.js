@@ -5,6 +5,9 @@ import Navbar from '../../components/Navbar/Navbar';
 import Summary from '../../components/Summary/Summary';
 import styles from "./../../styles/Home.module.scss";
 import Footer from '../../components/Footer/Footer';
+// import Product from '../../model/Product';
+import db from '../../utils/db';
+import { useRouter } from 'next/router';
 
 
 
@@ -23,15 +26,7 @@ import Footer from '../../components/Footer/Footer';
     </div>
   )
 }
-// export async function getServerSideProps() {
 
-//   return{
-//     props:{
-//       products:"ahmed"
-//     }
-//   }
-//   console.log(props.products)
 
-// }
 
 export default CartP;

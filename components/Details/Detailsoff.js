@@ -18,6 +18,9 @@ import Cartcontext from "../Cartctx/Cartcontext";
 import {avantage_office_19ProP} from "./avantages";
 import {avantages_office_mac} from "./avantages";
 import {avantage_office_hS} from "./avantages";
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineMinus, AiOutlinePlus,AiOutlineShoppingCart,AiFillDollarCircle } from 'react-icons/ai';
 const Detailoff = (props) => {
   // const router = useRouter();
@@ -29,19 +32,34 @@ const Detailoff = (props) => {
   const clickhandler=(office)=>{
     console.log("heloo from the cart");
     Cartctx.addDetail({
-      id:office.id,
+      id:office.slug,
       name:office.name,
       price:office.price,
       amount:count,
       // count:count,
       img:office.img,
-    })
+      stock:props.stock
+
+    },count)
     router.push('/CartP')
     
 
 
   }
+  const addhandler=()=>{
+    Setcount(count+1);
+    if (props.stock < count + 1) {
+       toast.error('Sorry. Product is out of stock');
+       Setcount(props.stock)
+    }
+
+  }
   return (
+    <>
+              <ToastContainer style={{ fontSize: "1.3rem" }} position="bottom-center" limit={1} />
+
+    
+    
     <div className={css.details}>
       <div className={css.image}>
         <Image
@@ -214,7 +232,8 @@ const Detailoff = (props) => {
             <p className={css.pp}>
               <span className={css.minus}  onClick={()=>{count > 1 ? Setcount(count-1) : 1}} ><AiOutlineMinus /></span>
               <span className={css.num}>{count}</span>
-              <span className={css.plus} onClick={()=>Setcount(count+1)}><AiOutlinePlus /></span>
+              <span className={css.plus} onClick={()=>addhandler()}><AiOutlinePlus /></span>
+
             </p>
           </div>
             <span className={css.stock}>Stock : {props.stock}</span>
@@ -248,6 +267,7 @@ const Detailoff = (props) => {
             </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import css from "./Summary.module.scss";
 import Image from "next/image";
 // import p from "./../img/offpp21.webp";
@@ -13,14 +13,32 @@ import {FaCartPlus} from "react-icons/fa"
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 import {FaCheck} from "react-icons/fa"
-import { useRouter } from "next/router";
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Summary = (props) => {
   const {items}=useContext(Cartcontext);
   const Cartctx=useContext(Cartcontext);
+  const [count,Setcount]=useState(1);
+
  
   const onAddCart=(item)=>{
-   Cartctx.addItem(item);
+    Setcount(count+1);
+    if(item.stock < count +1){
+    toast.error('Sorry. Product is out of stock');
+    Setcount(item.stock)
 
+   }
+   else{
+    Cartctx.addItem(item);
+
+   }
+ 
+  //  Cartctx.addItem(item);
+  //  Setcount(count+1);
+  //  console.log("count added"+count)
+
+   
   }
   const onRemove=(id)=>{
     Cartctx.removeItem(id);
@@ -32,6 +50,8 @@ const onClear=(item,id)=>{
 
   return (
     <>
+          <ToastContainer style={{ fontSize: "1.3rem" }} position="bottom-center" limit={1} />
+
       {items.length > 0 ? 
 
     <div className={css.pad}>
@@ -97,7 +117,7 @@ const onClear=(item,id)=>{
               </p>
             </div>
           </div>
-          <div className={css["summary__product_details-sub"]}>${item.price * item.amount}</div>
+          <div className={css["summary__product_details-sub"]}>${(Math.round((item.price * item.amount)*100)/100).toFixed(2)}</div>
         </div>
           
         ))}
@@ -144,7 +164,7 @@ const onClear=(item,id)=>{
 
             <div className={css["summary__productmobile-product"]}>
             <h3 className={css.h3_4}>Subtotal</h3>
-            <div className={css["summary__product_details-sub"]}>{item.price * item.amount}$</div>
+            <div className={css["summary__product_details-sub"]}>{(Math.round((item.price * item.amount))/100).toFixed(2)}$</div>
 
 
             </div>

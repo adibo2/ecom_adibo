@@ -40,7 +40,7 @@ const OfficeDetail = ({office,descrp}) => {
         email,
         note,
       });
-      console.log(data)
+      // console.log(data)
       
       Setreview(prev=>{
         const updategoals = [...prev];
