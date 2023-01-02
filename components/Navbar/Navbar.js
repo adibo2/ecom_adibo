@@ -46,6 +46,14 @@ const Navbar = () => {
   const onClear=(item,id)=>{
     CartCtx.clear(item,id)
   }
+  const clickHandler=()=>{
+    router.push('/CartP')
+
+
+  }
+  const checkouthandler=()=>{
+    router.push('/checkout')
+  }
 
 
   useEffect(() => {
@@ -99,8 +107,8 @@ const Navbar = () => {
             </form>
           </div>
         </li>
-        <Link href="CartP">
-          <li
+        {/* <Link href="/CartP"> */}
+          <li onClick={()=>clickHandler()} 
             className={css["Navbar__nav-item"]}
             onMouseEnter={() => {
               Setopen(true);
@@ -112,7 +120,7 @@ const Navbar = () => {
               <span className={css.amount}>{cartItems}</span>
             </div>
           </li>
-        </Link>
+        {/* </Link> */}
         {open && (
           <>
             <div
@@ -159,13 +167,13 @@ const Navbar = () => {
                         <p className={css.p}>SUBTOTAL</p>
                         <p className={css.p}>{CartCtx.totalamount}$</p>
                       </div>
-                      <Link href="checkout">
+                      {/* <Link href="checkout"> */}
 
-                      <div className={css.padd}>
+                      <div onClick={()=>checkouthandler()} className={css.padd}>
                       <button className={css.button}>CHECKOUT</button>
 
                       </div>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                     
                 </>

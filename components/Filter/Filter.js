@@ -70,6 +70,14 @@ const Filter = (props) => {
     });
     return () => ctx.revert();
   }, []);
+  const clickHandler=()=>{
+    router.push('/CartP')
+
+
+  }
+  const checkouthandler=()=>{
+    router.push('/checkout')
+  }
   return (
     <div className={`${css.filter} ${active ? css.active : css.notactive}`}>
       <div className={css.toggle_button} onClick={toggleIsLoading}>
@@ -96,8 +104,9 @@ const Filter = (props) => {
       </div>
 
       <div className={css.filter__icon} ref={cart}>
-        <Link href="CartP">
+        {/* <Link href="CartP"> */}
           <AiOutlineShoppingCart
+          onClick={()=>clickHandler()}
             size="1.8rem"
             color="#f7f7f7"
             onMouseEnter={() => Setopen(true)}
@@ -106,7 +115,7 @@ const Filter = (props) => {
           <div className={css["filter__icon-amount"]}>
             <span className={css.amount}>{cartItems}</span>
           </div>
-        </Link>
+        {/* </Link> */}
         {open && (
           <>
             <div
@@ -151,13 +160,13 @@ const Filter = (props) => {
                         <p className={css1.p}>SUBTOTAL</p>
                         <p className={css1.p}>{CartCtx.totalamount}$</p>
                       </div>
-                      <Link href="checkout">
+                      {/* <Link href="checkout"> */}
 
-                      <div className={css1.padd}>
+                      <div onClick={()=>checkouthandler()} className={css1.padd}>
                       <button className={css1.button}>CHECKOUT</button>
 
                       </div>
-                      </Link>
+                      {/* </Link> */}
                     </div>
                     
                 </>
