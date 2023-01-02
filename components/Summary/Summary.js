@@ -29,6 +29,11 @@ const Summary = (props) => {
     Setcount(item.stock)
 
    }
+   else if(item.stock <= item.amount  ){
+    toast.error('Sorry. Product is out of stock');
+    Setcount(item.stock)
+
+   }
    else{
     Cartctx.addItem(item);
 
