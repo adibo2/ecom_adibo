@@ -164,9 +164,7 @@ const onClear=(item,id)=>{
 
             <div className={css["summary__productmobile-product"]}>
             <h3 className={css.h3_4}>Subtotal</h3>
-            <div className={css["summary__product_details-sub"]}>{(Math.round((item.price * item.amount))/100).toFixed(2)}$</div>
-
-
+            <div className={css["summary__product_details-sub"]}>{(Math.round((item.price * item.amount)*100)/100).toFixed(2)}$</div>
             </div>
 
 

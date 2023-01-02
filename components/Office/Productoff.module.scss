@@ -6,7 +6,8 @@
     margin: 10rem 0;
     @include respons(phone){
       grid-column: 1/-1;
-      padding: 2rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
   
   
     }

@@ -1,3 +1,5 @@
+@import "./../../styles/respon.module.scss";
+ 
 .info{
     grid-column: 1/-1;
     margin: 0rem 0;
@@ -73,7 +75,13 @@
 }
 .h3{
     font-size: 1.5rem;
+    
     color: #6F6F6F;
     font-family: "Lato", Sans-serif;
     font-weight: bold;
+    @include respons(medium){
+       padding-right: 1rem;
+       padding-left:1rem;
+    
+    }
 }
