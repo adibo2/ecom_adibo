@@ -36,6 +36,8 @@ const Productoff = (props) => {
         price:product.price,
         amount:1,
         img:product.img,
+        stock:product.stock
+
       })
       console.log(Cartctx.items.name)
 

@@ -97,7 +97,7 @@ const Filter = (props) => {
                 `}
             >
               <Image src={filter.img} width={28} height={25} alt={filter.alt} />
-              <p className={css["filter__type-p"]}>{filter.name}</p>
+              <p className={`${css["filter__type-p"]}  ${router.pathname === filter.url ? css.punder : ""} `}>{filter.name}</p>
             </div>
           </Link>
         ))}
