@@ -4,9 +4,9 @@
   grid-template-columns: minmax(6rem,1fr) repeat(12,minmax(min-content,14rem)) minmax(6rem,1fr) ;
   // grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 10rem)) minmax(6rem, 1fr);
 
-  grid-template-rows:12vh 10vh repeat(3, min-content);
+  grid-template-rows:17vh 10vh repeat(3, min-content);
   @include respons(medium){
-    grid-template-rows:14vh 12vh repeat(4, min-content);
+    grid-template-rows:17vh 3vh repeat(4, min-content);
 
   }
   
