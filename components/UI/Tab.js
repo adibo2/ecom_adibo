@@ -87,6 +87,8 @@ function Tabo(props) {
   const [toggleState, setToggleState] = useState(0);
   const [descrp, Setdescrp] = useState(0);
   const router=useRouter();
+  const [value, setValue] = useState(2);
+
   console.log(router.query)
   useEffect(()=>{
 
@@ -285,8 +287,7 @@ function Tabo(props) {
                   {/****************************** CLIENT  $$$$$$$$$$$$$$$$$$$$$$$$*/}
                   <div className={css.reviews_client}>
                     <div className={css.reviews_client_title}>
-                      {props.reviewtaille} <span>reviews</span> for Windows 10 Professional Digital
-                      License
+                      {props.reviewtaille} <span>reviews</span> {router.query.winId}
                     </div>
                     {props.reviews.map((review,index)=>(
                     <div className={css.reviews_client_revue} key={index}>
@@ -302,15 +303,15 @@ function Tabo(props) {
                             {review.firstname}
                           </span>
                           <span className={css.bloc_title_right}>
-                            <Stack spacing={1}>
-                              <Rating
-                              readOnly
-                              name="read-only"
-                                className={css.stars}
-                                defaultValue={review.rating}
-                                size="large"
-                              />
-                            </Stack>{" "}
+                          <Stack spacing={1}>
+                                <Rating
+                                  className={css.stars}
+                                  name="rating"
+                                  value={review.rating}
+                                  size="large"
+                                  readOnly
+                                />
+                              </Stack>{" "}
                           </span>
                         </div>
                         <div className={css.bloc_content}>
@@ -332,22 +333,21 @@ function Tabo(props) {
                       Your rating <span className={css1.xo}>*</span>
                     </div>
                     <Controller
-                      name="rating"
-                      
-  
-                    control={control}
-                      // defaultValue={3}
-                      rules={{ required: true }}
-                      render={(props) =>  <Stack spacing={1}>
-                      <Rating
-                      sx={{ width: '75%' }}
-                      size="large"
-                        name="rating"
-                        defaultValue={0}
-                        precision={0.5}
-                      />
-                    </Stack>}
-                    />
+          name="rating"
+          control={control}
+          defaultValue={value}
+          rules={{ required: true }}
+          render={({ field: { onChange, onBlur, value, ref } }) => (
+            <Rating
+            size="10rem"
+              onChange={onChange}
+              onBlur={onBlur}
+              selected={value}
+            />
+          )}
+        
+        />
+
                     {/* <Stack spacing={1}>
                       <Rating
                         name="half-rating"
@@ -378,6 +378,7 @@ function Tabo(props) {
                         <span className={css1.span}>Your review</span>
                       </label>
                       <textarea
+                      rows="10" cols="50"
                         {...register("note", {
                           required: "Email Address is required",
                         })}

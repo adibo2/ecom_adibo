@@ -3,12 +3,10 @@ import css from "./Pay.module.scss";
 import { useForm} from "react-hook-form";
 import { useState,useEffect,useContext } from "react";
 import { ToastContainer } from 'react-toastify';
-import * as Yup from 'yup'
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import dynamic from 'next/dynamic';
-import { yupResolver } from '@hookform/resolvers/yup'
 import Image from "next/image";
 
 import {
@@ -91,10 +89,7 @@ const Pay = () => {
   }
 ]
 const [show,Setshow]=useState(false)
-const validation = Yup.object().shape({
-  chooseCb: Yup.bool().oneOf([true], 'Checkbox selection is required'),
-})
-const optionsForm = { resolver: yupResolver(validation) }
+
 const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
 const  onSubmit = async ({firstname,lastname,email,repeatemail}) => {

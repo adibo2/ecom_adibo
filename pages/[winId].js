@@ -44,7 +44,7 @@ const WindowsDetails =  ({product,descrp}) => {
         email,
         note,
       });
-      console.log(data)
+      console.log("data"+data)
       
       Setreview(prev=>{
         const updategoals = [...prev];
