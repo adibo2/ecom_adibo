@@ -29,7 +29,7 @@ const WindowsDetails =  ({product,descrp}) => {
     
     const { winId }=router.query;
     console.log("yea"+winId);
-    const handle=async (data)=>{
+    const handle=async (data,value)=>{
       if(!data){
         return;
       }

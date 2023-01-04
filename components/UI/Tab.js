@@ -87,7 +87,8 @@ function Tabo(props) {
   const [toggleState, setToggleState] = useState(0);
   const [descrp, Setdescrp] = useState(0);
   const router=useRouter();
-  const [value, setValue] = useState(2);
+  const [rat, setrat] = useState(null);
+  const [value, setvalue] = useState(2);
 
   console.log(router.query)
   useEffect(()=>{
@@ -98,17 +99,22 @@ function Tabo(props) {
     handleSubmit,
     watch,
     control,
+    reset,
     formState: { errors },
   } = useForm();
 
   const toggleTab = (index) => {
     setToggleState(index);
   };
+
   // { firstname, email,rating,note }
   const onSubmit = async (data) => {
     console.log("data reviews"+data)
     props.onsubmit(data)
+    reset();
+    setrat(3)
   };
+  
 
 
   return (
@@ -336,13 +342,17 @@ function Tabo(props) {
           name="rating"
           control={control}
           defaultValue={value}
+          
           rules={{ required: true }}
           render={({ field: { onChange, onBlur, value, ref } }) => (
             <Rating
+            // value={rat}
+            
             size="10rem"
               onChange={onChange}
               onBlur={onBlur}
               selected={value}
+             
             />
           )}
         
