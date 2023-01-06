@@ -26,47 +26,67 @@ const WindowsDetails =  ({product,descrp}) => {
     const router=useRouter();
     const Cartctx=useContext(Cartcontext);
     const [reviews,Setreview]=useState([]);
+
     
     const { winId }=router.query;
     console.log("yea"+winId);
-    const handle=async (data,value)=>{
+    const handle=useCallback(async (data,date)=>{
       if(!data){
         return;
       }
       if(data){
 
         const { firstname, email,rating,note }=data
-        const createdReview=Date.now()
 
         try {
       await axios.post(`/api/product/${product._id}`, {
         firstname,
         rating,
         email,
-        createdReview,
         note,
       });
       console.log("data"+data)
-      
+      // const  datax = await axios.get(`/api/product/${product._id}`);
+
+    
       Setreview(prev=>{
         const updategoals = [...prev];
         updategoals.unshift(data)
         return updategoals;
 
       })
+      reviewhandler()
+
+      
+
+
+
+      
     } catch (err) {
       console.log(err);
     }
   
       }
 
+    })
+    const getdata=async ()=>{
+      const { data } = await axios.get(`/api/product/${product._id}`);
+      Setreview(data.reviews)
+
     }
+    useEffect(()=>{
+       getdata();
+
+
+
+    },[])
     const reviewhandler=useCallback(async ()=>{
       try {
    
         const { data } = await axios.get(`/api/product/${product._id}`);
          Setreview(data.reviews)
         console.log("data"+data)
+       
 
 
         console.log(data.reviews.length)
@@ -75,7 +95,7 @@ const WindowsDetails =  ({product,descrp}) => {
       }
       
       
-    })
+    },[handle])
     useEffect(()=>{
       async function fetchBooks() {
 

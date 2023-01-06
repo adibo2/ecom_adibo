@@ -108,20 +108,11 @@ function Taboffice(props) {
   };
   // { firstname, email,rating,note }
   const onSubmit = async (data) => {
-    // console.log(rating,rating,note)
-    // try {
-    //   await axios.post(`/api/product/${product._id}`, {
-    //     firstname,
-    //     rating,
-    //     email,
-    //     note,
-    //   });
-    //   console.log(data)
-    // } catch (err) {
-    //   console.log(err);
-    // }
+  
     console.log(data);
     props.onsubmit(data);
+    reset();
+
   };
 
   return (
@@ -370,9 +361,15 @@ Reviews ({props.reviewtaille > 0 ? (props.reviewtaille) : (0) })
                         ></Image>
                         <div className={css.bloc}>
                           <div className={css.bloc_title}>
-                            <span className={css.bloc_title_left}>
-                              {review.firstname}
-                            </span>
+                            <div>
+                          <span className={css.bloc_title_left_bold}>
+                            {review.firstname}
+                          </span>
+                          <span className={css.bloc_title_left}>
+                          -{review.createdAt?.slice(0, 10)}
+
+                          </span>
+                          </div>
                             <span className={css.bloc_title_right}>
                               <Stack spacing={1}>
                                 <Rating

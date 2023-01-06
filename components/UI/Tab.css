@@ -21,7 +21,7 @@
     gap:7rem;
     /* display: grid;
     grid-template-columns: repeat(5,minmax(0,1fr)); */
-    padding-left: 13rem;
+    padding-left: 10rem;
     padding-right: 13rem;
     border-bottom: 1px solid rgb(209 213 219 / 2);
     overflow: auto;

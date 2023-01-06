@@ -48,6 +48,9 @@ const OfficeDetail = ({office,descrp}) => {
         return updategoals;
 
       })
+      reviewhandler()
+
+
     } catch (err) {
       console.log(err);
     }

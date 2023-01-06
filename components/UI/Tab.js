@@ -310,7 +310,7 @@ function Tabo(props) {
                             {review.firstname}
                           </span>
                           <span className={css.bloc_title_left}>
-                          -{review.createdReview}
+                          -{review.createdAt?.slice(0, 10)}
                           {/* {Date.now()} */}
 
                           </span>

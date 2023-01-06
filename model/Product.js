@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 const reviewSchema = mongoose.Schema(
   {
-    createdReview: {
-      type: Date,
-    },
+    
       note:{
           type: String,
           required: [true,' kr can not be empty'],                     
@@ -17,6 +15,10 @@ const reviewSchema = mongoose.Schema(
       firstname:{
           type: String,
           required: [true,'name required'],    
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now
       },
       email:{
           type: String,

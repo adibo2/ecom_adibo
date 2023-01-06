@@ -15,7 +15,7 @@ export default async function handler(req, res) {
             note,
         
           } 
-          product.reviews.push(review);
+          product.reviews.unshift(review);
           product.numReviews = product.reviews.length
 
           await product.save()
