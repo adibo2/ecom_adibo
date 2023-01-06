@@ -19,10 +19,13 @@ const reviewSchema = mongoose.Schema(
           type: String,
           required: [true,'name required'],    
       },
+      createdAt: {
+        type: Date,
+        default: Date.now(),
+        select: false
+      },
   },
-  {
-      timestamps: true,
-  }
+
 )
 
 const productofficeSchema = new mongoose.Schema(

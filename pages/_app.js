@@ -6,6 +6,7 @@ import "./../components/UI/Tab.css";
 import { useRouter } from 'next/router';
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 
 
@@ -26,6 +27,8 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
     <SessionProvider session={session}>
     <CartProvider>
     <FilterProvider>
+      <PayPalScriptProvider deferLoading={true}>
+
     {Component.auth ? (
             <Auth adminOnly={Component.auth.adminOnly}>
               <Component {...pageProps} />
@@ -33,6 +36,7 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
           ) : (
             <Component {...pageProps} />
           )}
+      </PayPalScriptProvider>
 
 
     </FilterProvider>

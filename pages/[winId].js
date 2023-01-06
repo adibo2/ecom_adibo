@@ -36,12 +36,14 @@ const WindowsDetails =  ({product,descrp}) => {
       if(data){
 
         const { firstname, email,rating,note }=data
+        const createdReview=Date.now()
 
         try {
       await axios.post(`/api/product/${product._id}`, {
         firstname,
         rating,
         email,
+        createdReview,
         note,
       });
       console.log("data"+data)
@@ -63,7 +65,8 @@ const WindowsDetails =  ({product,descrp}) => {
       try {
    
         const { data } = await axios.get(`/api/product/${product._id}`);
-        Setreview(data.reviews)
+         Setreview(data.reviews)
+        console.log("data"+data)
 
 
         console.log(data.reviews.length)

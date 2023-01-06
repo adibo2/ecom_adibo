@@ -1,6 +1,5 @@
 import React from 'react'
 import css from './Footer.module.scss'
-import visa from '/public/img/visabg.png'
 import Image from 'next/image'
 import visas from "/public/img/visas.svg";
 import master from "/public/img/master.webp"

@@ -2,19 +2,25 @@ import db from "./../../../utils/db";
 import Admin from "../../../model/admin";
 import bcryptjs from 'bcryptjs';
 import NextAuth from 'next-auth';
+import User from "../../../model/User";
+
 import CredentialsProvider from 'next-auth/providers/credentials';
 export default NextAuth({
     session: {
       strategy: 'jwt',
     },
     callbacks: {
-      async jwt({ token, admin }) {
-        if (admin?._id) token._id = admin._id;
+      async jwt({ token,tokenadmin,admin,user }) {
+        // if (admin?._id) tokenadmin._id = admin._id;
+        if (user?._id) token._id = user._id;
+
         // if (user?.isAdmin) token.isAdmin = user.isAdmin;
         return token;
       },
-      async session({ session, token }) {
-        if (token?._id) session.admin._id = token._id;
+      async session({ session, token,tokenadmin }) {
+        // if (tokenadmin?._id) session.admin._id = token._id;
+        if (token?._id) session.user._id = token._id;
+
         // if (token?.isAdmin) session.user.isAdmin = token.isAdmin;
         return session;
       },
@@ -26,6 +32,9 @@ export default NextAuth({
           const admin = await Admin.findOne({
             name: credentials.name,
           });
+          const user = await User.findOne({
+            email: credentials.email,
+          });
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
           await db.disconnect();
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
@@ -35,6 +44,16 @@ export default NextAuth({
               _id: admin._id,
               name: admin.name,
            
+            };
+          }
+          if (user) {
+            return {
+              _id: user._id,
+              firstname: user.firstname,
+              lastname: user.lastname,
+              email: user.email,
+              repeatemail: user.repeatemail
+              
             };
           }
           throw new Error('Invalid email or password');

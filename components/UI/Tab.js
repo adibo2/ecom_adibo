@@ -112,7 +112,7 @@ function Tabo(props) {
     console.log("data reviews"+data)
     props.onsubmit(data)
     reset();
-    setrat(3)
+    // setrat(3)
   };
   
 
@@ -305,9 +305,17 @@ function Tabo(props) {
                       ></Image>
                       <div className={css.bloc}>
                         <div className={css.bloc_title}>
-                          <span className={css.bloc_title_left}>
+                          <div>
+                          <span className={css.bloc_title_left_bold}>
                             {review.firstname}
                           </span>
+                          <span className={css.bloc_title_left}>
+                          -{review.createdReview}
+                          {/* {Date.now()} */}
+
+                          </span>
+
+                          </div>
                           <span className={css.bloc_title_right}>
                           <Stack spacing={1}>
                                 <Rating

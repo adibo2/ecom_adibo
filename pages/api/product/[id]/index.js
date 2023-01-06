@@ -3,18 +3,20 @@ import Product from "../../../../model/Product";
 
 export default async function handler(req, res) {
     if(req.method === 'POST'){
-        const { firstname, rating, email,note } = req.body;
+        const { firstname, rating, email,note,createdReview } = req.body;
         await db.connect();
         const product = await Product.findById(req.query.id);
         // res.send(product);
         const review = {
+            createdReview,
             firstname,
+            ladate:Date.now(),
             rating,
             email,
-            note,
+            note
         
           } 
-          product.reviews.push(review);
+           product.reviews.push(review);
           product.numReviews = product.reviews.length
 
           await product.save()
