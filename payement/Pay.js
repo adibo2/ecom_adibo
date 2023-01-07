@@ -68,9 +68,11 @@ const Pay = () => {
         repeatemail,
       });
       const result = await signIn('credentials', {
-        redirect: false,
-        
+        redirect: false,  
+        firstname,
         email,
+        
+        
         
       });
       
@@ -82,11 +84,11 @@ const Pay = () => {
       Cookies.set('Cart',[]);
       Cookies.set('total',0)
       
-      await axios.post("/api/sendEmail",{
-        firstname,
-        lastname,
-        email
-      })
+      // await axios.post("/api/sendEmail",{
+      //   firstname,
+      //   lastname,
+      //   email
+      // })
 
       toast.success("Information Added Successfully", {});
       Setshow(true);

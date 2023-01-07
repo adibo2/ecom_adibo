@@ -1,6 +1,6 @@
 import db from "./../../../utils/db";
-import Admin from "../../../model/admin";
-import bcryptjs from 'bcryptjs';
+// import Admin from "../../../model/admin";
+// import bcryptjs from 'bcryptjs';
 import NextAuth from 'next-auth';
 import User from "../../../model/User";
 
@@ -29,23 +29,23 @@ export default NextAuth({
       CredentialsProvider({
         async authorize(credentials) {
           await db.connect();
-          const admin = await Admin.findOne({
-            name: credentials.name,
-          });
           const user = await User.findOne({
             email: credentials.email,
           });
+          // const admin = await Admin.findOne({
+          //   name: credentials.name,
+          // });
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
           await db.disconnect();
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
-          if (admin && bcryptjs.compareSync(credentials.password, admin.password)) {
-            console.log("cksdkopsdksmdksldslkdmks");
-            return {
-              _id: admin._id,
-              name: admin.name,
+          // if (admin && bcryptjs.compareSync(credentials.password, admin.password)) {
+          //   console.log("cksdkopsdksmdksldslkdmks");
+          //   return {
+          //     _id: admin._id,
+          //     name: admin.name,
            
-            };
-          }
+          //   };
+          // }
           if (user) {
             return {
               _id: user._id,
@@ -60,4 +60,6 @@ export default NextAuth({
         },
       }),
     ],
+    secret: process.env.SECRET,
+
   });

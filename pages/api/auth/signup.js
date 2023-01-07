@@ -24,6 +24,7 @@ export default async function handler(req, res) {
 
     res.status(200).json({ name: 'message send succesfully' })
     await db.connect();
+
     const newUser = new User({
       firstname,
       lastname,
@@ -31,6 +32,7 @@ export default async function handler(req, res) {
       repeatemail,
   
     });
+    
     // twilio.messages.create({body: 'Hi there', from: '+1 864 387 8193', to: '+212655217579'})
     // .then(message => console.log('message sent'))
     // .catch((error)=>console.log(error))
@@ -46,6 +48,7 @@ export default async function handler(req, res) {
       repeatemail: user.repeatemail,
   
     });
+    res.end();
   }
 
 
