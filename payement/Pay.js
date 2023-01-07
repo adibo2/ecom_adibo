@@ -11,6 +11,8 @@ import axios from "axios";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
+
 
 import {datana,email,optional} from "./dataPay";
 
@@ -77,7 +79,8 @@ const Pay = () => {
         totalPrice:Cartctx.totalamount,
       });
       
-      
+      Cookies.set('Cart',[]);
+      Cookies.set('total',0)
       
 
       toast.success("Information Added Successfully", {});
