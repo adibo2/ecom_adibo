@@ -2,9 +2,8 @@ import React from "react";
 import css from "./Pay.module.scss";
 import { useForm } from "react-hook-form";
 import { useState, useEffect, useContext } from "react";
-import { useSession } from "next-auth/react";
 import { ToastContainer } from "react-toastify";
-import { signIn } from "next-auth/react";
+import { signIn,useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
@@ -26,7 +25,9 @@ import Cartcontext from "../components/Cartctx/Cartcontext";
 const Pay = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const Cartctx = useContext(Cartcontext);
-  const [{ isPending },paypalDispatch] = usePayPalScriptReducer();
+  const { data: session } = useSession();
+
+  // const [{ isPending },paypalDispatch] = usePayPalScriptReducer();
 
 
   const [show, Setshow] = useState(false);
@@ -35,21 +36,21 @@ const Pay = () => {
 
 
 
-  useEffect(() => {
-      // const loadPaypalScript = async () => {
-      //   const { data: clientId } = await axios.get('/api/keys/paypal');
-      //   paypalDispatch({
-      //     type: 'resetOptions',
-      //     value: {
-      //       'client-id': clientId,
-      //       currency: 'USD',
-      //     },
-      //   });
-      //   paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
-      // };
-      // loadPaypalScript();
+  // useEffect(() => {
+  //     // const loadPaypalScript = async () => {
+  //     //   const { data: clientId } = await axios.get('/api/keys/paypal');
+  //     //   paypalDispatch({
+  //     //     type: 'resetOptions',
+  //     //     value: {
+  //     //       'client-id': clientId,
+  //     //       currency: 'USD',
+  //     //     },
+  //     //   });
+  //     //   paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
+  //     // };
+  //     // loadPaypalScript();
     
-  }, [paypalDispatch]);
+  // }, [paypalDispatch]);
 
   const {
     register,
@@ -60,6 +61,7 @@ const Pay = () => {
 
   const onSubmit = async ({ firstname, lastname, email, repeatemail }) => {
     try {
+      console.log(email)
       // e.preventDefault() 
       await axios.post("/api/auth/signup", {
         firstname,
@@ -69,26 +71,24 @@ const Pay = () => {
       });
       const result = await signIn('credentials', {
         redirect: false,  
-        firstname,
-        email,
-        
-        
-        
+        email,   
       });
+      console.log("result: " + result)
+      console.log("session"+session)
       
       await axios.post('/api/orders', {
         orderItems: Cartctx.items,  
         totalPrice:Cartctx.totalamount,
       });
       
-      Cookies.set('Cart',[]);
-      Cookies.set('total',0)
+      // Cookies.set('Cart',[]);
+      // Cookies.set('total',0)
       
-      // await axios.post("/api/sendEmail",{
-      //   firstname,
-      //   lastname,
-      //   email
-      // })
+      await axios.post("/api/sendEmail",{
+        firstname,
+        lastname,
+        email
+      })
 
       toast.success("Information Added Successfully", {});
       Setshow(true);

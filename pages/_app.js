@@ -27,16 +27,15 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
     <SessionProvider session={session}>
     <CartProvider>
     <FilterProvider>
-      <PayPalScriptProvider deferLoading={true}>
-
+{/* 
     {Component.auth ? (
-            <Auth adminOnly={Component.auth.adminOnly}>
+            // <Auth adminOnly={Component.auth.adminOnly}>
               <Component {...pageProps} />
-            </Auth>
+            // </Auth>
           ) : (
             <Component {...pageProps} />
-          )}
-      </PayPalScriptProvider>
+          )} */}
+           <Component {...pageProps} />
 
 
     </FilterProvider>
@@ -47,22 +46,22 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
     
     ) 
 }
-function Auth({ children, adminOnly }) {
-  const router = useRouter();
-  const { status, data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      router.push('/unauthorized?message=login required');
-    },
-  });
-  if (status === 'loading') {
-    return <div>Loading...</div>;
-  }
-  if (adminOnly && !session.user) {
-    router.push('/unauthorized?message=admin login required');
-  }
+// function Auth({ children, adminOnly }) {
+//   const router = useRouter();
+//   const { status, data: session } = useSession({
+//     required: true,
+//     onUnauthenticated() {
+//       router.push('/unauthorized?message=login required');
+//     },
+//   });
+//   if (status === 'loading') {
+//     return <div>Loading...</div>;
+//   }
+//   if (adminOnly && !session.user) {
+//     router.push('/unauthorized?message=admin login required');
+//   }
 
-  return children;
-}
+//   return children;
+// }
 
 export default MyApp

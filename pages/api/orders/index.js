@@ -9,6 +9,7 @@ const handler = async (req, res) => {
     
   
     const { user } = session;
+    console.log("sld"+user.email)
 
     await db.connect();
     const newOrder = new Order({

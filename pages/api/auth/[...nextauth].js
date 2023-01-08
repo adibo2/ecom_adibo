@@ -10,14 +10,14 @@ export default NextAuth({
       strategy: 'jwt',
     },
     callbacks: {
-      async jwt({ token,tokenadmin,admin,user }) {
+      async jwt({ token,user }) {
         // if (admin?._id) tokenadmin._id = admin._id;
         if (user?._id) token._id = user._id;
 
         // if (user?.isAdmin) token.isAdmin = user.isAdmin;
         return token;
       },
-      async session({ session, token,tokenadmin }) {
+      async session({ session, token}) {
         // if (tokenadmin?._id) session.admin._id = token._id;
         if (token?._id) session.user._id = token._id;
 
@@ -37,6 +37,7 @@ export default NextAuth({
           // });
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
           await db.disconnect();
+          
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
           // if (admin && bcryptjs.compareSync(credentials.password, admin.password)) {
           //   console.log("cksdkopsdksmdksldslkdmks");
@@ -46,6 +47,7 @@ export default NextAuth({
            
           //   };
           // }
+          
           if (user) {
             return {
               _id: user._id,
@@ -60,6 +62,9 @@ export default NextAuth({
         },
       }),
     ],
-    secret: process.env.SECRET,
+    // secret: process.env.SECRET,
 
   });
+
+
+  
