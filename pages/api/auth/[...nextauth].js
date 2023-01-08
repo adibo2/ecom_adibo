@@ -29,9 +29,7 @@ export default NextAuth({
       CredentialsProvider({
         async authorize(credentials) {
           await db.connect();
-          const user = await User.findOne({
-            email: credentials.email,
-          });
+          const user = await User.findOne({email: credentials.email});
           // const admin = await Admin.findOne({
           //   name: credentials.name,
           // });
@@ -47,7 +45,6 @@ export default NextAuth({
 
           //   };
           // }
-          return user;
 
           if (user) {
             return {
@@ -58,6 +55,9 @@ export default NextAuth({
               repeatemail: user.repeatemail
 
             };
+          }
+          else{
+            return null;
           }
           throw new Error('Invalid email or password');
         },
