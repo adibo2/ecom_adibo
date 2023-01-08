@@ -3,8 +3,8 @@ import db from "./../../../utils/db";
 // import bcryptjs from 'bcryptjs';
 import NextAuth from 'next-auth';
 import User from "../../../model/User";
-
 import CredentialsProvider from 'next-auth/providers/credentials';
+
 export default NextAuth({
     session: {
       strategy: 'jwt',
@@ -30,6 +30,7 @@ export default NextAuth({
       CredentialsProvider({
         async authorize(credentials) {
           await db.connect();
+          console.log("created credentials"+credentials.email)
           const user = await User.findOne({
             email: credentials.email,
           });

@@ -35,8 +35,7 @@ export default async function handler(req, res) {
     const user = await newUser.save();
     await db.disconnect();
   
-     res.status(201).send({
-      message: 'Created user!',
+     res.status(201).json({
       _id: user._id,
       firstname: user.firstname,
       lastname: user.lastname,

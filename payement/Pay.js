@@ -71,17 +71,17 @@ const Pay = () => {
       });
       const result = await signIn('credentials', {
         redirect: false,
-        email,
+        email,      
       });
 
-      if (result.error) {
-        toast.error(result.error);
-      }
       
       await axios.post('/api/orders', {
         orderItems: Cartctx.items,  
         totalPrice:Cartctx.totalamount,
       });
+      if (result.error) {
+        toast.error(result.error);
+      }
       
       // Cookies.set('Cart',[]);
       // Cookies.set('total',0)
