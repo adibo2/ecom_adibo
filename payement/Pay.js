@@ -69,12 +69,11 @@ const Pay = () => {
         email,
         repeatemail,
       });
-       await signIn('credentials', {
+       const result=await signIn('credentials', {
         email,
         redirect: false,
       });
       // console.log("result: " + result)
-      console.log("session"+session)
       
       await axios.post('/api/orders', {
         orderItems: Cartctx.items,  
