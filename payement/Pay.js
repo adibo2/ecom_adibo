@@ -16,16 +16,15 @@ import Cookies from 'js-cookie';
 import {datana,email,optional} from "./dataPay";
 
 
-import {
-  PayPalScriptProvider,
-  PayPalButtons,
-  usePayPalScriptReducer,
-} from "@paypal/react-paypal-js";
+// import {
+//   PayPalScriptProvider,
+//   PayPalButtons,
+//   usePayPalScriptReducer,
+// } from "@paypal/react-paypal-js";
 import Cartcontext from "../components/Cartctx/Cartcontext";
 const Pay = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const Cartctx = useContext(Cartcontext);
-  const { data: session } = useSession();
 
   // const [{ isPending },paypalDispatch] = usePayPalScriptReducer();
 
