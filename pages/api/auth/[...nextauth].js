@@ -74,7 +74,6 @@ import User from "../../../model/User";
 
 import CredentialsProvider from "next-auth/providers/credentials";
 export default NextAuth({
-  secret: process.env.SECRET,
   session: {
     strategy: "jwt",
   },
@@ -112,4 +111,6 @@ export default NextAuth({
       },
     }),
   ],
+  secret: process.env.SECRET,
+
 });
