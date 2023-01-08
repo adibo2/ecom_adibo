@@ -69,11 +69,11 @@ const Pay = () => {
         email,
         repeatemail,
       });
-      const result = await signIn('credentials', {
-        redirect: false,  
-        email,   
+       await signIn('credentials', {
+        email,
+        redirect: false,
       });
-      console.log("result: " + result)
+      // console.log("result: " + result)
       console.log("session"+session)
       
       await axios.post('/api/orders', {
@@ -96,6 +96,7 @@ const Pay = () => {
       // console.log(data)
     } catch (err) {
       toast.error("Not a valid state");
+      console.log(err)
     }
 
     // console.log(data);

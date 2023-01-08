@@ -9,6 +9,8 @@ import Productoffice from '../../model/Productoffice';
 import { search } from '../../components/data';
 import Fetch from '../../model/search';
 import Review from '../../model/reviews';
+import User from '../../model/User';
+import Order from '../../model/Order';
 const data = {
   users: [
     {
@@ -28,6 +30,8 @@ export default async function handler(req, res) {
   // await Admin.insertMany(data.users);
   await Product.deleteMany();
   await Product.insertMany(data_windows);
+  await User.deleteMany()
+  await Order.deleteMany()
   // await Productoffice.deleteMany();
   // await Productoffice.insertMany(data_office);
   // await Product.find().populate({ path: 'reviews', model: Review });
