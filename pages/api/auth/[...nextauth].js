@@ -78,7 +78,7 @@ export default NextAuth({
     strategy: "jwt",
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user}) {
       if (user?._id) token._id = user._id;
       // if (user?.isAdmin) token.isAdmin = user.isAdmin;
       return token;
@@ -89,9 +89,9 @@ export default NextAuth({
       return session;
     },
   },
+
   providers: [
     CredentialsProvider({
-      id: "username-login", 
       async authorize(credentials) {
         await db.connect();
         const user = await User.findOne({
@@ -107,7 +107,7 @@ export default NextAuth({
             repeatemail: user.repeatemail,
           };
         }
-        throw new Error("Invalid email or password");
+        throw new Error('Invalid email or password');
       },
     }),
   ],
