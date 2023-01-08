@@ -58,12 +58,15 @@ export default NextAuth({
 
             };
           }
+          else {
+            return null;
+          }
        
-          throw new Error('Invalid email or password');
+          // throw new Error('Invalid email');
         },
       }),
     ],
-    secret: process.env.SECRET,
+    // secret: process.env.SECRET,
 
 
 

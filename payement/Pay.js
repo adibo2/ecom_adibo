@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
+import { getError } from "../utils/error";
 
 
 import {datana,email,optional} from "./dataPay";
@@ -62,7 +63,7 @@ const Pay = () => {
     try {
       console.log(email)
       // e.preventDefault() 
-      await axios.post("/api/auth/signup", {
+      await axios.post('/api/auth/signup', {
         firstname,
         lastname,
         email,
@@ -72,7 +73,11 @@ const Pay = () => {
         redirect: false,
         email,
       });
+
       console.log("result: " + result)
+      if (result.error) {
+        toast.error(result.error);
+      }
       
       await axios.post('/api/orders', {
         orderItems: Cartctx.items,  
@@ -92,9 +97,10 @@ const Pay = () => {
       Setshow(true);
 
       // console.log(data)
+
     } catch (err) {
       toast.error("Not a valid state");
-      console.log(err)
+      console.log(getError(err))
     }
 
     // console.log(data);
