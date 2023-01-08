@@ -74,19 +74,19 @@ const Pay = () => {
       });
       // console.log("result: " + result)
       
-      await axios.post('/api/orders', {
-        orderItems: Cartctx.items,  
-        totalPrice:Cartctx.totalamount,
-      });
+      // await axios.post('/api/orders', {
+      //   orderItems: Cartctx.items,  
+      //   totalPrice:Cartctx.totalamount,
+      // });
       
-      // Cookies.set('Cart',[]);
-      // Cookies.set('total',0)
+      // // Cookies.set('Cart',[]);
+      // // Cookies.set('total',0)
       
-      await axios.post("/api/sendEmail",{
-        firstname,
-        lastname,
-        email
-      })
+      // await axios.post("/api/sendEmail",{
+      //   firstname,
+      //   lastname,
+      //   email
+      // })
 
       toast.success("Information Added Successfully", {});
       Setshow(true);
