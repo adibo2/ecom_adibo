@@ -47,6 +47,7 @@ export default NextAuth({
 
           //   };
           // }
+          return user;
 
           if (user) {
             return {
