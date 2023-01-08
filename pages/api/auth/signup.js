@@ -7,11 +7,13 @@ export default async function handler(req, res) {
     if(req.method !== 'POST'){
         return;
     }
-    const { firstname, email } = req.body;
+    const { firstname, lastname, email,repeatemail } = req.body;
   if (
     !firstname ||
+    !lastname ||
     !email ||
-    !email.includes('@') 
+    !email.includes('@') ||
+    !repeatemail 
     
   ) {
     res.status(422).json({
@@ -20,31 +22,25 @@ export default async function handler(req, res) {
     return;
   }
 
-    // res.status(200).json({ name: 'message send succesfully' })
     await db.connect();
 
-    // const newUser = new User({
-    //   firstname,
-    //   lastname,
-    //   email,
-    //   repeatemail,
-  
-    // });
     const newUser = new User({
       firstname,
+      lastname,
       email,
-      isAdmin: false,
+      repeatemail,
+  
     });
     const user = await newUser.save();
     await db.disconnect();
   
-     res.status(201).send({
-    
+    res.status(201).send({
       message: 'Created user!',
       _id: user._id,
       firstname: user.firstname,
+      lastname: user.lastname,
       email: user.email,
-      isAdmin: user.isAdmin,
+      repeatemail: user.repeatemail,
   
     });
   }

@@ -59,17 +59,20 @@ const Pay = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async ({ firstname, email }) => {
+  const onSubmit = async ({ firstname, lastname, email, repeatemail }) => {
     try {
       console.log(email)
       // e.preventDefault() 
       await axios.post('/api/auth/signup', {
         firstname,
+        lastname,
         email,
+        repeatemail,
       });
       const result = await signIn('credentials', {
         redirect: false,
         email,
+        
       });
 
       
