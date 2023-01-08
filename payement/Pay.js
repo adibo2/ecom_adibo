@@ -74,7 +74,6 @@ const Pay = () => {
         email,
       });
 
-      console.log("result: " + result)
       if (result.error) {
         toast.error(result.error);
       }
