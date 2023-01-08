@@ -69,9 +69,9 @@ const Pay = () => {
         email,
         repeatemail,
       });
-       const result=await signIn('credentials', {
-        email,
+      const result = await signIn("username-login", {
         redirect: false,
+        email,
       });
       // console.log("result: " + result)
       
