@@ -1,6 +1,6 @@
 import db from "./../../../utils/db";
-// import Admin from "../../../model/admin";
-// import bcryptjs from 'bcryptjs';
+import Admin from "../../../model/admin";
+import bcryptjs from 'bcryptjs';
 import NextAuth from 'next-auth';
 import User from "../../../model/User";
 import CredentialsProvider from 'next-auth/providers/credentials';
@@ -10,17 +10,18 @@ export default NextAuth({
       strategy: 'jwt',
     },
     callbacks: {
-      async jwt({ token,user }) {
-        // if (admin?._id) tokenadmin._id = admin._id;
+      async jwt({ token,user,admin,tokenadmin }) {
+        if (admin?._id) tokenadmin._id = admin._id;
+
         if (user?._id) token._id = user._id;
 
         // if (user?.isAdmin) token.isAdmin = user.isAdmin;
         return token;
       },
-      async session({ session, token}) {
+      async session({ session, token,tokenadmin}) {
         // if (tokenadmin?._id) session.admin._id = token._id;
-
-        if (token?._id) session.user._id = token._id;
+         if (tokenadmin?._id) session.admin._id = token._id;
+         if (token?._id) session.user._id = token._id;
         // if (token?.isAdmin) session.user.isAdmin = token.isAdmin;
         return session;
       },
@@ -30,25 +31,26 @@ export default NextAuth({
       CredentialsProvider({
         async authorize(credentials) {
           await db.connect();
-          console.log("created credentials"+credentials.email)
+          console.log("created credentials"+credentials.name)
           const user = await User.findOne({
             email: credentials.email,
           });
-          // const admin = await Admin.findOne({
-          //   name: credentials.name,
-          // });
+          const admin = await Admin.findOne({
+            name: credentials.name,
+          });
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
           await db.disconnect();
+          console.log(admin)
 
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
-          // if (admin && bcryptjs.compareSync(credentials.password, admin.password)) {
-          //   console.log("cksdkopsdksmdksldslkdmks");
-          //   return {
-          //     _id: admin._id,
-          //     name: admin.name,
+          if (admin && bcryptjs.compareSync(credentials.password, admin.password)) {
+            console.log("cksdkopsdksmdksldslkdmks");
+            return {
+              _id: admin._id,
+              name: admin.name,
 
-          //   };
-          // }
+            };
+          }
 
           if (user) {
             return {

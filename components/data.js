@@ -75,7 +75,7 @@ export const data_windows=[{
     price:20.99,
     notprice:25,
 
-    name:"MICROSOFT Windows 10 Enterprise –INSTANT DELIVERY-",
+    name:"Windows 10 Enterprise Digital License",
     alt:"Windows 10 enterprise product key license ",
     // img:w10en,
     img:"/img/w10entreprise.webp",
@@ -96,7 +96,7 @@ export const data_windows=[{
 
     // img:w11entreprise,
     img:'/img/win11entreprise.webp',
-    name:"MICROSOFT Windows 11 Enterprise –INSTANT DELIVERY-",
+    name:"Windows 11 Enterprise Digital License",
     // img:w11entreprise,
     meta:'Buy Microsoft Windows 11 Enterprise Product Key for the best price at instant key. Order now and download the activation key instantly'
 
@@ -111,7 +111,7 @@ export const data_windows=[{
     alt:"Windows 11 Home product key license ",
     notprice:9.99,
     price:7.99,
-    name:"MICROSOFT WINDOWS 11 HOME  –INSTANT DELIVERY-",
+    name:"WINDOWS 11 HOME Digital License",
     // img:w11h,
     img:'/img/w11home.webp',
     meta:'Buy Microsoft Windows 11 Home Product Key for the best price at instant key. Order now and download the activation key instantly'

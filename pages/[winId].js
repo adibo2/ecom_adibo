@@ -85,11 +85,11 @@ const WindowsDetails =  ({product,descrp}) => {
    
         const { data } = await axios.get(`/api/product/${product._id}`);
          Setreview(data.reviews)
-        console.log("data"+data)
+        // console.log("data"+data)
        
 
 
-        console.log(data.reviews.length)
+        // console.log(data.reviews.length)
       } catch (err) {
         console.log(err);
       }

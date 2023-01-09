@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import css from "./Pay.module.scss";
 import { useForm } from "react-hook-form";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContex,useReducer } from "react";
 import { ToastContainer } from "react-toastify";
 import { signIn,useSession } from "next-auth/react";
 import { toast } from "react-toastify";
@@ -15,42 +15,99 @@ import { getError } from "../utils/error";
 
 
 import {datana,email,optional} from "./dataPay";
+import {
+  PayPalScriptProvider,
+  PayPalButtons,
+  usePayPalScriptReducer,
+} from "@paypal/react-paypal-js";
+function reducer(state, action) {
+  switch (action.type) {
+    case 'FETCH_REQUEST':
+      return { ...state, loading: true, error: '' };
+    case 'FETCH_SUCCESS':
+      return { ...state, loading: false, order: action.payload, error: '' };
+    case 'FETCH_FAIL':
+      return { ...state, loading: false, error: action.payload };
+    case 'PAY_REQUEST':
+      return { ...state, loadingPay: true };
+    case 'PAY_SUCCESS':
+      return { ...state, loadingPay: false, successPay: true };
+    case 'PAY_FAIL':
+      return { ...state, loadingPay: false, errorPay: action.payload };
+    case 'PAY_RESET':
+      return { ...state, loadingPay: false, successPay: false, errorPay: '' };
 
+    case 'DELIVER_REQUEST':
+      return { ...state, loadingDeliver: true };
+    case 'DELIVER_SUCCESS':
+      return { ...state, loadingDeliver: false, successDeliver: true };
+    case 'DELIVER_FAIL':
+      return { ...state, loadingDeliver: false };
+    case 'DELIVER_RESET':
+      return {
+        ...state,
+        loadingDeliver: false,
+        successDeliver: false,
+      };
 
-// import {
-//   PayPalScriptProvider,
-//   PayPalButtons,
-//   usePayPalScriptReducer,
-// } from "@paypal/react-paypal-js";
+    default:
+      state;
+  }
+}
 import Cartcontext from "../components/Cartctx/Cartcontext";
 const Pay = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const Cartctx = useContext(Cartcontext);
+  const [{loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,},dispatch,] = useReducer(reducer, {
+    loading: true,
+    order: {},
+    error: '',
+  });
 
-  // const [{ isPending },paypalDispatch] = usePayPalScriptReducer();
+  const [{ isPending },paypalDispatch] = usePayPalScriptReducer();
 
 
   const [show, Setshow] = useState(false);
   const router = useRouter();
+  // console.log("router.query"+router.query.id)
+  // console.log("orderId"+ orderId);
+  const orderId=router.query.id;
 
 
 
 
-  // useEffect(() => {
-  //     // const loadPaypalScript = async () => {
-  //     //   const { data: clientId } = await axios.get('/api/keys/paypal');
-  //     //   paypalDispatch({
-  //     //     type: 'resetOptions',
-  //     //     value: {
-  //     //       'client-id': clientId,
-  //     //       currency: 'USD',
-  //     //     },
-  //     //   });
-  //     //   paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
-  //     // };
-  //     // loadPaypalScript();
+  useEffect(() => {
+    const fetchOrder = async () => {
+      try {
+        dispatch({ type: 'FETCH_REQUEST' });
+        const { data } = await axios.get(`/api/orders/${orderId}`);
+        console.log("data of order: " + JSON.stringify(data));
+        dispatch({ type: 'FETCH_SUCCESS', payload: data });
+      } catch (err) {
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
+      }
+    };
+    if(!order._id){
+      fetchOrder();
+      console.log("fetch order failed");
+    }
+    else{
+      const loadPaypalScript = async () => {
+        const { data: clientId } = await axios.get('/api/keys/paypal');
+        paypalDispatch({
+          type: 'resetOptions',
+          value: {
+            'client-id': clientId,
+            currency: 'USD',
+          },
+        });
+        paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
+      };
+      loadPaypalScript();
+
+    }
     
-  // }, [paypalDispatch]);
+  }, [order,paypalDispatch,orderId]);
 
   const {
     register,
@@ -63,7 +120,7 @@ const Pay = () => {
     try {
       console.log(email)
       // e.preventDefault() 
-      await axios.post('/api/auth/signup', {
+    await axios.post('/api/auth/signup', {
         firstname,
         lastname,
         email,
@@ -76,7 +133,7 @@ const Pay = () => {
       });
 
       
-      await axios.post('/api/orders', {
+    const { data }=await axios.post('/api/orders', {
         orderItems: Cartctx.items,  
         totalPrice:Cartctx.totalamount,
       });
@@ -94,7 +151,12 @@ const Pay = () => {
       })
 
       toast.success("Information Added Successfully", {});
+      router.push({
+        pathname: router.pathname,
+        query: { id: data._id },
+      });
       Setshow(true);
+      console.log(orderId)
 
       // console.log(data)
 
@@ -105,6 +167,7 @@ const Pay = () => {
 
     // console.log(data);
   };
+  const {totalPrice,orderItems,isPaid}=order
 
 
   // const initialOptions = {
@@ -125,6 +188,8 @@ const Pay = () => {
         return orderID;
       });
   }
+
+ 
   function onApprove(data, actions) {
     return actions.order.capture().then(async function (details) {
       try {
@@ -133,13 +198,16 @@ const Pay = () => {
           `/api/orders/${order._id}/pay`,
           details
         );
-        // dispatch({ type: 'PAY_SUCCESS', payload: data });
+        dispatch({ type: 'PAY_SUCCESS', payload: data });
         toast.success('Order is paid successgully');
       } catch (err) {
-        // dispatch({ type: 'PAY_FAIL', payload: getError(err) });
-        toast.error("error in payement");
+        dispatch({ type: 'PAY_FAIL', payload: getError(err) });
+        toast.error(getError(err));
       }
     });
+  }
+  function onError(err) {
+    toast.error(getError(err));
   }
 
   return (
@@ -312,14 +380,18 @@ const Pay = () => {
           <button type="submit" className={css.button} value="submit">
             continue to payement
           </button>
-          {show && (
-            <>
-              {/* <PayPalButtons
-                createOrder={createOrder}
+          {true && (
+            <div className="paypal">
+              <PayPalButtons
+                style={{"layout":"vertical"}}
+
+              createOrder={createOrder}
                 onApprove={onApprove}
+                onError={onError}
+
              
-              ></PayPalButtons> */}
-            </>
+              ></PayPalButtons>
+            </div>
           )}
         </div>
       </form>
