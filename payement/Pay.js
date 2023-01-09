@@ -12,8 +12,6 @@ import Image from "next/image";
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { getError } from "../utils/error";
-
-
 import {datana,email,optional} from "./dataPay";
 import {
   PayPalScriptProvider,
@@ -58,7 +56,7 @@ import Cartcontext from "../components/Cartctx/Cartcontext";
 const Pay = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const Cartctx = useContext(Cartcontext);
-  const [{loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,},dispatch,] = useReducer(reducer, {
+  const [{loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,},dispatch] = useReducer(reducer, {
     loading: true,
     order: {},
     error: '',
@@ -76,38 +74,7 @@ const Pay = () => {
 
 
 
-  useEffect(() => {
-    const fetchOrder = async () => {
-      try {
-        dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`/api/orders/${orderId}`);
-        console.log("data of order: " + JSON.stringify(data));
-        dispatch({ type: 'FETCH_SUCCESS', payload: data });
-      } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
-      }
-    };
-    if(!order._id){
-      fetchOrder();
-      console.log("fetch order failed");
-    }
-    else{
-      const loadPaypalScript = async () => {
-        const { data: clientId } = await axios.get('/api/keys/paypal');
-        paypalDispatch({
-          type: 'resetOptions',
-          value: {
-            'client-id': clientId,
-            currency: 'USD',
-          },
-        });
-        paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
-      };
-      loadPaypalScript();
 
-    }
-    
-  }, [order,paypalDispatch,orderId]);
 
   const {
     register,
@@ -151,6 +118,7 @@ const Pay = () => {
       })
 
       toast.success("Information Added Successfully", {});
+      
       router.push({
         pathname: router.pathname,
         query: { id: data._id },
@@ -167,6 +135,38 @@ const Pay = () => {
 
     // console.log(data);
   };
+  useEffect(() => {
+    // const fetchOrder = async () => {
+    //   try {
+    //     dispatch({ type: 'FETCH_REQUEST' });
+    //     const { data } = await axios.get(`/api/orders/${orderId}`);
+    //     console.log("data of order: " + JSON.stringify(data));
+    //     dispatch({ type: 'FETCH_SUCCESS', payload: data });
+    //   } catch (err) {
+    //     dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
+    //   }
+    // };
+    // if(!order._id){
+    //   fetchOrder();
+    //   console.log("fetch order failed");
+    // }
+    // else{
+      const loadPaypalScript = async () => {
+        const { data: clientId } = await axios.get('/api/keys/paypal');
+        paypalDispatch({
+          type: 'resetOptions',
+          value: {
+            'client-id': 'AZ0MS7R-DPx6L7Ebpg4XmchffryVtJ7cDWsky_9D2D8R23Uwg4sAupm3Nw9Y6fNcwXwG-leREdPQfb2C',
+            currency: 'USD',
+          },
+        });
+        paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
+      
+      loadPaypalScript();
+
+    }
+    
+  });
   const {totalPrice,orderItems,isPaid}=order
 
 
@@ -380,19 +380,26 @@ const Pay = () => {
           <button type="submit" className={css.button} value="submit">
             continue to payement
           </button>
-          {true && (
-            <div className="paypal">
-              <PayPalButtons
-                style={{"layout":"vertical"}}
-
-              createOrder={createOrder}
-                onApprove={onApprove}
-                onError={onError}
-
-             
-              ></PayPalButtons>
-            </div>
-          )}
+          {isPending ? (
+                      <div>Loading...</div>
+                    ) : (
+                      <div style={{ maxWidth: "750px", minHeight: "200px" }}>
+                          <PayPalScriptProvider
+                options={{
+                    "client-id": 'AZ0MS7R-DPx6L7Ebpg4XmchffryVtJ7cDWsky_9D2D8R23Uwg4sAupm3Nw9Y6fNcwXwG-leREdPQfb2C',
+                    components: "buttons",
+                    currency: "USD"
+                }}
+            >
+                        <PayPalButtons
+                          createOrder={createOrder}
+                          onApprove={onApprove}
+                          onError={onError}
+                        ></PayPalButtons>
+                      </PayPalScriptProvider>
+                      </div>
+                    )}
+ 
         </div>
       </form>
     </>

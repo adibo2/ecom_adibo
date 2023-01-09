@@ -45,7 +45,7 @@ const WindowsDetails =  ({product,descrp}) => {
         email,
         note,
       });
-      console.log("data"+data)
+      // console.log("data"+data)
       // const  datax = await axios.get(`/api/product/${product._id}`);
 
     

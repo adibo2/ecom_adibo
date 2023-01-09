@@ -41,7 +41,7 @@ const Productw = (props) => {
         img:product.img,
         stock:product.stock
       })
-      console.log(Cartctx.items.name)
+      // console.log(Cartctx.items.name)
 
 
     }

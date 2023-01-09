@@ -109,7 +109,7 @@ function Tabo(props) {
 
   // { firstname, email,rating,note }
   const onSubmit = async (data) => {
-    console.log("data reviews"+data)
+    // console.log("data reviews"+data)
     props.onsubmit(data)
     reset();
     // setrat(3)

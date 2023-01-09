@@ -39,7 +39,7 @@ const Productoff = (props) => {
         stock:product.stock
 
       })
-      console.log(Cartctx.items.name)
+      // console.log(Cartctx.items.name)
 
 
     }

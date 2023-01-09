@@ -27,7 +27,9 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
     <SessionProvider session={session}>
     <CartProvider>
     <FilterProvider>
-      <PayPalScriptProvider deferLoading={true}>
+      <PayPalScriptProvider 
+
+      deferLoading={true}>
 
     {Component.auth ? (
             <Auth adminOnly={Component.auth.adminOnly}>
@@ -37,13 +39,13 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
             <Component {...pageProps} />
           )}
 
+
       </PayPalScriptProvider>
-
-
     </FilterProvider>
 
     </CartProvider>
     </SessionProvider>
+
 
     
     ) 

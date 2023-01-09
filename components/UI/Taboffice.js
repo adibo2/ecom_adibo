@@ -90,7 +90,7 @@ function Taboffice(props) {
     console.log(router.query);
     const [toggleState, setToggleState] = useState(0);
     const [value, setValue] = useState(2);
-    console.log("value"+value)
+    // console.log("value"+value)
 
     
 
@@ -109,7 +109,7 @@ function Taboffice(props) {
   // { firstname, email,rating,note }
   const onSubmit = async (data) => {
   
-    console.log(data);
+    // console.log(data);
     props.onsubmit(data);
     reset();
 
