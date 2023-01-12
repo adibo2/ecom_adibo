@@ -29,12 +29,12 @@ const Admin = () => {
         register,
         formState: { errors },
       } = useForm();
-    const submitHandler = async ({ name, password }) => {
-        console.log("name: " + name + "password: " + password);
+    const submitHandler = async ({ email, password }) => {
+        console.log("name: " + email + "password: " + password);
         try {
           const result = await signIn('credentials', {
             redirect: false,
-            name,
+            email,
             password,
           });
           if (result.error) {
@@ -54,10 +54,10 @@ const Admin = () => {
       >
         <h1 className="mb-4 text-xl">Login</h1>
         <div className="mb-4">
-          <label htmlFor="name">MPPMP</label>
+          <label htmlFor="email">MPPMP</label>
           <input
-           {...register('name', {
-            required: 'name',
+           {...register('email', {
+            required: 'email',
             
           })}
             type="text"

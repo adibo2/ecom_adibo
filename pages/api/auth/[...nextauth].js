@@ -10,19 +10,19 @@ export default NextAuth({
       strategy: 'jwt',
     },
     callbacks: {
-      async jwt({ token,user,admin,tokenadmin }) {
-        if (admin?._id) tokenadmin._id = admin._id;
-
+      async jwt({token,user}) {
         if (user?._id) token._id = user._id;
+        if (user?.isAdmin) token.isAdmin = user.isAdmin;
 
         // if (user?.isAdmin) token.isAdmin = user.isAdmin;
         return token;
       },
-      async session({ session, token,tokenadmin}) {
+      async session({ session, token}) {
         // if (tokenadmin?._id) session.admin._id = token._id;
-         if (tokenadmin?._id) session.admin._id = token._id;
-         if (token?._id) session.user._id = token._id;
-        // if (token?.isAdmin) session.user.isAdmin = token.isAdmin;
+        if (token?._id) session.user._id = token._id;
+
+         if (token?.isAdmin) session.user.isAdmin = token.isAdmin;
+
         return session;
       },
     },
@@ -31,26 +31,30 @@ export default NextAuth({
       CredentialsProvider({
         async authorize(credentials) {
           await db.connect();
-          console.log("created credentials"+credentials.name)
+          console.log("created credentials"+credentials.email)
           const user = await User.findOne({
             email: credentials.email,
           });
-          const admin = await Admin.findOne({
-            name: credentials.name,
-          });
-          console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
-          await db.disconnect();
-          console.log(admin)
 
           console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
-          if (admin && bcryptjs.compareSync(credentials.password, admin.password)) {
-            console.log("cksdkopsdksmdksldslkdmks");
+          await db.disconnect();
+          console.log(user);
+
+          console.log("sd,kls,dksjndjksdhjksdnsjkdjsnjdj")
+          if(user.isAdmin){
             return {
-              _id: admin._id,
-              name: admin.name,
+              _id: user._id,
+              firstname: user.firstname,
+              lastname: user.lastname,
+              email: user.email,
+              repeatemail: user.repeatemail,
+              isAdmin: user.isAdmin,
+
+            
 
             };
           }
+   
 
           if (user) {
             return {
@@ -58,7 +62,9 @@ export default NextAuth({
               firstname: user.firstname,
               lastname: user.lastname,
               email: user.email,
-              repeatemail: user.repeatemail
+              repeatemail: user.repeatemail,
+              isAdmin: user.isAdmin,
+
 
             };
           }

@@ -14,12 +14,22 @@ import Order from '../../model/Order';
 const data = {
   users: [
     {
-      name: 'Wraith',    
+      firstname: 'Wraith',
+      lastname: 'paragon',   
+      email:"Wraith@example.com",
+      repeatemail: 'Wraith@example.com',
       password: bcrypt.hashSync('tahasalim2015'),
+      isAdmin: true,
+
     },
     {
-      name: 'Revenant',
+      firstname: 'Revenant',
+      lastname: 'paragon',   
+      email:"Revenant@example.com",
+      repeatemail: 'Revenant@example.com',
       password: bcrypt.hashSync('tahasalim2017'),
+      isAdmin: true,
+
     },
   ],}
 
@@ -31,6 +41,7 @@ export default async function handler(req, res) {
   // await Product.deleteMany();
   // await Product.insertMany(data_windows);
   await User.deleteMany()
+  await User.insertMany(data.users)
   await Order.deleteMany()
   // await Productoffice.deleteMany();
   // await Productoffice.insertMany(data_office);
