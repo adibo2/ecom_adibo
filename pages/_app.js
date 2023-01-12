@@ -28,8 +28,10 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
     <CartProvider>
     <FilterProvider>
       <PayPalScriptProvider 
+       
+      deferLoading={true}
 
-      deferLoading={true}>
+      >
 
     {Component.auth ? (
             <Auth adminOnly={Component.auth.adminOnly}>

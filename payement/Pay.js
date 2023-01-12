@@ -62,7 +62,7 @@ const Pay = () => {
     error: '',
   });
 
-  const [{ isPending },paypalDispatch] = usePayPalScriptReducer();
+  const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
 
 
   const [show, Setshow] = useState(false);
@@ -156,7 +156,7 @@ const Pay = () => {
         paypalDispatch({
           type: 'resetOptions',
           value: {
-            'client-id': 'AZ0MS7R-DPx6L7Ebpg4XmchffryVtJ7cDWsky_9D2D8R23Uwg4sAupm3Nw9Y6fNcwXwG-leREdPQfb2C',
+            'client-id': clientId,
             currency: 'USD',
           },
         });
@@ -166,7 +166,7 @@ const Pay = () => {
 
     }
     
-  });
+  },[paypalDispatch]);
   const {totalPrice,orderItems,isPaid}=order
 
 
@@ -188,6 +188,7 @@ const Pay = () => {
         return orderID;
       });
   }
+  console.log("zldklmqd"+process.env.NODE_ENV);
 
  
   function onApprove(data, actions) {
@@ -384,19 +385,18 @@ const Pay = () => {
                       <div>Loading...</div>
                     ) : (
                       <div style={{ maxWidth: "750px", minHeight: "200px" }}>
-                          <PayPalScriptProvider
+                          {/* <PayPalScriptProvider
                 options={{
-                    "client-id": 'AZ0MS7R-DPx6L7Ebpg4XmchffryVtJ7cDWsky_9D2D8R23Uwg4sAupm3Nw9Y6fNcwXwG-leREdPQfb2C',
-                    components: "buttons",
-                    currency: "USD"
+                    "client-id": process.env.REACT_PAYPAL_CLIENT_ID,
+                   
                 }}
-            >
+            > */}
                         <PayPalButtons
                           createOrder={createOrder}
                           onApprove={onApprove}
                           onError={onError}
                         ></PayPalButtons>
-                      </PayPalScriptProvider>
+                      {/* </PayPalScriptProvider> */}
                       </div>
                     )}
  
