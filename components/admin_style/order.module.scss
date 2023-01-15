@@ -1,0 +1,136 @@
+.table {
+  overflow-x: auto;
+  border-collapse: collapse;
+  &_td {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    border-right: 2px solid #eee;
+    border-left: 2px solid #eee;
+  }
+  &_buttonflex {
+    display: flex;
+    justify-content: space-between;
+  }
+  &_button {
+    border-radius: 1rem;
+    background-color: gray;
+    padding: 1rem 1.4rem;
+    cursor: pointer;
+  }
+  &_buttondelete {
+    border-radius: 1rem;
+    background-color: rgb(153, 52, 52);
+    padding: 1rem 1.4rem;
+    color: #f7f7f7;
+    cursor: pointer;
+  }
+  &_title {
+    padding: 2rem;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1rem;
+  }
+  &_thread {
+    border-bottom: 4px solid gray;
+  }
+}
+.content {
+  padding-right: 10rem;
+  grid-column: span 3 / span 3;
+  overflow-x: auto;
+}
+.tr {
+  border-bottom: 1px solid rebeccapurple;
+}
+.tableorder {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+.form {
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8rem;
+  &__survey {
+    display: grid;
+    margin-bottom: 1.5rem;
+  }
+  &__label {
+    font-size: 1.3rem;
+    line-height: 1rem;
+    margin-bottom: 1rem;
+  }
+  &__input {
+    border-radius: 0.25rem;
+    padding: 1rem;
+    border: 1px solid #27274a;
+  }
+  &__buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__back {
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.95em;
+    background: #000000;
+    &:hover &_text{
+        transform: translateY(-0.33em);
+    }
+    &:active &_text{
+        transform: translateY(0);
+    }
+    &_text {
+      display: block;
+      box-sizing: border-box;
+      border: 2px solid #000000;
+      border-radius: 0.95rem;
+      padding: 0.75em 1.5em;
+      background: #e8e8e8;
+      color: #000000;
+      transform: translateY(-0.2em);
+      transition: transform 0.1s ease;
+    }
+  }
+  &__update{
+    position: relative;
+    font-size: 1.7rem;
+    padding: 1rem 1.6em;
+    background-color: #BF0426;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5em;
+    color: #DEDEDE;
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+    &:hover::before{
+        width: 1.6em;
+        height: 1.6em;
+    }
+    &:active{
+        box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+        transform: translate(0.1em, 0.1em);
+    }
+    &::before{
+        position: absolute;
+        content: '';
+        height: 0;
+        width: 0;
+        top: 0;
+        left: 0;
+        background: linear-gradient(135deg, rgb(226, 221, 221) 0%, rgb(195, 186, 186) 50%, rgba(150,4,31,1) 50%, rgba(191,4,38,1) 60%);
+        border-radius: 0 0 0.5em 0;
+        box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+    }
+
+
+
+
+  }
+}

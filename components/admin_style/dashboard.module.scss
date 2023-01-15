@@ -1,0 +1,68 @@
+.dashboard{
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3rem;
+    &__summary{
+        grid-column: span 3 / span 3;
+        &-cardsummary{
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            &-card{
+                display: block;
+                color: rgb(0 0 0 / 1);
+                margin: 1.25rem;
+                padding: 1.25rem;
+                margin-bottom: 1.55rem;
+                border-radius: 0.5rem;
+                border-color: rgb(229 231 235 / 1);
+                box-shadow: 2px 1px 7px black;
+            }
+        }
+    }
+    &__summary_h1{
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+}
+.li{
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    display: flex;
+    margin-top: 1.2rem;
+   
+    font-weight: 700;
+
+    cursor: pointer;
+    color: rgb(37 99 235 / 1);
+    &:hover{
+        color: rgb(30 64 175 / 1);
+        text-decoration: underline;
+    }
+}
+.p{
+    font-size: 1.875rem;
+    line-height: 2.25rem
+
+}
+.p1{
+    font-size: 1.375rem;
+    line-height: 2.25rem
+
+}
+.link{
+    font-size: 1.375rem;
+    line-height: 2.25rem;
+    color: rgb(37 99 235 / 1);
+
+
+}
+.ulcenter{
+   padding-top: 5rem;
+   width: 40%;
+}
+.active {
+    text-decoration: underline;
+    font-weight: 700;
+    color: green;
+}

@@ -61,9 +61,15 @@ padding-right: 2rem;
         
         &-item{
             color: #252525;
-            font-size: 1.7rem;
+            font-size: 1.9rem;
             font-weight: bold;
             position: relative;
+            @include respons(medium){
+                font-size: 2rem;
+                
+
+              
+            }
             @include respons(phone){
                 font-size: 2.7rem;
                 
@@ -96,8 +102,9 @@ padding-right: 2rem;
 
 }
 .amount{
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     line-height: 1rem;
+
 }
 .dropdown{
     box-shadow: 2px 5px 10px #252525;

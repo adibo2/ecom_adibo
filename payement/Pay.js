@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
+import Loader from "../utils/Loader";
 import { getError } from "../utils/error";
 import {datana,email,optional} from "./dataPay";
 import {
@@ -22,6 +23,8 @@ function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':
       return { ...state, loading: true, error: '' };
+      case 'FETCH_END':
+        return { ...state, loading: false, error: '' };
     case 'FETCH_SUCCESS':
       return { ...state, loading: false, order: action.payload, error: '' };
     case 'FETCH_FAIL':
@@ -70,12 +73,6 @@ const Pay = () => {
   // console.log("router.query"+router.query.id)
   // console.log("orderId"+ orderId);
   const orderId=router.query.id;
-
-
-
-
-
-
   const {
     register,
     handleSubmit,
@@ -85,6 +82,9 @@ const Pay = () => {
 
   const onSubmit = async ({ firstname, lastname, email, repeatemail }) => {
     try {
+      dispatch({ type: 'FETCH_END' });
+
+
       console.log(email)
       // e.preventDefault() 
     await axios.post('/api/auth/signup', {
@@ -117,6 +117,9 @@ const Pay = () => {
         email
       })
 
+      dispatch({ type: 'FETCH_REQUEST' });
+
+
       toast.success("Information Added Successfully", {});
       
       router.push({
@@ -129,6 +132,8 @@ const Pay = () => {
       // console.log(data)
 
     } catch (err) {
+      dispatch({ type: 'FETCH_REQUEST' });
+
       toast.error("Not a valid state");
       console.log(getError(err))
     }
@@ -379,7 +384,7 @@ const Pay = () => {
             </label>
           </div>
           <button type="submit" className={css.button} value="submit">
-            continue to payement
+            {loading ? 'continue to payement'  : <Loader></Loader> }
           </button>
           {isPending ? (
                       <div>Loading...</div>
