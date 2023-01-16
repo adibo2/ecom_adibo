@@ -36,7 +36,7 @@ const NavbarAdmin = () => {
       <div>
         <ul className={css.ul}>
           {data.map((item,i)=>(
-        <Link  href={item.href}>
+        <Link key={i}  href={item.href}>
           <li className={`${css.li} ${router.pathname === item.href ? css.active : ''}`}>{item.name}</li>
         </Link>
 

@@ -6,14 +6,14 @@ import css from "../../components/admin_style/dashboard.module.scss";
 import css1 from "../../components/admin_style/order.module.scss"
 
 
-const productOffice = () => {
-    const [windows,setwindows]=useState([])
+const ProductOffice = () => {
+    const [office,setOffice] = useState([])
 
     useEffect(()=>{
         const fetchData = async () =>{
             try{
                 const {data} = await axios.get('/api/admin/productOffice');
-                setwindows(data)
+                setOffice(data)
 
             } catch (err){
 
@@ -21,7 +21,7 @@ const productOffice = () => {
 
         }
         fetchData();
-        console.log(windows)
+        console.log(office)
 
     },[])
   return (
@@ -43,13 +43,10 @@ const productOffice = () => {
                     <th className={css1.table_title}>Reviews</th>
                     <th className={css1.table_title}>Date</th>
                     <th className={css1.table_title}>ACTIONS</th>
-
-
-       
                   </tr>
                 </thead>
                 <tbody>
-                  {windows.map((order) => (
+                  {office.map((order) => (
                     <tr key={order._id} className={css1.tr}>
                       <td className={css1.table_td}>{order._id.substring(20, 24)}</td>
                       <td className={css1.table_td}>
@@ -82,8 +79,6 @@ const productOffice = () => {
                           Delete
                         </button>
                       </td>
-  
-
                     </tr>
                   ))}
                 </tbody>
@@ -95,6 +90,6 @@ const productOffice = () => {
     </>
   )
 }
-productOffice.auth = { adminOnly: true };
+ProductOffice.auth = { adminOnly: true };
 
-export default productOffice
+export default ProductOffice;
