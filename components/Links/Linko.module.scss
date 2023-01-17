@@ -1,9 +1,9 @@
 .Linko{
     grid-column: 1/-1;
-    padding: 1rem 0rem 0rem 4rem;
+    padding: 2.5rem 0rem 0rem 4rem;
     &__flex{
         display: flex;
-        gap: .5rem;
+        gap: .4rem;
         font-size: 1.275rem;
         line-height: 1.45rem;
     }
@@ -26,6 +26,7 @@
 }
 .link{
     color:rgb(55 65 81 / 1);
+    padding-right: 0rem;
     &:hover{
         color: rgb(78, 191, 120);
 

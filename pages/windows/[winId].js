@@ -1,18 +1,18 @@
 import React, { useContext, useState,useEffect,useCallback } from 'react'
 import { useRouter } from 'next/router'
-import Filter from "../components/Filter/Filter";
-import styles from "../styles/Home.module.scss";
+import Filter from "../../components/Filter/Filter";
+import styles from "../../styles/Home.module.scss";
 import Head from 'next/head'
-import db from '../utils/db';
+import db from '../../utils/db';
 // import Product from '../model/Product';
-import Navbar from "../components/Navbar/Navbar";
-import Linko from '../components/Links/Linko';
-import Detail from '../components/Details/Detail';
-import Tabo from '../components/UI/Tab';
-import { filter_data } from '../components/UI/content';
-import Footer from '../components/Footer/Footer';
-import Product from '../model/Product';
-import Cartcontext from '../components/Cartctx/Cartcontext';
+import Navbar from "../../components/Navbar/Navbar";
+import Linko from '../../components/Links/Linko';
+import Detail from '../../components/Details/Detail';
+import Tabo from '../../components/UI/Tab';
+import { filter_data } from '../../components/UI/content';
+import Footer from '../../components/Footer/Footer';
+import Product from '../../model/Product';
+import Cartcontext from '../../components/Cartctx/Cartcontext';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -56,11 +56,6 @@ const WindowsDetails =  ({product,descrp}) => {
 
       })
       reviewhandler()
-
-      
-
-
-
       
     } catch (err) {
       console.log(err);
@@ -76,9 +71,6 @@ const WindowsDetails =  ({product,descrp}) => {
     }
     useEffect(()=>{
        getdata();
-
-
-
     },[])
     const reviewhandler=useCallback(async ()=>{
       try {
@@ -101,8 +93,6 @@ const WindowsDetails =  ({product,descrp}) => {
 
         const { data } = await axios.get(`/api/product/${product._id}`)
         Setreview(data.reviews)
-
-
     }
     fetchBooks();
       
@@ -139,7 +129,7 @@ const WindowsDetails =  ({product,descrp}) => {
 
     <Navbar></Navbar>
     <Filter></Filter>
-    <Linko href="/" log='Windows' product={product.title}></Linko>
+    <Linko href="/windows" log='Windows' product={product.title}></Linko>
         {/* <h1>hello {officeId} </h1>
         <Image src={windows.img} width={230} height={270} alt="windows Keys" />
         <h1>{windows.name}</h1> */}

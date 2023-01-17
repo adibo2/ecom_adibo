@@ -38,8 +38,8 @@ export default async function handler(req, res) {
   await db.connect();
   // await Admin.deleteMany();
   // await Admin.insertMany(data.users);
-  // await Product.deleteMany();
-  // await Product.insertMany(data_windows);
+  await Product.deleteMany();
+  await Product.insertMany(data_windows);
   await User.deleteMany()
   await User.insertMany(data.users)
   await Order.deleteMany()

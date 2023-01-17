@@ -5,6 +5,10 @@ import axios from 'axios';
 import css from "../../components/admin_style/dashboard.module.scss";
 import css1 from "../../components/admin_style/order.module.scss"
 import Link from 'next/link';
+import { toast } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const ProductWindows = () => {
     const [windows,setwindows]=useState([])
@@ -23,8 +27,26 @@ const ProductWindows = () => {
         fetchData();
 
     },[])
+
+  const deleteHandler = async (productId) => {
+    if (!window.confirm('Are you sure?')) {
+      return;
+    }
+    try {
+      await axios.delete(`/api/admin/productwindows/${productId}`);
+      toast.success('Product deleted successfully');
+    } catch (err) {
+      dispatch({ type: 'DELETE_FAIL' });
+      toast.error(getError(err));
+    }
+  };
   return (
     <>
+      <ToastContainer
+        style={{ fontSize: "1.3rem" }}
+        position="bottom-center"
+        limit={1}
+      />
         <Navbar></Navbar>
         <hr></hr>
     <div className={css.dashboard}>

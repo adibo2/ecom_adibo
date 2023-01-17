@@ -1,0 +1,96 @@
+@import "./../../styles/respon.module.scss";
+.wrapper{
+    grid-column: 2/14;
+    margin-top: 3rem;
+    margin-bottom: 8rem;
+    @include respons(phone){
+        grid-column: 1/-1;
+
+
+    }
+}
+.main{
+    display: grid;
+    // grid-template-columns: repeat(4,minmax(0,1fr));
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    row-gap: 4rem;
+
+
+    padding-top: 2.5rem;
+padding-bottom: 2.5rem;
+column-gap: 6rem;
+@include respons(large){
+    column-gap: 0rem;
+
+
+}
+@include respons(phone){
+    grid-template-columns: repeat(4,minmax(0,1fr));
+
+
+
+
+}
+
+&_card{
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    grid-column: span 1 / span 1;
+    text-align: center;
+  
+align-items: center;
+@include respons(phone){
+    grid-column: span 4 / span 4;
+}
+&_h3{
+    align-self: center;
+    text-align: center;
+    font-size: 1.625rem;
+font-weight: 700;
+font-family: 'Nunito';
+color: #1e13e8;
+}
+
+&_img{
+    display: block; 
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
+    max-width: 100%;
+}
+&_p{
+    align-self: center;
+    text-align: center;
+    font-size: 1.425rem;
+font-weight: 500;
+color: rgb(156 163 175 / 1);
+font-family: 'Poppins';
+
+}
+}
+}
+.nav{
+    grid-column: 6/10;
+    width: 100%;
+    &_h1{
+        text-align: center;
+        font-family: 'Poppins';
+        font-weight: 700;
+        color: rgb(37 99 235 / 1);
+        font-size: 2.975rem;
+
+line-height: 2.25rem;
+
+    }
+    &_p{
+        text-align: center;
+        color: rgb(107 114 128 / 1);
+        margin-top: .9rem;
+        font-size: 1.45rem;
+        line-height: 2.25rem;
+
+
+    }
+}

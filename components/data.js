@@ -19,6 +19,11 @@ import officeApp from '/public/img/Project-2021-Icon.webp';
 import Antivirus from '/public/img/secure-Icon-20.webp'
 import w11entreprise from '/public/img/win11entreprise.webp'
 import w11prof from "/public/img/Windows-11-Professional-IMG-Box-License.webp";
+
+import antivirus from "/public/img/antivirus-2-1.webp"
+import mainw from "/public/img/mainwin.webp"
+import mainop from "/public/img/mainoper.webp"
+import mainof from "/public/img/mainoff.webp"
 export const data_windows=[{
     name:'Windows 10 Professional Digital License',
     slug:'Windows 10 Professional Digital License',
@@ -252,7 +257,7 @@ export const data_filter=[{
     id:'f1',
     name:'Windows',
     img:wlogo,
-    url:"/",
+    url:"/windows",
     param:"Windows",
 
     alt:"Microsoft Office"
@@ -493,4 +498,109 @@ export const search=[
     },
     
 
+]
+export const Main=[
+    {
+        id:'mm1',
+        image:mainw,
+        text:'Office for Mac',
+        href:'/microsoft_office',
+        subtext:'Office 2021 – 2016',
+        alt:'Office for mac'
+    },
+    {
+        id:'mm4',
+        image:mainof,
+        href:'/microsoft_office',
+
+        text:'Office for Windows',
+        subtext:'Office 2021 – 2016',
+        alt:'Office for windows'
+
+    },
+    {
+        id:'mm2',
+        image:mainop,
+        href:'/windows',
+        text:'Operating System',
+        subtext:'Windows 11 - 10',
+        alt:'Windows Digital liscence'
+
+    },
+    {
+        id:'mm3',
+        image:antivirus,
+        href:'/Antivirus',
+        text:'Antivirus',
+        subtext:'Protect what you want most',
+        alt:'Antivirus for Pc '
+
+    },
+]
+export const Main_seller=[
+    {
+        name:'Windows 10 Professional Digital License',
+        slug:'Windows 10 Professional Digital License',
+        
+        index:'w1',
+        img:'/img/Pro-W-10.webp',
+        desc:'Windows 10 Professional Digital License',
+        path:'windows/Windows 10 Professional Digital License',
+        price:9.99,
+        notprice:30,
+        stock:8,
+        alt:"Windows 10 Professional product key license ",
+        title:'Microsoft Windows 10 Professional',
+        meta:'Buy Microsoft Windows 10 Professional Product Key for the best price at instant key. Order now and download the activation key instantly'
+    },
+    {
+        stock:10,
+    
+        index:'w2',
+        name:"Windows 11 Professional Digital License",
+        slug:"Windows 11 Professional Digital License",
+        desc:"Windows 11 Professional Digital License",
+        // img:w11prof,
+        img:"/img/Windows-11-Professional-IMG-Box-License.webp",
+        price:11.99,
+        notprice:30,
+        path:'windows/Windows 11 Professional Digital License',
+
+        alt:"Windows 11 Professional license product key",
+    
+        title:'Microsoft Windows 11 Professional',
+        meta:'Buy Microsoft Windows 11 Professional Product Key for the best price at instant key. Order now and download the activation key instantly'
+
+    },
+    {
+        index:'o7',
+        name:'Office 2021 Professional Plus Digital License',
+        img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
+        title:'Office 2021 Professional Plus Digital License',
+        notprice:40.99,
+        price:14.99,
+        path:'microsoft_office/Office 2021 Professional Plus Digital License',
+
+        alt:"Office 2021 Professional Plus Digital License",
+        stock:5,
+        slug:'Office 2021 Professional Plus Digital License',
+        meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
+
+    },
+    {
+        index:'o4',
+        name:'Office 2021 Home and Business for Mac Digital License',
+        img:"/img/Microsoft-Office-2021-Home-and-Business-for-Mac.webp",
+        title:'Office 2021 Home and Business',
+        notprice:50.99,
+        price:20.99,
+        path:'microsoft_office/Office 2021 Home and Business',
+
+        slug:'Office 2021 Home and Business Mac',
+        alt:"Office 2021 Home and Business for Mac",
+        stock:5,
+        meta:'Buy Office 2021 Home and Business Mac Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+    
+
+    },
 ]

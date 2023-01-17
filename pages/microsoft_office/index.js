@@ -15,7 +15,7 @@ const office = (props) => {
   return (
     <>
      <Head>
-        <title>Create Next App</title>
+        <title>Microsoft Office Packages - Instant software Key</title>
         <meta charSet="utf-8" />
         <meta name="description" content="microsoft office keys liscence" />
         <link rel="icon" href="/favicon.ico" />

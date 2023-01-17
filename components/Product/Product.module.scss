@@ -2,7 +2,9 @@
 @import "./../../styles/respon.module.scss";
 .product {
   grid-column: 2/14;
-  margin: 10rem 0;
+  // margin: 7rem 0;
+  margin-top: 7rem;
+  margin-bottom: 5rem;
   @include respons(phone){
     grid-column: 1/-1;
     padding-left: 1.5rem;
@@ -37,6 +39,7 @@
     grid-template-columns: repeat(2, 1fr);
     box-shadow: 0 0 #0000, 0 0 #0000,0 1px 2px 0 rgb(0 0 0 / .05);
     border: 1.3px solid rgb(243 244 246 / 1);
+    border-radius: .9rem;
     transition: all .5s;
     z-index: 20;
     justify-items: end;
@@ -51,6 +54,16 @@
 
     }
 
+    &-flex{
+      grid-column: 1/-1;
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      justify-self: start;
+      align-items: center;
+
+    }
     &-image {
       text-align: center;
       margin: 0 auto;
@@ -88,6 +101,7 @@
       font-size: 1.2rem;
 
       display: flex;
+      align-items: center;
       gap: 0.4rem;
     }
     &-btn{
@@ -97,6 +111,16 @@
         position: relative;
         overflow: hidden;
        
+    }
+    &-btn1{
+      padding: 1rem;
+      width: 100%;
+      grid-column: 1/-1;
+        justify-self: center;
+        align-self: end;
+        position: relative;
+        overflow: hidden;
+
     }
   }
 }
@@ -137,6 +161,7 @@
     display: flex;
     position: relative;
     align-items: center;
+    justify-content: center;
     gap: .2rem;
     font-size: 1.575rem;
 line-height: 1.55rem;
@@ -209,11 +234,16 @@ padding-bottom: 1.125rem;
 }
 .spanos{
   font-weight: 700;
-  font-size: 1.4rem;
-  color: #044071;
+  font-size: 1.66rem;
+  color: #3c3c52;
+  font-family: 'Work Sans', sans-serif;
+
+
 }
 .notspanos{
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-family: 'Work Sans', sans-serif;
+
 }
 .titre{
   display: flex;
