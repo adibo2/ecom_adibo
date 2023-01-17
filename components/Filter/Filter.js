@@ -158,7 +158,7 @@ const Filter = (props) => {
                     <div className={css1.dropdown__total}>
                       <div className={css1.dropdown__total_price}>
                         <p className={css1.p}>SUBTOTAL</p>
-                        <p className={css1.p}>{CartCtx.totalamount}$</p>
+                        <p className={css1.p}>{CartCtx.items.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2)}$</p>
                       </div>
                       {/* <Link href="checkout"> */}
 

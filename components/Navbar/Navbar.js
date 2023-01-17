@@ -165,7 +165,7 @@ const Navbar = () => {
                     <div className={css.dropdown__total}>
                       <div className={css.dropdown__total_price}>
                         <p className={css.p}>SUBTOTAL</p>
-                        <p className={css.p}>{CartCtx.totalamount}$</p>
+                        <p className={css.p}>{CartCtx.items.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2)}$</p>
                       </div>
                       {/* <Link href="checkout"> */}
 

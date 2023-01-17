@@ -368,7 +368,7 @@ const Pay = () => {
           ))}
           <div className={css.pay__payement_details}>
             <h3 className={css.h3_1}>Total</h3>
-            <h3 className={css.h3_2_2}>${Cartctx.totalamount}</h3>
+            <h3 className={css.h3_2_2}>${Cartctx.items.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2)}</h3>
           </div>
           <div className={css.terms}>
             <input

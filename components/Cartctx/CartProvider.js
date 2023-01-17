@@ -30,16 +30,29 @@ const Reducer=(state,action)=>{
 
     }
     if(action.type==='ADDDETAIL'){
-        const updatetotalamount=state.totalamount + (parseInt(action.payload.price + 0.01 ) * parseInt(action.payload.amount));
+        let updatetotalamount;
+        console.log(state.items.map((item)=>(item)))
+
+        
+        updatetotalamount=  state.totalamount +  (parseInt(action.payload.price + 0.01 ) * parseInt(action.payload.amount));
+        updatetotalamount=state.items.reduce((a, c) => a + c.subtotal, 0)
         let updateitems;
         if(state.items.find((item)=>item.id===action.payload.id)){
-            updateitems=state.items.map((item)=>(
-                item.id===action.payload.id ? {...item,amount:item.amount+action.payload.amount} : item
+            updateitems=state.items.map((item)=>{
+                if(item.amount+action.payload.amount <= item.stock)
+                {
+                    return item.id===action.payload.id ? {...item,amount:item.amount+action.payload.amount,subtotal:item.subtotal+action.payload.subtotal} : item
+                }
+                else{
+                    return item.id===action.payload.id ? {...item,amount:item.stock} : item
 
-            ))
+                }
+                
+
+        })
         }
         else{
-            action.payload.amount=action.payloadcount;
+            action.payload.amount=action.payload.amount;
             updateitems=state.items.concat(action.payload)
         }
         return{

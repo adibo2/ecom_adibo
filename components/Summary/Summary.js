@@ -24,14 +24,14 @@ const Summary = (props) => {
  
   const onAddCart=(item)=>{
     Setcount(count+1);
-    if(item.stock < count +1){
+    if(item.stock < item.amount){
     toast.error('Sorry. Product is out of stock');
-    Setcount(item.stock)
+    // Setcount(item.stock)
 
    }
    else if(item.stock <= item.amount  ){
     toast.error('Sorry. Product is out of stock');
-    Setcount(item.stock)
+    // Setcount(item.stock)
 
    }
    else{
@@ -113,7 +113,7 @@ const onClear=(item,id)=>{
                 <span className={css.minus} onClick={()=>onRemove(item.id)}>
                   <AiOutlineMinus />
                 </span>
-                <span className={css.num}>{item.amount > item.stock ? item.stock : item.amount}</span>
+                <span className={css.num}>{item.amount}</span>
                 {/* <input className={css.num} type="number" inputMode="numeric" value={item.amount} autoComplete="off" /> */}
 
                 <span className={css.plus} onClick={()=>onAddCart(item)}>
@@ -186,12 +186,14 @@ const onClear=(item,id)=>{
         <div className={css.summary__total_prix}>
           <div className={css.flexo}>
             <h4 className={css.h4}>subtotal</h4>
-            <h6 className={css.h6}>{Cartctx.totalamount}$</h6>
+            <h6 className={css.h6}>{Cartctx.items.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2)}$</h6>
           </div>
           <hr className={css.hr}></hr>
           <div className={css.flexo}>
             <h4 className={css.h4}>subtotal</h4>
-            <h5 className={css.h5}>{Cartctx.totalamount}$</h5>
+            {/* <h5 className={css.h5}>{Cartctx.totalamount}$</h5> */}
+            <h5 className={css.h5}>{Cartctx.items.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2)}$</h5>
+
           </div>
           <Link href="checkout">
         <button className={css.button}>PROCEED TO CHECKOUT

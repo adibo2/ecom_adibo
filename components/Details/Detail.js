@@ -24,12 +24,16 @@ import Cartcontext from "../Cartctx/Cartcontext";
 const Detail = (props) => {
   const Cartctx=useContext(Cartcontext);
   const [count,Setcount]=useState(1);
+  
   const router = useRouter();
   // const {}=router.query
   // console.log("router"+id);
 
 
    const clickhandler= async (product)=>{
+   
+    console.log(props.stock)
+    console.log(count);
 
     console.log("heloo from the cart");
     Cartctx.addDetail({
@@ -40,7 +44,8 @@ const Detail = (props) => {
       amount:count,
       // count:count,
       img:product.img,
-      stock:props.stock
+      subtotal:(Math.round(product.price * count) * 100 /100),
+      stock:product.stock
     },count)
     router.push('/CartP')
     
