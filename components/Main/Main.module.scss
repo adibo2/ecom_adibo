@@ -74,6 +74,11 @@ font-family: 'Poppins';
 .nav{
     grid-column: 6/10;
     width: 100%;
+    @include respons(phone){
+        grid-column: 1/-1;
+
+    
+    }
     &_h1{
         text-align: center;
         font-family: 'Poppins';
