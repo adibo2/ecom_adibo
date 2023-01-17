@@ -128,7 +128,7 @@ const Filter = (props) => {
                 <>
                   <div className={css1.dropdown__header}>
                     <span>{CartCtx.items.length} Items</span>
-                    <Link href="CartP">View Cart</Link>
+                    <Link href="/CartP">View Cart</Link>
                   </div>
                   <div className={css.dropdown__overflow}>
 

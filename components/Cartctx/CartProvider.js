@@ -34,7 +34,7 @@ const Reducer=(state,action)=>{
         let updateitems;
         if(state.items.find((item)=>item.id===action.payload.id)){
             updateitems=state.items.map((item)=>(
-                item.id===action.payload.id ? {...item,amount:item.amount+item.amount} : item
+                item.id===action.payload.id ? {...item,amount:item.amount+action.payload.amount} : item
 
             ))
         }

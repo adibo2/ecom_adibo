@@ -113,7 +113,7 @@ const onClear=(item,id)=>{
                 <span className={css.minus} onClick={()=>onRemove(item.id)}>
                   <AiOutlineMinus />
                 </span>
-                <span className={css.num}>{item.amount}</span>
+                <span className={css.num}>{item.amount > item.stock ? item.stock : item.amount}</span>
                 {/* <input className={css.num} type="number" inputMode="numeric" value={item.amount} autoComplete="off" /> */}
 
                 <span className={css.plus} onClick={()=>onAddCart(item)}>
