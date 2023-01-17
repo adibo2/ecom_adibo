@@ -17,7 +17,9 @@
 .container2 {
   display: grid;
   grid-template-columns: minmax(6rem,1fr) repeat(12,minmax(min-content,14rem)) minmax(6rem,1fr) ;
-  grid-template-rows:12vh 10vh repeat(3, min-content);
+  grid-template-rows:17vh -1vh repeat(3, min-content);
+
+  // grid-template-rows:12vh 10vh repeat(3, min-content);
 
 
 
@@ -28,7 +30,8 @@
 .container_detail{
   display: grid;
   grid-template-columns: minmax(6rem,1fr) repeat(12,minmax(min-content,14rem)) minmax(6rem,1fr) ;
-  grid-template-rows:12vh 10vh repeat(3, min-content);
+  grid-template-rows:17vh -1vh repeat(3, min-content);
+
   @include respons(medium){
     grid-template-rows:9vh 10vh repeat(4, min-content);
 
