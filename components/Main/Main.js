@@ -9,7 +9,7 @@ const MainPage = () => {
     <div className={css.wrapper}>
     <div className={css.main}>
         {Main.map((main)=>(
-          <Link  href={main.href} className={css.main_card}>
+          <Link key={main.id}  href={main.href} className={css.main_card}>
                   <Image
                   width={230} 
                   height={270}     
