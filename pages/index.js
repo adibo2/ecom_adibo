@@ -21,8 +21,6 @@ const App = () => {
           name="description"
           content="If you are looking for a genuine site to buy software keys windows 10 or 11 Professional or microsoft office  online, you have come to the right place. Instant Key provides a wide range of keys for different paid software at the lowest price."
         />
-
-
         <meta property="og:site_name" content="Instant software key" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

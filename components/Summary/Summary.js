@@ -68,7 +68,7 @@ const onClear=(item,id)=>{
       Product added successufly!
       </div>
       <div className={css.succes_right}>
-      <Link href="/">
+      <Link href="/windows">
       <button className={css.cart__vide_btn}>
           <IoMdArrowDropleft size="2rem" color="#f7f7f7"></IoMdArrowDropleft>
           RETURN TO SHOP
@@ -206,7 +206,7 @@ const onClear=(item,id)=>{
       </> : 
       <div className={css.cart__vide}>
         <h2 className={css.h2}>Your cart is currently empty</h2>
-        <Link href="/">
+        <Link href="/windows">
         <button className={css.cart__vide_btn}>
           <IoMdArrowDropleft size="2rem" color="#f7f7f7"></IoMdArrowDropleft>
           RETURN TO SHOP
