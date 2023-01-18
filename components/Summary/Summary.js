@@ -182,7 +182,7 @@ const onClear=(item,id)=>{
       </div>
       {/**************$$$$$$$$$$  Cart total $$$$$$$$$$$$$$$$$$$********** */}
       <div className={css.summary__total}>
-        <h1 className={css.h1}>Cart total</h1>
+        <h1 className={css.h1}>Cart total ({Cartctx.items.reduce((a,c)=> a + c.amount,0)} items) </h1>
         <div className={css.summary__total_prix}>
           <div className={css.flexo}>
             <h4 className={css.h4}>subtotal</h4>
