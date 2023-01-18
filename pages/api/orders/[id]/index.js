@@ -5,7 +5,6 @@ import db from "../../../../utils/db";
 const handler = async (req, res) => {
     // const session = await getSession({ req });
     const session = await getSession({ req });
-    const { user } = session;
     if (!session) {
       return res.status(401).send('signin required');
     }
@@ -13,7 +12,8 @@ const handler = async (req, res) => {
     await db.connect();
   
     // const order = await Order.findById(req.query.id);
-    const order = await Order.find({user:user._id})
+    const order = await Order.findById(req.query.id)
+    
 
     await db.disconnect();
     res.send(order);

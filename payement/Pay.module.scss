@@ -17,6 +17,7 @@
             @include respons(small){
                 display: block;
             }
+            
             &_label{
                 display: flex;
                 flex-direction: column;
@@ -28,6 +29,7 @@
                 }
             
             }
+           
             &_email{
                 margin-top: 2rem;
                 grid-column: span 2/ span 2;
@@ -245,4 +247,41 @@ gap: .5rem;
     height: 100rem;
     display: flex;
     flex-direction: column;
+}
+.flexspace{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 5rem;
+
+}
+.modify{
+    background-color: red;
+    color: #f7f7f7;
+    margin-top: 1.6rem;
+    cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.95em;
+        background: #000000;
+        &:hover &_text{
+            transform: translateY(-0.33em);
+        }
+        &:active &_text{
+            transform: translateY(0);
+        }
+        &_text {
+          display: block;
+          box-sizing: border-box;
+          border: 1px solid #000000;
+          border-radius: 0.95rem;
+          padding: 0.75em 1.5em;
+          background: #e8e8e8;
+          color: #000000;
+          transform: translateY(-0.2em);
+          transition: transform 0.1s ease;
+        }
+      
+
 }

@@ -22,9 +22,9 @@ import {
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':
-      return { ...state, loading: true, error: '' };
+      return { ...state,loadingx:true , loading: true, error: '' };
       case 'FETCH_END':
-        return { ...state, loading: false, error: '' };
+        return { ...state, loadingx: false, error: '' };
     case 'FETCH_SUCCESS':
       return { ...state, loading: false, order: action.payload, error: '' };
     case 'FETCH_FAIL':
@@ -59,8 +59,9 @@ import Cartcontext from "../components/Cartctx/Cartcontext";
 const Pay = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const Cartctx = useContext(Cartcontext);
-  const [{loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,},dispatch] = useReducer(reducer, {
+  const [{loadingx,loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,},dispatch] = useReducer(reducer, {
     loading: true,
+    loadingx:true,
     order: {},
     error: '',
   });
@@ -140,22 +141,29 @@ const Pay = () => {
 
     // console.log(data);
   };
+
   useEffect(() => {
-    // const fetchOrder = async () => {
-    //   try {
-    //     dispatch({ type: 'FETCH_REQUEST' });
-    //     const { data } = await axios.get(`/api/orders/${orderId}`);
-    //     console.log("data of order: " + JSON.stringify(data));
-    //     dispatch({ type: 'FETCH_SUCCESS', payload: data });
-    //   } catch (err) {
-    //     dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
-    //   }
-    // };
-    // if(!order._id){
-    //   fetchOrder();
-    //   console.log("fetch order failed");
-    // }
-    // else{
+    const fetchOrder = async () => {
+      try {
+        dispatch({ type: 'FETCH_REQUEST' });
+        const { data } = await axios.get(`/api/orders/${orderId}`);
+        console.log(data);
+        console.log("data of order: " + JSON.stringify(data));
+        dispatch({ type: 'FETCH_SUCCESS', payload: data });
+      } catch (err) {
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
+      }
+    };
+    if (!order._id || successPay || successDeliver ||(order._id && order._id !== orderId)) 
+    {
+      fetchOrder();
+      if (successPay) {
+        dispatch({ type: 'PAY_RESET' });
+      }
+      if (successDeliver) {
+        dispatch({ type: 'DELIVER_RESET' });
+      }
+    } else {
       const loadPaypalScript = async () => {
         const { data: clientId } = await axios.get('/api/keys/paypal');
         paypalDispatch({
@@ -166,12 +174,10 @@ const Pay = () => {
           },
         });
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
-      
+      };
       loadPaypalScript();
-
     }
-    
-  },[paypalDispatch]);
+  }, [order, orderId, paypalDispatch, successDeliver, successPay]);
   const {totalPrice,orderItems,isPaid}=order
 
 
@@ -193,7 +199,6 @@ const Pay = () => {
         return orderID;
       });
   }
-  console.log("zldklmqd"+process.env.NODE_ENV);
 
  
   function onApprove(data, actions) {
@@ -214,6 +219,9 @@ const Pay = () => {
   }
   function onError(err) {
     toast.error(getError(err));
+  }
+  const modifyhandler=()=>{
+    console.log("hiii")
   }
 
   return (
@@ -236,9 +244,15 @@ const Pay = () => {
         limit={1}
       />
 
-      <form className={css.pay} onSubmit={handleSubmit(onSubmit)}>
+      <div className={css.pay} onSubmit={handleSubmit(onSubmit)}>
         <div className={css.pay__info}>
+          <div className={css.flexspace}>
           <h1 className={css.h1}>Billing Details</h1>
+          <button onClick={modifyhandler} className={css.modify}>
+            <span className={css.modify_text}>Modify</span>
+          </button>
+
+          </div>
           <div className={css.pay__info_input}>
             {datana.map((lab) => (
               <div className={`${css.pay__info_input_label} `} key={lab.id}>
@@ -343,7 +357,7 @@ const Pay = () => {
           </div>
         </div>
         {/* payement */}
-        <div className={css.pay__payement}>
+        <form className={css.pay__payement}>
           <h1 className={css.h1}>Your order</h1>
           <div className={css.pay__payement_title}>
             <h3 className={css.h3_1}>Product</h3>
@@ -384,7 +398,7 @@ const Pay = () => {
             </label>
           </div>
           <button type="submit" className={css.button} value="submit">
-            {loading ? 'continue to payement'  : <Loader></Loader> }
+            {loadingx ? 'continue to payement'  : <Loader></Loader> }
           </button>
           {isPending ? (
                       <div>Loading...</div>
@@ -405,8 +419,8 @@ const Pay = () => {
                       </div>
                     )}
  
-        </div>
-      </form>
+        </form>
+      </div>
     </>
   );
 };
