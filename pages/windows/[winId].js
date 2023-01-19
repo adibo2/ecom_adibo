@@ -26,6 +26,7 @@ const WindowsDetails =  ({product,descrp}) => {
     const router=useRouter();
     const Cartctx=useContext(Cartcontext);
     const [reviews,Setreview]=useState([]);
+    const [scrollreview,Setscrollreview]=useState(false);
 
     
     const { winId }=router.query;
@@ -103,7 +104,10 @@ const WindowsDetails =  ({product,descrp}) => {
   useEffect(() =>  {
    handle();
 },[handle]);
-
+const scrollhandler=()=>{
+  Setscrollreview(true)
+  console.log(scrollreview)
+}
 
 
 
@@ -133,11 +137,11 @@ const WindowsDetails =  ({product,descrp}) => {
         {/* <h1>hello {officeId} </h1>
         <Image src={windows.img} width={230} height={270} alt="windows Keys" />
         <h1>{windows.name}</h1> */}
-        <Detail id={winId}  img={product.img} name={product.title} product={product} alt={product.alt}
-        notprice={product.notprice} price={product.price} stock={product.stock}></Detail>
+        <Detail onScroll={()=>scrollhandler()} id={winId}  img={product.img} name={product.title} product={product} alt={product.alt}
+        notprice={product.notprice} numReviews={reviews.length} price={product.price} stock={product.stock}></Detail>
         {/* <ToastContainer position="bottom-center" limit={1} /> */}
 
-        <Tabo data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} onReview={reviewhandler} alt={product.alt} reviews={reviews}></Tabo>
+        <Tabo scrollreview={scrollreview} data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} onReview={reviewhandler} alt={product.alt} reviews={reviews}></Tabo>
 
         <Footer></Footer>
 

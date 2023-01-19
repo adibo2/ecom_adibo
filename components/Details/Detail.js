@@ -15,6 +15,8 @@ import { avantage_office } from "./avantages";
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link as Linko } from 'react-scroll';
+
 
 
 import { AiOutlineMinus, AiOutlinePlus,AiOutlineShoppingCart } from 'react-icons/ai';
@@ -82,7 +84,7 @@ const Detail = (props) => {
         <div className={css.content__h1}>
           {props.name}
         </div>
-        <Stack spacing={1}>
+        <div className={css.content_review}>
           <Rating
             className={css.stars}
             name="half-rating-read"
@@ -90,7 +92,13 @@ const Detail = (props) => {
             size="large"
             readOnly
           />
-        </Stack>
+          <Linko data-text="reviews" to="reviews" smooth={true} spy={true} offset={-150} duration={1500}>
+        <p onClick={props.onScroll} className={css.content_review_p}>({props.numReviews} reviews)</p>
+          
+          </Linko>
+
+
+        </div>
         {/* /$$$$$$$$$$$$$$$$$$$$$$$$$$$*price $$$$$$$$$$$$$$$$$$$$$*/}
 
         <div className={css["content__price"]}>
@@ -155,9 +163,6 @@ const Detail = (props) => {
                 <Image src={master} width={40} height={35} alt="windows keys payement with masterCard"></Image>
                 <Image src={discover} width={40} height={55} alt="windows keys payement with discover"></Image>
                 <Image src={paypal} width={55} height={65} alt="windows keys payement with paypal"></Image>
-
-
-
 
             </div>
       </div>
