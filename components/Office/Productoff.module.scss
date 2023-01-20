@@ -3,7 +3,7 @@
 
 .product {
     grid-column: 2/14;
-    margin: 10rem 0;
+    margin: 7rem 0;
     @include respons(phone){
       grid-column: 1/-1;
       padding-left: 1.5rem;

@@ -14,6 +14,8 @@ import Cookies from 'js-cookie';
 import Loader from "../utils/Loader";
 import { getError } from "../utils/error";
 import {datana,email,optional} from "./dataPay";
+import { Fade } from "react-awesome-reveal";
+import { useController } from 'react-hook-form';
 import {
   PayPalScriptProvider,
   PayPalButtons,
@@ -22,11 +24,13 @@ import {
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':
-      return { ...state,loadingx:true , loading: true, error: '' };
-      case 'FETCH_END':
+      return { ...state,loadingx:true, loading: true, error: '' };
+      case 'FETCH_START':
         return { ...state, loadingx: false, error: '' };
     case 'FETCH_SUCCESS':
       return { ...state, loading: false, order: action.payload, error: '' };
+      case 'MODIFY':
+      return { ...state,modify:true,error: '' };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
     case 'PAY_REQUEST':
@@ -37,7 +41,6 @@ function reducer(state, action) {
       return { ...state, loadingPay: false, errorPay: action.payload };
     case 'PAY_RESET':
       return { ...state, loadingPay: false, successPay: false, errorPay: '' };
-
     case 'DELIVER_REQUEST':
       return { ...state, loadingDeliver: true };
     case 'DELIVER_SUCCESS':
@@ -59,10 +62,12 @@ import Cartcontext from "../components/Cartctx/Cartcontext";
 const Pay = () => {
   const [empty,Setempty]=useState(true)
   const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [isCheckeds, setIsCheckeds] = useState(false)
   const Cartctx = useContext(Cartcontext);
-  const [{loadingx,loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,},dispatch] = useReducer(reducer, {
+  const [{loadingx,loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,modify},dispatch] = useReducer(reducer, {
     loading: true,
     loadingx:true,
+    modify:false,  
     order: {},
     error: '',
   });
@@ -73,6 +78,8 @@ const Pay = () => {
 
   const [show, Setshow] = useState(false);
   const router = useRouter();
+  // const [isChecked, setIsChecked] = useState(false)
+
   // console.log("router.query"+router.query.id)
   // console.log("orderId"+ orderId);
   const orderId=router.query.id;
@@ -84,14 +91,22 @@ const Pay = () => {
   },[Cartctx])
   const {
     register,
+    setValue,
     handleSubmit,
     watch,
+    
     formState: { errors },
   } = useForm();
 
+  const isChecked = watch("checkboxName")
+  function handleCheckboxChange(event){
+    setIsCheckeds(event.target.checked)
+    setValue("checkboxName",event.target.checked)
+  }
+
   const onSubmit = async ({ firstname, lastname, email, repeatemail }) => {
     try {
-      dispatch({ type: 'FETCH_END' });
+      dispatch({ type: 'FETCH_START' });
 
 
       console.log(email)
@@ -127,6 +142,7 @@ const Pay = () => {
       })
 
       dispatch({ type: 'FETCH_REQUEST' });
+      dispatch({type: 'MODIFY'})
 
 
       toast.success("Information Added Successfully", {});
@@ -243,13 +259,15 @@ const Pay = () => {
       {(!errors.firstname &&
         !errors.lastname &&
         !errors.email &&
-        !errors.repeatemail) || (
-        <div className={css.error}>
+        !errors.repeatemail &&
+        !errors.checkboxName) || (   
+          <div className={css.error}>
           {errors.firstname && <span>*Name fileld required</span>}
           {errors.lastname && <span>*Name fileld required</span>}
           {errors.email && <span>*{errors.email?.message}</span>}
           {errors.repeatemail && <span>*{errors.repeatemail?.message}</span>}
-          {errors.repeatemail && <span>*{errors.chooseCb?.message}</span>}
+          {!isChecked && <span>*You must agree the terms to proceed into the payment!</span>}
+
         </div>
       )}
       <ToastContainer
@@ -262,10 +280,14 @@ const Pay = () => {
         <div className={css.pay__info}>
           <div className={css.flexspace}>
           <h1 className={css.h1}>Billing Details</h1>
+          {modify && 
+          <Fade direction="right" triggerOnce={true}>
           <button onClick={modifyhandler} className={css.modify}>
             <span className={css.modify_text}>Modify</span>
           </button>
 
+          </Fade>
+          }
           </div>
           <div className={css.pay__info_input}>
             {datana.map((lab) => (
@@ -400,36 +422,30 @@ const Pay = () => {
           </div>
           <div className={css.terms}>
             <input
-              name="selectCheckbox"
-              id="selectCheckbox"
-              {...register("chooseCb")}
+              {...register("checkboxName",{ required: true })}
+              name="checkboxName"
+              id="checkboxName"
               type="checkbox"
+              onChange={handleCheckboxChange}    
               className={css.terms_check}
             />
-            <label htmlFor="chooseCb" className={css.terms_text}>
+            <label htmlFor="checkboxName" className={css.terms_text}>
               I agree the terms & refund policy{" "}
               <span className={css.xo}>*</span>
             </label>
           </div>
-          <button type="submit" className={css.button} value="submit">
+          <button type="submit" className={`${css.button} ${loadingx ? '' : '' } `} value="submit">
             {loadingx ? 'continue to payement'  : <Loader></Loader> }
           </button>
           {isPending ? (
                       <div>Loading...</div>
                     ) : (
-                      <div style={{ maxWidth: "750px", minHeight: "200px" }}>
-                          {/* <PayPalScriptProvider
-                options={{
-                    "client-id": process.env.REACT_PAYPAL_CLIENT_ID,
-                   
-                }}
-            > */}
+                      <div style={{ maxWidth: "750px", minHeight: "200px" }}>               
                         <PayPalButtons
                           createOrder={createOrder}
                           onApprove={onApprove}
                           onError={onError}
                         ></PayPalButtons>
-                      {/* </PayPalScriptProvider> */}
                       </div>
                     )}
  

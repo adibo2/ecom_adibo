@@ -34,6 +34,7 @@
     "nodemailer": "^6.8.0",
     "react": "18.2.0",
     "react-accessible-accordion": "^5.0.0",
+    "react-awesome-reveal": "^4.1.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-scroll": "^1.8.9",
@@ -43,7 +44,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "react-hook-form": "^7.40.0",
+    "react-hook-form": "^7.42.1",
     "twilio": "^3.83.4"
   }
 }
