@@ -57,6 +57,7 @@ function reducer(state, action) {
 }
 import Cartcontext from "../components/Cartctx/Cartcontext";
 const Pay = () => {
+  const [empty,Setempty]=useState(true)
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const Cartctx = useContext(Cartcontext);
   const [{loadingx,loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,},dispatch] = useReducer(reducer, {
@@ -66,6 +67,7 @@ const Pay = () => {
     error: '',
   });
 
+
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
 
 
@@ -74,6 +76,12 @@ const Pay = () => {
   // console.log("router.query"+router.query.id)
   // console.log("orderId"+ orderId);
   const orderId=router.query.id;
+  useEffect(()=>{
+    if (Cartctx.items.length === 0){
+      router.back()
+
+    }
+  },[Cartctx])
   const {
     register,
     handleSubmit,
@@ -223,6 +231,12 @@ const Pay = () => {
   const modifyhandler=()=>{
     console.log("hiii")
   }
+
+
+  if (!Cartctx) {
+    return null;
+  }
+
 
   return (
     <>
