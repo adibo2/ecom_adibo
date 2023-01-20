@@ -31,6 +31,8 @@ function reducer(state, action) {
       return { ...state, loading: false, order: action.payload, error: '' };
       case 'MODIFY':
       return { ...state,modify:true,error: '' };
+      case 'MODIFY_NOT':
+        return { ...state,modify:false,error: '' };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
     case 'PAY_REQUEST':
@@ -63,6 +65,7 @@ const Pay = () => {
   const [empty,Setempty]=useState(true)
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [isCheckeds, setIsCheckeds] = useState(false)
+  const [direction,Setdirection]=useState("right")
   const Cartctx = useContext(Cartcontext);
   const [{loadingx,loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,modify},dispatch] = useReducer(reducer, {
     loading: true,
@@ -246,6 +249,8 @@ const Pay = () => {
   }
   const modifyhandler=()=>{
     console.log("hiii")
+    Setdirection("left");
+    dispatch({ type: 'MODIFY_NOT'})
   }
 
 
@@ -434,12 +439,14 @@ const Pay = () => {
               <span className={css.xo}>*</span>
             </label>
           </div>
-          <button type="submit" className={`${css.button} ${loadingx ? '' : '' } `} value="submit">
+          <button type="submit" className={`${css.button} ${modify ? css.none : '' } `} value="submit">
             {loadingx ? 'continue to payement'  : <Loader></Loader> }
           </button>
-          {isPending ? (
+          {modify && (
+            isPending ? (
                       <div>Loading...</div>
                     ) : (
+                      <Fade direction="right">
                       <div style={{ maxWidth: "750px", minHeight: "200px" }}>               
                         <PayPalButtons
                           createOrder={createOrder}
@@ -447,7 +454,9 @@ const Pay = () => {
                           onError={onError}
                         ></PayPalButtons>
                       </div>
-                    )}
+                      </Fade>
+                    ))
+                    }
  
         </form>
       </div>
