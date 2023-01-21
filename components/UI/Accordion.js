@@ -149,7 +149,7 @@ const Accordion = () => {
         </>
     },
     {
-        question:'I&apos;m having problems installing or activating Office',
+        question:`I'm having problems installing or activating Office`,
         answer:<>Most problems with the installation or activation of Office are caused by the fact that there is still an old or different Office version on your system. On a new laptop, for example, there is another trial version of Office 365 that conflicts with new versions.
         <br></br><br></br><br></br>
         Examples of errors :
