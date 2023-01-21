@@ -54,28 +54,28 @@ const Accordion = () => {
 
     },
     {
-        question:`I haven't received my order/email?`,
+        question:'I haven&apos;t received my order/email?',
         answer:<>The mail containing your license codes and links to the software will be sent automatically after your order, so you will receive it in your mailbox in just a few moments. The mail will be sent to the e-mail address you ordered with. If you suspect that you have entered an incorrect e-mail address, please contact us as soon as possible via clientcare@instant-license.com.<br /> <br></br>Also be sure to check your spam or junk folder, especially if you have an email address that ends in @hotmail.xxx or @live.xxx or @outlook.xxx.
 
         </>
 
     },
     {
-        question:`What kind of support do you offer?`,
+        question:'What kind of support do you offer?',
         answer:<>You can always contact us by mail or our contact form. Our support staff will be happy to answer your question during office hours.<br /> <br></br>As we have the license guarantee as the starting point of our business operations, you will always be helped to get a working license. When you contact us, we will ask you for the procedure followed or to send screenshots.
 
         </>
 
     },
     {
-        question:`Why can't I activate my license?`,
+        question:'Why can&apos;t I activate my license?',
         answer:<>Instant License sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select "Telephone activation" and follow the procedure.<br></br><br></br>We give you a 100% license guarantee. We guarantee that if you buy a license from us, you will get an optimal working license from us.<br></br><br />In the meantime, you can always download a fully functional trial version of the software product of your choice from our download page.
 
         </>
 
     },
     {
-        question:`What is telephone activation (Office)?`,
+        question:'What is telephone activation (Office)?',
         answer:<>Instant License sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select "Telephone activation" and follow the procedure.
         <br></br><br></br><br></br>
         —————-
@@ -88,7 +88,7 @@ const Accordion = () => {
         </>
     },
     {
-        question:`What is telephone activation (Windows)?`,
+        question:'What is telephone activation (Windows)?',
         answer:<>Instant License sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select "Telephone activation" and follow the procedure.
         <br></br><br></br><br></br>
         —————-
@@ -116,7 +116,7 @@ const Accordion = () => {
         </>
     },
     {
-        question:`I want to upgrade from Windows 10/11 Home to Pro ?`,
+        question:'I want to upgrade from Windows 10/11 Home to Pro ?',
         answer:<>Upgrading from Windows 10 or 11 Home to Windows 10 or 11 Pro is not so obvious.
         <br></br><br></br><br></br>
         If you enter the purchased licence key in a Windows 10 or 11 Home, you will receive an error message because Microsoft does not allow this. 
@@ -149,7 +149,7 @@ const Accordion = () => {
         </>
     },
     {
-        question:`I'm having problems installing or activating Office`,
+        question:'I&apos;m having problems installing or activating Office',
         answer:<>Most problems with the installation or activation of Office are caused by the fact that there is still an old or different Office version on your system. On a new laptop, for example, there is another trial version of Office 365 that conflicts with new versions.
         <br></br><br></br><br></br>
         Examples of errors :
@@ -174,7 +174,7 @@ const Accordion = () => {
         </>
     },
     {
-        question:`Can I reinstall the software (on the same or a different PC) ?`,
+        question:'Can I reinstall the software (on the same or a different PC) ?',
         answer:<><strong>For Windows :</strong>
         <br></br><br></br><br></br>
         After entering your license key and activation, your Windows is automatically linked to your computer's Mac address. Microsoft creates a profile of your device. On the basis of this data, a new installation checks whether your device was already equipped (with an activated version) with Windows 10. You can then reinstall it as much as you want on the same computer. You cannot use the license key on another PC.
