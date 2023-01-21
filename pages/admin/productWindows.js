@@ -8,16 +8,20 @@ import Link from 'next/link';
 import { toast } from 'react-toastify';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from 'next/router';
 
 
 const ProductWindows = () => {
-    const [windows,setwindows]=useState([])
+    const [windows,setwindows]=useState([]);
+    const router=useRouter();
 
     useEffect(()=>{
         const fetchData = async () =>{
             try{
                 const {data} = await axios.get('/api/admin/productWindows');
+                
                 setwindows(data)
+                console.log(windows)
 
             } catch (err){
 
@@ -40,6 +44,10 @@ const ProductWindows = () => {
       toast.error(getError(err));
     }
   };
+  const ReviewHandler=()=>{
+    router.push('')
+
+  }
   return (
     <>
       <ToastContainer
@@ -82,8 +90,13 @@ const ProductWindows = () => {
                       <td className={css1.table_td}>
                         {order.stock}
                       </td>
-                      <td className={css1.table_td}>
+                      <td className={`${css1.table_td} ${css1.tableflex}`}>
                         {order.reviews.length}
+                        <Link href={`/admin/reviews/${order._id}`}>
+                        <button onClick={ReviewHandler} className={css1.tablebutton}>
+                          viewReviews
+                        </button>
+                        </Link>
                       </td>
                       <td className={css1.table_td}>
                         {order.createdAt.substring(0, 10)}

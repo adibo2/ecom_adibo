@@ -9,7 +9,7 @@
 .item{
     background: #f0ebe1;
     margin-bottom: 5px;
-    padding: 2rem 2rem;
+    padding:1rem 1rem .5rem 1rem;
     cursor: pointer;
     border:1px solid rgb(209 213 219 / 1);
     background-color: rgb(249 250 251 / 1);
@@ -35,11 +35,12 @@
 .content{
     // color:#8b7f75;
     max-height: 0;
-    margin-top: 2rem;
+    margin-top: 1.4rem;
     color: rgb(107 114 128 /1);
     width: 100%;
     font-size: 1.275rem;
     line-height: 1.55rem;
+    margin-bottom: 1rem;
   
     overflow: hidden;
     background-color: rgb(255 255 255 /1);
@@ -58,4 +59,9 @@
 }
 .span{
     padding-right: 2rem;
+}
+.h2{
+    font-size: 1.4rem;
+    line-height: 1rem;
+    font-family: 'Nunito';
 }

@@ -134,3 +134,22 @@
 
   }
 }
+.order_name{
+  font-size: 1rem;
+  line-height: 1rem;
+
+}
+.tableflex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tablebutton{
+  background-color: #707e60;
+  cursor: pointer;
+  &:hover{
+    background-color: #8cba57;
+
+
+  }
+}

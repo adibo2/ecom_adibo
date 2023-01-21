@@ -1,5 +1,5 @@
-import Product from "../../../../../model/Product";
-import db from "../../../../../utils/db";
+import Product from "../../../../../../../model/Product";
+import db from "../../../../../../../utils/db";
 import { getSession } from 'next-auth/react';
 const handler = async (req, res) => {
     const session = await getSession({ req });
@@ -11,9 +11,7 @@ const handler = async (req, res) => {
     if (req.method === 'GET') {
       return getHandler(req, res, user);
     } 
-    else if (req.method === 'PUT') {
-      return putHandler(req, res);
-    } 
+    
     else if (req.method === 'DELETE') {
       return deleteHandler(req, res, user);
     } 
@@ -23,40 +21,23 @@ const handler = async (req, res) => {
   };
   const getHandler = async (req, res) =>{
     await db.connect();
+    console.log(req.query.id);
     const productwin=await Product.findById(req.query.id);
     await db.disconnect()
-    // console.log(productwin)
-    res.send(productwin)
-  }
-  const putHandler = async (req, res) =>{
-    await db.connect();
-    const productwin=await Product.findById(req.query.id);
-    if(productwin){
-      productwin.name=req.body.name;
-      productwin.slug=req.body.slug;
-      productwin.price=req.body.price;
-      productwin.notprice=req.body.notprice;
-      productwin.meta=req.body.meta;
-      productwin.stock=req.body.Stock;
-      productwin.title=req.body.title;
-      productwin.alt=req.body.alt;
-      productwin.description=req.body.desc;
-      await productwin.save();
-      await db.disconnect();
-      res.send({ message: 'Product updated successfully' });
 
-    }
-    else {
-      await db.disconnect();
-      res.status(404).send({ message: 'Product not found' });
-    }
-
+    res.send(productwin.reviews)
   }
+  
   const deleteHandler = async (req, res) => {
     await db.connect();
     const product = await Product.findById(req.query.id);
+    console.log(req.query.id);
+    console.log("rev"+req.query.rev)
+   
+    
     if (product) {
-      await product.remove();
+      await product.reviews.id(req.query.rev).remove();
+      await product.save();
       await db.disconnect();
       res.send({ message: 'Product deleted successfully' });
     } else {
