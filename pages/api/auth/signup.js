@@ -23,6 +23,7 @@ export default async function handler(req, res) {
   }
 
     await db.connect();
+    // User.dropIndex( { email: 1 }, { unique: true } )
 
     const newUser = new User({
       firstname,

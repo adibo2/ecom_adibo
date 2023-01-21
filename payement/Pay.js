@@ -30,9 +30,9 @@ function reducer(state, action) {
     case 'FETCH_SUCCESS':
       return { ...state, loading: false, order: action.payload, error: '' };
       case 'MODIFY':
-      return { ...state,modify:true,error: '' };
+      return { ...state,modify:true,update:false,error: '' };
       case 'MODIFY_NOT':
-        return { ...state,modify:false,error: '' };
+        return { ...state,modify:false,update:true,error: '' };
     case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
     case 'PAY_REQUEST':
@@ -67,10 +67,11 @@ const Pay = () => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [isCheckeds, setIsCheckeds] = useState(false)
   const Cartctx = useContext(Cartcontext);
-  const [{loadingx,loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,modify},dispatch] = useReducer(reducer, {
+  const [{loadingx,loading,error,update,order,successPay,loadingPay,loadingDeliver,successDeliver,modify},dispatch] = useReducer(reducer, {
     loading: true,
     loadingx:true,
-    modify:false,  
+    modify:false,
+    update:false,  
     order: {},
     error: '',
   });
@@ -114,29 +115,52 @@ const Pay = () => {
 
       console.log(email)
       // e.preventDefault() 
-    await axios.post('/api/auth/signup', {
-        firstname,
-        lastname,
-        email,
-        repeatemail,
-      });
-      const result = await signIn('credentials', {
-        redirect: false,
-        email,
-        
-      });
+      if(update){
+        await axios.put('/api/auth/modify',{
+          firstname,
+          lastname,
+          email,
+          repeatemail
+        })
+        const result = await signIn('credentials', {
+          redirect: false,
+          email,
+          
+        });
+        if (result.error) {
+          toast.error(result.error);
+        }
+        toast.success('information updated successfully');
+
+      }
+      else{
+        await axios.post('/api/auth/signup', {
+            firstname,
+            lastname,
+            email,
+            repeatemail,
+          });
+          const result = await signIn('credentials', {
+            redirect: false,
+            email,
+          });
+          if (result.error) {
+            toast.error(result.error);
+          }
+          toast.success("Information Added Successfully", {});
+
+      }
+
 
       
     const { data }=await axios.post('/api/orders', {
         orderItems: Cartctx.items,  
         totalPrice:Cartctx.totalamount,
       });
-      if (result.error) {
-        toast.error(result.error);
-      }
+     
       
-      Cookies.set('Cart',[]);
-      Cookies.set('total',0)
+      // Cookies.set('Cart',[]);
+      // Cookies.set('total',0)
       
       await axios.post("/api/sendEmail",{
         firstname,
@@ -148,7 +172,6 @@ const Pay = () => {
       dispatch({type: 'MODIFY'})
 
 
-      toast.success("Information Added Successfully", {});
       
       router.push({
         pathname: router.pathname,
@@ -247,6 +270,7 @@ const Pay = () => {
     toast.error(getError(err));
   }
   const modifyhandler=()=>{
+
     console.log("hiii")
     dispatch({ type: 'MODIFY_NOT'})
   }
@@ -445,7 +469,7 @@ const Pay = () => {
             isPending ? (
                       <div>Loading...</div>
                     ) : (
-                      <Fade direction="right">
+                      <Fade direction="right" triggerOnce={true}>
                       <div style={{ maxWidth: "750px", minHeight: "200px" }}>               
                         <PayPalButtons
                           createOrder={createOrder}
