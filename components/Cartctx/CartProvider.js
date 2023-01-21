@@ -10,7 +10,7 @@ const defaultstate={
 }
 const Reducer=(state,action)=>{
     if(action.type==='ADD'){
-        const updatetotalamount=state.totalamount*1 + parseInt(action.payload.price + 0.01);
+        // const updatetotalamount=state.totalamount*1 + parseInt(action.payload.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2));
         let updateitems;
         if(state.items.find((item)=>item.id===action.payload.id)){
             updateitems=state.items.map((item)=>(
@@ -24,8 +24,8 @@ const Reducer=(state,action)=>{
             updateitems=state.items.concat(action.payload)
         }
         return{
-            totalamount:updatetotalamount,
-            items:updateitems
+            items:updateitems,
+            totalamount:updateitems.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2)*1,
         }
 
     }
@@ -56,15 +56,15 @@ const Reducer=(state,action)=>{
             updateitems=state.items.concat(action.payload)
         }
         return{
-            totalamount:updatetotalamount,
-            items:updateitems
+            items:updateitems,
+            totalamount:updateitems.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2)*1,
         }
 
     }
     if(action.type==='REMOVE'){
         const existingCartindex=state.items.findIndex((item)=>item.id === action.payload);
         const existingCartitem=state.items[existingCartindex];
-        const updatetotalamount=state.totalamount-parseInt(existingCartitem.price + 0.01);
+        const updatetotalamount=state.totalamount-parseInt(existingCartitem.price);
         let updateitems;
         if(existingCartitem.amount===1){
             updateitems=state.items.filter((item)=>item.id !== action.payload);
@@ -82,7 +82,7 @@ const Reducer=(state,action)=>{
     if(action.type==='CLEAR'){
         const existingCartindex=state.items.findIndex((item)=>item.id === action.payload);
         const existingCartitem=state.items[existingCartindex];
-        let updatetotalamount=state.totalamount - (parseInt(existingCartitem.price + 0.01) * parseInt(action.payload1.amount));
+        let updatetotalamount=state.totalamount - (parseInt(existingCartitem.price) * parseInt(action.payload1.amount));
         let updateitems=state.items.filter((item)=>item.id !== action.payload);
         return({
             items:updateitems,

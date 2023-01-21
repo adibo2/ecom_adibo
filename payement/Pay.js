@@ -61,11 +61,11 @@ function reducer(state, action) {
   }
 }
 import Cartcontext from "../components/Cartctx/Cartcontext";
+import ButtonPay from "./ButtonPay";
 const Pay = () => {
   const [empty,Setempty]=useState(true)
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [isCheckeds, setIsCheckeds] = useState(false)
-  const [direction,Setdirection]=useState("right")
   const Cartctx = useContext(Cartcontext);
   const [{loadingx,loading,error,order,successPay,loadingPay,loadingDeliver,successDeliver,modify},dispatch] = useReducer(reducer, {
     loading: true,
@@ -214,8 +214,7 @@ const Pay = () => {
   //   currency: "USD",
   // };
   function createOrder(data, actions) {
-    return actions.order
-      .create({
+    return actions.order.create({
         purchase_units: [
           {
             amount: { value: totalPrice },
@@ -249,7 +248,6 @@ const Pay = () => {
   }
   const modifyhandler=()=>{
     console.log("hiii")
-    Setdirection("left");
     dispatch({ type: 'MODIFY_NOT'})
   }
 
@@ -397,7 +395,7 @@ const Pay = () => {
             </div>
           </div>
         </div>
-        {/* payement */}
+        {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ payement $$$$$$$$$$$$$$$$$$$$*/}
         <form className={css.pay__payement}>
           <h1 className={css.h1}>Your order</h1>
           <div className={css.pay__payement_title}>
@@ -439,6 +437,7 @@ const Pay = () => {
               <span className={css.xo}>*</span>
             </label>
           </div>
+          {/* <ButtonPay></ButtonPay> */}
           <button type="submit" className={`${css.button} ${modify ? css.none : '' } `} value="submit">
             {loadingx ? 'continue to payement'  : <Loader></Loader> }
           </button>
