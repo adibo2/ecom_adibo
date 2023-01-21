@@ -68,8 +68,8 @@ const Accordion = () => {
 
     },
     {
-        question:'Why can&apos;t I activate my license?',
-        answer:<>Instant License sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select "Telephone activation" and follow the procedure.<br></br><br></br>We give you a 100% license guarantee. We guarantee that if you buy a license from us, you will get an optimal working license from us.<br></br><br />In the meantime, you can always download a fully functional trial version of the software product of your choice from our download page.
+        question:<>{" Why can't I activate my license? "}</> ,
+        answer:<>{"Instant License sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select Telephone activation and follow the procedure.<br></br><br></br>We give you a 100% license guarantee. We guarantee that if you buy a license from us, you will get an optimal working license from us.<br></br><br />In the meantime, you can always download a fully functional trial version of the software product of your choice from our download page."}
 
         </>
 
