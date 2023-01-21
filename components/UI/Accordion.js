@@ -54,7 +54,7 @@ const Accordion = () => {
 
     },
     {
-        question:'I haven&apos;t received my order/email?',
+        question:`I haven't received my order/email?`,
         answer:<>The mail containing your license codes and links to the software will be sent automatically after your order, so you will receive it in your mailbox in just a few moments. The mail will be sent to the e-mail address you ordered with. If you suspect that you have entered an incorrect e-mail address, please contact us as soon as possible via clientcare@instant-license.com.<br /> <br></br>Also be sure to check your spam or junk folder, especially if you have an email address that ends in @hotmail.xxx or @live.xxx or @outlook.xxx.
 
         </>
@@ -82,7 +82,7 @@ const Accordion = () => {
         <br></br><br></br><br></br>
         You then choose the toll-free number of your country from the selection list and contact Microsoft. A computer voice will guide you. You enter your code which will be displayed on your screen and the computer voice will give you a confirmation code which you will have to re-enter yourself for the activation of your software.
         <br></br><br></br><br></br>
-        If you wish, you can also do this Telephone activation online via this link:<a style={{color:"rgb(37 99 235 / 1)"}} href='https://bit.ly/2QrOxMU' target='_blank'>CLICK HERE</a> But this is a bit more difficult because you have to enter the numbers manually.
+        If you wish, you can also do this Telephone activation online via this link:<a style={{color:"rgb(37 99 235 / 1)"}} href='https://bit.ly/2QrOxMU'>CLICK HERE</a> But this is a bit more difficult because you have to enter the numbers manually.
         <br></br><br></br><br></br>
         ————–
         </>
@@ -101,7 +101,7 @@ const Accordion = () => {
         <br></br><br></br><br></br>
         You will then see the installation ID at the bottom of the screen. You can use the website below to enter the ID.
         <br></br><br></br><br></br>
-        <a style={{color:"rgb(37 99 235 / 1)"}} target="_blank" href='https://bit.ly/2QrOxMU'>https://bit.ly/2QrOxMU</a>
+        <a style={{color:"rgb(37 99 235 / 1)"}}  href='https://bit.ly/2QrOxMU'>https://bit.ly/2QrOxMU</a>
         <br></br><br></br><br></br>
         You can choose 7 Digits and then enter the installation ID that is visible on the computer. After entering, click on Next.
         <br></br><br></br><br></br>
@@ -166,9 +166,9 @@ const Accordion = () => {
         <br></br><br></br><br></br>
         You can read how to do that here:
         <br></br><br></br><br></br>
-        <a style={{color:"rgb(37 99 235 / 1)"}} target="_blank" href='https://support.office.com/nl-nl/article/office-verwijderen-van-een-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8'>https://support.office.com/nl-nl/article/office-verwijderen-van-een-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8</a>
+        <a style={{color:"rgb(37 99 235 / 1)"}}  href='https://support.office.com/nl-nl/article/office-verwijderen-van-een-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8'>https://support.office.com/nl-nl/article/office-verwijderen-van-een-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8</a>
         <br></br><br></br><br></br>
-        or for Mac : <a style={{color:"rgb(37 99 235 / 1)"}} target="_blank" href='https://support.microsoft.com/nl-nl/office/problemen-met-office-voor-mac-oplossen-door-het-programma-volledig-te-verwijderen-voordat-je-het-opnieuw-installeert-ec3aa66e-6a76-451f-9d35-cba2e14e94c0'>https://support.microsoft.com/nl-nl/office/problemen-met-office-voor-mac-oplossen-door-het-programma-volledig-te-verwijderen-voordat-je-het-opnieuw-installeert-ec3aa66e-6a76-451f-9d35-cba2e14e94c0</a>
+        or for Mac : <a style={{color:"rgb(37 99 235 / 1)"}}  href='https://support.microsoft.com/nl-nl/office/problemen-met-office-voor-mac-oplossen-door-het-programma-volledig-te-verwijderen-voordat-je-het-opnieuw-installeert-ec3aa66e-6a76-451f-9d35-cba2e14e94c0'>https://support.microsoft.com/nl-nl/office/problemen-met-office-voor-mac-oplossen-door-het-programma-volledig-te-verwijderen-voordat-je-het-opnieuw-installeert-ec3aa66e-6a76-451f-9d35-cba2e14e94c0</a>
         <br></br><br></br><br></br>
         If you want to check if you are working with the correct Office version, go to File - Account and in the right column you will see your version of Office and the activation.
         </>
@@ -183,9 +183,9 @@ const Accordion = () => {
         <br></br><br></br><br></br>
         This depends on the type of license. Check the product description to see if the product is suitable for installation via an account or only valid for 1 PC.
         <br></br><br></br><br></br>
-        You create an Office account at <a style={{color:"rgb(37 99 235 / 1)"}} target="_blank" href='https://setup.office.com'>https://setup.office.com</a>
+        You create an Office account at <a style={{color:"rgb(37 99 235 / 1)"}}  href='https://setup.office.com'>https://setup.office.com</a>
         and enter your license key. After this, your product will always be present in your Microsoft 
-        Account. You can check this by going to <a style={{color:"rgb(37 99 235 / 1)"}} target="_blank" href='https://account.microsoft.com/'>https://account.microsoft.com/</a> and clicking on 'services and subscriptions' at the top of the menu, then you will find your product and you can install it again. Attention, only 1 installation is possible, so you first have to uninstall your installation on the other computer
+        Account. You can check this by going to <a style={{color:"rgb(37 99 235 / 1)"}}  href='https://account.microsoft.com/'>https://account.microsoft.com/</a> and clicking on 'services and subscriptions' at the top of the menu, then you will find your product and you can install it again. Attention, only 1 installation is possible, so you first have to uninstall your installation on the other computer
         <br></br><br></br><br></br>
         Attention : your original license key will no longer work if it is linked to your Microsoft Account and Microsoft will not allow a second use. You must therefore use your account for the reinstallation.
         <br></br><br></br><br></br>
