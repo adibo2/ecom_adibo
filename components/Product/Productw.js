@@ -35,7 +35,8 @@ const Productw = (props) => {
       console.log("heloo from the cart");
       Cartctx.addItem({
         id:product.slug,
-        name:product.name,
+        slug:product.slug,
+
         price:product.price,
         amount:1,
         img:product.img,

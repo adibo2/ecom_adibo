@@ -68,6 +68,9 @@
     @include respons(medium) {
       font-size: 2.45rem;
     }
+    @include respons(medium) {
+      font-size: 2.05rem;
+    }
   }
   &__price {
     margin-top: 1.5rem;
@@ -200,10 +203,17 @@
 
   transition: all 0.5s ease;
   @include respons(medium) {
+    padding: 1rem 2rem;
+
     width: 25%;
   }
   @include respons(phone) {
-    width: 50%;
+    justify-content: space-between;
+
+    font-size: 1.6rem;
+    padding: 1rem 1.4rem;
+
+    width: 27%;
   }
   // &:hover{
   //     transform:scale(1.05,1.1);

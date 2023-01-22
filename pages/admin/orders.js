@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
 import css from "../../components/admin_style/dashboard.module.scss";
 import css1 from "../../components/admin_style/order.module.scss";
+import { getError } from '../../utils/error';
 
 const Orders = () => {
   const [orders, setorders] = useState([]);
@@ -18,6 +19,17 @@ const Orders = () => {
     fetchData();
     console.log(orders);
   }, []);
+  const deleteHandler = async (productId) => {
+    if (!window.confirm('Are you sure?')) {
+      return;
+    }
+    try {
+      await axios.delete(`/api/admin/order/${productId}`);
+      toast.success('order deleted successfully');
+    } catch (err) {
+      toast.error(getError(err));
+    }
+  };
   return (
     <>
       <Navbar></Navbar>
@@ -66,7 +78,7 @@ const Orders = () => {
                     <td className={css1.table_td}>
                       {order.orderItems.map((el) => (
                         <>
-                        <h1 className={css1.order_name}>{el.name}-</h1>
+                        <h1 className={css1.order_name}>{el.slug}-</h1>
                         <p>{el.amount}</p>
                         </>
                       ))}.
@@ -87,6 +99,21 @@ const Orders = () => {
                           <a>Details</a>
                         </Link> */}
                     </td>
+                    <td className={`${css1.table_td} ${css1.table_buttonflex}`}>
+                        {/* <Link href={`/admin/product/${product._id}`}> */}
+                          <a type="button" className={css1.table_button}>
+                            Edit
+                          </a>
+                        {/* </Link> */}
+                        &nbsp;
+                        <button
+                          onClick={() => deleteHandler(order._id)}
+                          className={css1.table_buttondelete}
+                          type="button"
+                        >
+                          Delete
+                        </button>
+                      </td>
                   </tr>
                 ))}
               </tbody>

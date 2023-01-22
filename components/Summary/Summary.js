@@ -103,7 +103,7 @@ const onClear=(item,id)=>{
           <div className={css["summary__product_details-image"]}>
             <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item,item.id)}></AiFillCloseCircle>
             <Image src={item.img} width={90} height={80} alt="windows Keys"></Image>           
-              <p className={css.p}>{item.name}</p>
+              <p className={css.p}>{item.slug}</p>
 
           </div>
           <div className={css["summary__product_details-price"]}>${item.price}</div>
@@ -137,7 +137,7 @@ const onClear=(item,id)=>{
             <hr className={css.hrmobile}></hr>
             <div className={css["summary__productmobile-product"]}>
             <h3 className={css.h3_1}>Product</h3>
-            <p className={css.p}>{item.name}</p>
+            <p className={css.p}>{item.slug}</p>
             </div>
             <hr className={css.hrmobile}></hr>
             <div className={css["summary__productmobile-product"]}>

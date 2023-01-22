@@ -155,7 +155,7 @@ const Pay = () => {
       
     const { data }=await axios.post('/api/orders', {
         orderItems: Cartctx.items,  
-        totalPrice:Cartctx.totalamount,
+        totalPrice:Cartctx.items.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2),
       });
      
       
@@ -435,7 +435,7 @@ const Pay = () => {
                 </div>
                 <div className={css.pay__payement_details_titre}>
                   <h4 className={css.h4}>
-                    {item.name} x {item.amount}
+                    {item.slug} x {item.amount}
                   </h4>
                 </div>
                 <div className={css.letotal}>${item.price}</div>

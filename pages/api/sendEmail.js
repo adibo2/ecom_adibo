@@ -22,59 +22,42 @@ export default async function handler(req, res) {
           return res.status(400).send({ message: "Bad request" });
         }
         await db.connect();
-        const order = await Order.find({user:user._id},{
-          _id: 0,
-          names: {
-            $map: {
-              input: "$orderItems",
-              as: "item",
-              in: "$$item.name"
-            }
-          },
-        });
+        const order=await Order.findOne({user:user._id})
+        console.log(order)
+        // const order = await Order.find({user:user._id},{
+        //   _id: 0,
+        //   names: {
+        //     $map: {
+        //       input: "$orderItems",
+        //       as: "item",
+        //       in: "$$item.slug"
+        //     }
+        //   },
+        // });
 
-        const leben=await Order.aggregate([
-          {
-            $project: {
-              names: {
-                $map: {
-                  input: "$orderItems",
-                  as: "item",
-                  in: "$$item.name"
-                }
-              }
-            }
-          },
-          { $unwind: "$names" },
-          // { $replaceRoot: { newRoot: "$names" } }
-        ])
-        console.log(order[0]._doc.names);
-        order[0]._doc.names.forEach(el=>console.log(el))
-        // console.log(leben.map((el)=>{
-        //   console.log(el.names)
-        // }));
-        const produits=leben.map((el)=>{
-          return el.names
-        })
-        console.log(produits)
-        
-
-
-        // const orderProducts= await Order.aggregate([
+        // const leben=await Order.aggregate([
         //   {
-        //     $set: {
-        //       orderItems: {
+        //     $project: {
+        //       names: {
         //         $map: {
         //           input: "$orderItems",
-        //           in: { productDetails: "$$this" }
+        //           as: "item",
+        //           in: "$$item.slug"
         //         }
         //       }
         //     }
-
-        //   }
+        //   },
+        //   { $unwind: "$names" },
+        //   // { $replaceRoot: { newRoot: "$names" } }
         // ])
-
-    
+        // console.log(order[0]._doc.names);
+        // order[0]._doc.names.forEach(el=>console.log(el))
+        // console.log(leben.map((el)=>{
+        //   console.log(el.names)
+        // }));
+        // const produits=leben.map((el)=>{
+        //   return el.names
+        // })
         try {
           await transporter.sendMail({
             from: 'Adibbensmina99@gmail.com',
@@ -86,7 +69,7 @@ export default async function handler(req, res) {
             
             <p>Your order has been confirmed. You Bought Code(s).</p>
             <br /> 
-            <p>${produits}</p>
+            <p> ${order.orderItems.map(item => item.slug).join(", ")}</p>
           
 
             `,
