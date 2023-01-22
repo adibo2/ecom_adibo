@@ -1,6 +1,12 @@
+@import "./../../styles/respon.module.scss";
+
 .titre{
     grid-column: 2/14;
     margin: 4rem 0;
+    @include respons(phone){
+      padding: .2rem 2rem .2rem 2rem;
+      grid-column: 1/-1;
+    }
 
     &_2{
       font-size: 2.275rem;

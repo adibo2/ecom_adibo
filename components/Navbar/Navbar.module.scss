@@ -25,8 +25,10 @@ padding-right: 2rem;
     align-items: center;
     @include respons(phone){
         padding: 0rem;
-        padding-right: 1rem;
-        padding: 2rem ;
+        padding-right: 0rem;
+        padding-top: 2rem ;
+        padding-left: 0rem;
+        padding-bottom: 1rem;
 
       
     }
