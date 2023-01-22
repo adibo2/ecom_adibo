@@ -55,6 +55,10 @@ color: rgb(31 41 55 / .9)
     font-size: 1.3rem;
     line-height: 3rem;
     margin-left: 1.2rem;
+    @include respons(phone){
+        margin-left: 2rem;
+
+    }
 }
 .li{
     list-style: auto;

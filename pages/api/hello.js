@@ -11,6 +11,9 @@ import Fetch from '../../model/search';
 import Review from '../../model/reviews';
 import User from '../../model/User';
 import Order from '../../model/Order';
+import Code from '../../model/code';
+import { code_data } from '../../model/code';
+
 const data = {
   users: [
     {
@@ -38,16 +41,18 @@ export default async function handler(req, res) {
   await db.connect();
   // await Admin.deleteMany();
   // await Admin.insertMany(data.users);
-  await Product.deleteMany();
-  await Product.insertMany(data_windows);
+  // await Product.deleteMany();
+  // await Product.insertMany(data_windows);
+  await Code.deleteMany();
+  await Code.insertMany(code_data)
   // await User.deleteMany()
   // await User.insertMany(data.users)
   // await Order.deleteMany()
-  await Productoffice.deleteMany();
-  await Productoffice.insertMany(data_office);
+  // await Productoffice.deleteMany();
+  // await Productoffice.insertMany(data_office);
   // await Product.find().populate({ path: 'reviews', model: Review });
-  await Fetch.deleteMany();
-  await Fetch.insertMany(search);
+  // await Fetch.deleteMany();
+  // await Fetch.insertMany(search);
   await db.disconnect();
   res.status(200).json({ name: 'message send succesfully' })
 }
