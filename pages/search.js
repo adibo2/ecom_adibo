@@ -23,7 +23,7 @@ const Searchx = (props) => {
   
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container3}>
         <Navbar></Navbar>
         <Filter></Filter>
         <Count taille={props.countProducts} search={props.searchQuery}></Count>
