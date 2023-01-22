@@ -150,7 +150,7 @@ const Navbar = () => {
                       </div>
                       <div className={css.dropdown__liste_item_id}>
                         <p className={css["dropdown__liste_item_id-name"]}>
-                          {item.name}
+                          {item.slug}
                         </p>
                         <p className={css["dropdown__liste_item_id-price"]}> {item.amount} x {item.price}$</p>
                       </div>
