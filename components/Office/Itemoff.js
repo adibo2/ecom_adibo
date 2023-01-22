@@ -91,7 +91,7 @@ const Item = (props) => {
     const router=useRouter();
     const showDetail=()=>{
         console.log(router.query);
-        router.push('microsoft_office/'+props.slug)
+        router.push(`/${props.push}/`+props.slug)
 
     }
 

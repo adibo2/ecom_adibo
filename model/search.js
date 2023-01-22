@@ -13,6 +13,8 @@ const fetchSchema = new mongoose.Schema(
     title:{ type: String, required: true },
     meta:{ type: String, required: true },
     stock:{ type: Number, required: true},
+    push:{ type: String, required: true },
+
 
     price: { type: Number, required: true },
     notprice:{ type: Number, required: true },

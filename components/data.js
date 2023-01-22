@@ -27,6 +27,7 @@ import mainof from "/public/img/mainoff.webp"
 export const data_windows=[{
     name:'Windows 10 Professional Digital License',
     slug:'Windows 10 Professional Digital License',
+    push:'windows',
     // img:w10pro,
     
     index:'w1',
@@ -44,6 +45,8 @@ export const data_windows=[{
     stock:10,
     
     index:'w2',
+    push:'windows',
+
     name:"Windows 11 Professional Digital License",
     slug:"Windows 11 Professional Digital License",
     desc:"Windows 11 Professional Digital License",
@@ -72,6 +75,8 @@ export const data_windows=[{
 // },
 {
     index:'w4',
+    push:'windows',
+
     title:' Windows 10 Enterprise Digital License',
     slug:'Windows 10 Enterprise Digital License',
     stock:5,
@@ -89,6 +94,8 @@ export const data_windows=[{
 },
 {
     index:'w6',
+    push:'windows',
+
     title:'Windows 11 Enterprise Digital License',
     slug:'Windows 11 Enterprise Digital License',
     desc:"Windows 11 Enterprise Digital License",
@@ -101,6 +108,7 @@ export const data_windows=[{
 
     // img:w11entreprise,
     img:'/img/win11entreprise.webp',
+
     name:"Windows 11 Enterprise Digital License",
     // img:w11entreprise,
     meta:'Buy Microsoft Windows 11 Enterprise Product Key for the best price at instant key. Order now and download the activation key instantly'
@@ -108,6 +116,8 @@ export const data_windows=[{
 },
 {
     index:'w5',
+    push:'windows',
+
     title:'Windows 11 Home Digital License',  
     slug:'Windows 11 Home Digital License',
     desc:"Windows 11 Home Digital License",
@@ -127,6 +137,8 @@ export const data_windows=[{
 export const data_office=[
     {
         index:'o1',
+        push:'microsoft_office',
+       
         name:'Office 2019 Home and Business for Mac Digital License',
         img:'/img/Microsoft-Office-2019-Home-and-Business-IMG-key.webp',
         slug:'Office 2019 Home and Business for Mac Digital License',
@@ -139,6 +151,9 @@ export const data_office=[
     },
     {
         index:'o2',
+        push:'microsoft_office',
+
+
         name:'Office 2019 Professional Plus Digital License',
         img:'/img/Microsoft-Office-2019-Professional-Plus.webp',
         title:'Office 2019 Professional Plus',
@@ -154,6 +169,8 @@ export const data_office=[
     },
     {
         index:'o7',
+        push:'microsoft_office',
+
         name:'Office 2021 Professional Plus Digital License',
         img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
         title:'Office 2021 Professional Plus Digital License',
@@ -169,6 +186,8 @@ export const data_office=[
     },
     {
         index:'o3',
+        push:'microsoft_office',
+
         name:'Office 2021 Home and Business Digital License',
         img:"/img/Microsoft-Office-2021-Home-and-Business-IMG-box.webp",
         title:'Office 2021 Home and Business',
@@ -184,6 +203,8 @@ export const data_office=[
     },
     {
         index:'o4',
+        push:'microsoft_office',
+
         name:'Office 2021 Home and Business for Mac Digital License',
         img:"/img/Microsoft-Office-2021-Home-and-Business-for-Mac.webp",
         title:'Office 2021 Home and Business',
@@ -198,6 +219,8 @@ export const data_office=[
     },
     {
         index:'o5',
+        push:'microsoft_office',
+
         name:'Office 2021 Home and Student Digital License',
         img:"/img/Microsoft-Office-2021-Home-and-Student-IMG.webp",
         title:'Office 2021 Home and Student',
@@ -211,6 +234,8 @@ export const data_office=[
     },
     {
         index:'o6',
+        push:'microsoft_office',
+
         name:'Office 2019 Professional Plus Binding License',
         img:"/img/Microsoft-Office-2019-Professional-Plus.webp",
         title:'Office 2019 Professional Plus Binding',
@@ -303,7 +328,8 @@ export const search=[
     {
         name:'Windows10ProfessionalDigitalLicense',
         slug:'Windows 10 Professional Digital License',
-        // img:w10pro,
+        push:'windows',
+
         
         index:'w1',
         img:'/img/Pro-W-10.webp',
@@ -320,6 +346,8 @@ export const search=[
         stock:10,
         
         index:'w2',
+        push:'windows',
+
         name:"Windows11ProfessionalDigitalLicense",
         slug:"Windows 11 Professional Digital License",
         // desc:"Windows 11 Professional Digital License",
@@ -355,6 +383,8 @@ export const search=[
         // desc:"Windows 10 Enterprise Digital License",
         price:20.99,
         notprice:25,
+        push:'windows',
+
     
         name:"Windows10Enterprise",
         alt:"Windows 10 enterprise product key license ",
@@ -370,6 +400,8 @@ export const search=[
         // desc:"Windows 11 Enterprise Digital License",
         alt:"Windows 11 enterprise product key license ",
         stock:5,
+        push:'windows',
+
     
     
         price:24.99,
@@ -388,6 +420,8 @@ export const search=[
         slug:'Windows 11 Home Digital License',
         // desc:"Windows 11 Home Digital License",
         stock:8,
+        push:'windows',
+
     
         alt:"Windows 11 Home product key license ",
         notprice:9.99,
@@ -400,6 +434,8 @@ export const search=[
     },
     {
         index:'o1',
+        push:'microsoft_office',
+
         name:'Office2019HomeandBusinessforMacDigitalLicense',
         img:'/img/Microsoft-Office-2019-Home-and-Business-IMG-key.webp',
         slug:'Office 2019 Home and Business for Mac Digital License',
@@ -412,6 +448,8 @@ export const search=[
     },
     {
         index:'o2',
+        push:'microsoft_office',
+
         name:'Office2019ProfessionalPlusDigitalLicense',
         img:'/img/Microsoft-Office-2019-Professional-Plus.webp',
         title:'Office 2019 Professional Plus',
@@ -427,6 +465,8 @@ export const search=[
     },
     {
         index:'o3',
+        push:'microsoft_office',
+
         name:'Office2021HomeandBusinessDigitalLicense',
         img:"/img/Microsoft-Office-2021-Home-and-Business-IMG-box.webp",
         title:'Office 2021 Home and Business',
@@ -442,6 +482,8 @@ export const search=[
     },
     {
         index:'o4',
+        push:'microsoft_office',
+
         name:'Office2021HomeandBusinessforMacDigitalLicense',
         img:"/img/Microsoft-Office-2021-Home-and-Business-for-Mac.webp",
         title:'Office 2021 Home and Business',
@@ -456,6 +498,8 @@ export const search=[
     },
     {
         index:'o5',
+        push:'microsoft_office',
+
         name:'Office2021HomeandStudentDigitalLicense',
         img:"/img/Microsoft-Office-2021-Home-and-Student-IMG.webp",
         title:'Office 2021 Home and Student',
@@ -469,6 +513,8 @@ export const search=[
     },
     {
         index:'o6',
+        push:'microsoft_office',
+
         name:'Office2019ProfessionalPlusBindingLicense',
         img:"/img/Microsoft-Office-2019-Professional-Plus.webp",
         title:'Office 2019 Professional Plus Binding',
@@ -483,6 +529,8 @@ export const search=[
     
     }, {
         index:'o7',
+        push:'microsoft_office',
+
         name:'Office2021ProfessionalPlusDigitalLicense',
         img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
         title:'Office 2021 Professional Plus Digital License',

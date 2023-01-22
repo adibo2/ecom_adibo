@@ -40,6 +40,8 @@ const productofficeSchema = new mongoose.Schema(
     alt: { type: String, required: true },
     title:{ type: String, required: true },
     meta:{ type: String, required: true },
+    push:{ type: String, required: true },
+
     stock:{ type: Number, required: true},
 
     price: { type: Number, required: true },

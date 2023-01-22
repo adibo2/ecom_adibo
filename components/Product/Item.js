@@ -14,7 +14,7 @@ const Item = (props) => {
     const router=useRouter();
     const showDetail=()=>{
         console.log(router.query);
-        router.push('/windows/'+props.slug)
+        router.push(`/${props.push}/`+props.slug)
 
     }
 
