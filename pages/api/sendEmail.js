@@ -58,18 +58,23 @@ export default async function handler(req, res) {
         // const produits=leben.map((el)=>{
         //   return el.names
         // })
+        var items = order.orderItems.map(item => `<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">${item.slug}</div>`).join('')
         try {
           await transporter.sendMail({
-            from: 'Adibbensmina99@gmail.com',
+            from: '"The Store Team" <noreply@thestore.com>',
             to: email,
-            subject: 'Email Confirmation',
+            subject: 'Your Order Details',
             text: 'Thank you for confirming your email address.',
             html: `<h3>Dear ${firstname} ${lastname} </h3>
             <br /> 
             
-            <p>Your order has been confirmed. You Bought Code(s).</p>
-            <br /> 
-            <p> ${order.orderItems.map(item => item.slug).join(", ")}</p>
+            <p>Thank you for your purchase!</p>
+            <p>Your order details:</p>
+            ${items}
+          
+            <p>Please let us know if you have any questions.</p>
+            <p>Best regards,</p>
+            <h4>The Store Team</h4>
           
 
             `,
