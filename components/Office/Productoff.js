@@ -63,7 +63,7 @@ const Productoff = (props) => {
         <div className={css["product__grid"]}>
             {props.products.map(product=>(
                 <Item  key={product.id} index={product.index} slug={product.slug} img={product.img} 
-                name={product.name} notprice={product.notprice} price={product.price} alt={product.alt}
+                 notprice={product.notprice} price={product.price} alt={product.alt}
                 onClick={()=>clickhandler(product)}></Item>
              
             ))}

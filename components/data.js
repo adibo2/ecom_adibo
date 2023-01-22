@@ -301,7 +301,7 @@ export const data_filter=[{
 ]
 export const search=[
     {
-        name:'Windows 10 Professional Digital License',
+        name:'Windows10ProfessionalDigitalLicense',
         slug:'Windows 10 Professional Digital License',
         // img:w10pro,
         
@@ -320,7 +320,7 @@ export const search=[
         stock:10,
         
         index:'w2',
-        name:"Windows 11 Professional Digital License",
+        name:"Windows11ProfessionalDigitalLicense",
         slug:"Windows 11 Professional Digital License",
         // desc:"Windows 11 Professional Digital License",
         // img:w11prof,
@@ -356,7 +356,7 @@ export const search=[
         price:20.99,
         notprice:25,
     
-        name:"MICROSOFT Windows 10 Enterprise",
+        name:"Windows10Enterprise",
         alt:"Windows 10 enterprise product key license ",
         // img:w10en,
         img:"/img/w10entreprise.webp",
@@ -377,7 +377,7 @@ export const search=[
     
         // img:w11entreprise,
         img:'/img/win11entreprise.webp',
-        name:"MICROSOFT Windows 11 Enterprise –INSTANT DELIVERY-",
+        name:"Windows11Enterprise",
         // img:w11entreprise,
         meta:'Buy Microsoft Windows 11 Enterprise Product Key for the best price at instant key. Order now and download the activation key instantly'
     
@@ -392,7 +392,7 @@ export const search=[
         alt:"Windows 11 Home product key license ",
         notprice:9.99,
         price:7.99,
-        name:"MICROSOFT WINDOWS 11 HOME  –INSTANT DELIVERY-",
+        name:"WINDOWS11HOME",
         // img:w11h,
         img:'/img/w11home.webp',
         meta:'Buy Microsoft Windows 11 Home Product Key for the best price at instant key. Order now and download the activation key instantly'
@@ -400,7 +400,7 @@ export const search=[
     },
     {
         index:'o1',
-        name:'Office 2019 Home and Business for Mac Digital License',
+        name:'Office2019HomeandBusinessforMacDigitalLicense',
         img:'/img/Microsoft-Office-2019-Home-and-Business-IMG-key.webp',
         slug:'Office 2019 Home and Business for Mac Digital License',
         title:'Office 2019 Home and Business for Mac',
@@ -412,7 +412,7 @@ export const search=[
     },
     {
         index:'o2',
-        name:'Office 2019 Professional Plus Digital License',
+        name:'Office2019ProfessionalPlusDigitalLicense',
         img:'/img/Microsoft-Office-2019-Professional-Plus.webp',
         title:'Office 2019 Professional Plus',
         slug:'Office 2019 Professional Plus Digital License',
@@ -427,7 +427,7 @@ export const search=[
     },
     {
         index:'o3',
-        name:'Office 2021 Home and Business Digital License',
+        name:'Office2021HomeandBusinessDigitalLicense',
         img:"/img/Microsoft-Office-2021-Home-and-Business-IMG-box.webp",
         title:'Office 2021 Home and Business',
         notprice:50.99,
@@ -442,7 +442,7 @@ export const search=[
     },
     {
         index:'o4',
-        name:'Office 2021 Home and Business for Mac Digital License',
+        name:'Office2021HomeandBusinessforMacDigitalLicense',
         img:"/img/Microsoft-Office-2021-Home-and-Business-for-Mac.webp",
         title:'Office 2021 Home and Business',
         notprice:50.99,
@@ -456,7 +456,7 @@ export const search=[
     },
     {
         index:'o5',
-        name:'Office 2021 Home and Student Digital License',
+        name:'Office2021HomeandStudentDigitalLicense',
         img:"/img/Microsoft-Office-2021-Home-and-Student-IMG.webp",
         title:'Office 2021 Home and Student',
         notprice:40.99,
@@ -469,7 +469,7 @@ export const search=[
     },
     {
         index:'o6',
-        name:'Office 2019 Professional Plus Binding License',
+        name:'Office2019ProfessionalPlusBindingLicense',
         img:"/img/Microsoft-Office-2019-Professional-Plus.webp",
         title:'Office 2019 Professional Plus Binding',
         notprice:45.99,
@@ -483,7 +483,7 @@ export const search=[
     
     }, {
         index:'o7',
-        name:'Office 2021 Professional Plus Digital License',
+        name:'Office2021ProfessionalPlusDigitalLicense',
         img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
         title:'Office 2021 Professional Plus Digital License',
         notprice:40.99,

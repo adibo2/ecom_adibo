@@ -120,7 +120,7 @@ const Item = (props) => {
 
     </div>
     <div className={css["product__card-content"]}>
-        <h2>{props.name}</h2>
+        <h2>{props.slug}</h2>
     </div>
     <div className={css["product__card-price"]}>
         <del className={css.del}>

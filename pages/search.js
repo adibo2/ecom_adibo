@@ -46,7 +46,10 @@ export async function getServerSideProps({query}) {
     //   console.log(queryFilter);
       await db.connect();
 
-      const productDocs = await Fetch.find({ name: { $regex: searchQuery, $options: 'i', }}).lean();
+      // const productDocs = await Fetch.find({ name: { $regex: RegExp(searchQuery.replace(/\s+/g, "")), $options: 'i', }}).lean();
+      const productDocs = await Fetch.find({ name: { $regex: RegExp(searchQuery.replace(/\s+/g, ""),'i')}}).lean();
+
+
 
       
 
