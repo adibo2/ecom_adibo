@@ -28,8 +28,9 @@ const Searchx = (props) => {
         <Filter></Filter>
         <Count taille={props.countProducts} search={props.searchQuery}></Count>
         {/* <Info></Info> */}
-        {query.query.startsWith('wi') &&  <Productw products={props.products}></Productw> }
-        {query.query.startsWith('of') &&  <Productoff products={props.products}></Productoff> }
+        {/* {query.query.startsWith('wi') &&  <Productw products={props.products}></Productw> } */}
+        {/* {query.query.startsWith('of') &&  <Productoff products={props.products}></Productoff> } */}
+        <Productw products={props.products}></Productw>
         
         {/* <Productw products={props.products}></Productw> */}
         
