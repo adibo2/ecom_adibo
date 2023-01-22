@@ -26,7 +26,7 @@ const Searchx = (props) => {
     <div className={styles.container3}>
         <Navbar></Navbar>
         <Filter></Filter>
-        <Count taille={props.countProducts} search={props.searchQuery}></Count>
+        {/* <Count taille={props.countProducts} search={props.searchQuery}></Count> */}
         {/* <Info></Info> */}
         {query.query.startsWith('wi') &&  <Productw products={props.products}></Productw> }
         {query.query.startsWith('of') &&  <Productoff products={props.products}></Productoff> }

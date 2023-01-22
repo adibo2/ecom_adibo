@@ -29,7 +29,7 @@
 .container3 {
   display: grid;
   grid-template-rows:17vh -1vh 30rem;
-  // grid-template-columns: minmax(6rem,1fr) repeat(12,minmax(min-content,14rem)) minmax(6rem,1fr) ;
+  grid-template-columns: minmax(6rem,1fr) repeat(12,minmax(min-content,14rem)) minmax(6rem,1fr) ;
 
   // grid-template-rows:12vh 10vh repeat(3, min-content);
 
