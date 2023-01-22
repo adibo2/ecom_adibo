@@ -1,11 +1,26 @@
+@import "./../../styles/respon.module.scss";
+
 .Linko{
     grid-column: 1/-1;
     padding: 2.5rem 0rem 0rem 4rem;
+    @include respons(phone){
+        padding: 2.5rem 0rem 0rem 2rem;
+
+
+
+    }
     &__flex{
         display: flex;
         gap: .4rem;
         font-size: 1.275rem;
         line-height: 1.45rem;
+        @include respons(phone){
+            font-size: 1.4rem;
+            line-height: 1.45rem;
+    
+    
+    
+        }
     }
 }
 .span{
