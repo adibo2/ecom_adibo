@@ -91,3 +91,16 @@ export default async function handler(req, res) {
       }
       return res.status(400).json({ message: "Bad request" });
 }
+// 8xWindows 10 Professional product key license 
+// 10xWindows 11 Professional license product key
+// 5XWindows 10 Enterprise Digital License
+// 5XWindows 11 Enterprise Digital License
+// 8XWindows 11 Home Digital License
+
+// 5xOffice 2019 Home and Business for Mac Digital License
+// 5xOffice 2019 Professional Plus Digital License
+// 5xOffice 2021 Home and Business
+// 5xOffice 2021 Home and Business for Mac
+// 5xOffice 2021 Home and Student
+// 3XOffice 2019 Professional Plus Binding License
+// 5xOffice 2021 Professional Plus Digital License
