@@ -32,10 +32,12 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
   return(
     <>
     <Script
+    id='myscript'
     strategy='lazyOnload'
     src={`https://www.googletagmanager.com/gtag/js?id=G-GX5RHW5XHG`}/>
 
     <Script
+    id='myscript1'
     strategy='lazyOnload'>
     {`
       window.dataLayer = window.dataLayer || [];
