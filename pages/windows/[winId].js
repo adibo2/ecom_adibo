@@ -109,20 +109,6 @@ const scrollhandler=()=>{
   console.log(scrollreview)
 }
 
-
-
-    // const addhandler=(windows)=>{
-    //     Cartctx.addItem({
-    //         id:windows.id,
-    //         name:windows.name,
-    //         price:windows.price,
-    //         img:windows.img,
-    //       })
-    // }
-//     const onAddCart=(item)=>{
-//    Cartctx.addItem(item);
-
-//   }
   return (
     <>
     <Head>
@@ -141,7 +127,7 @@ const scrollhandler=()=>{
         notprice={product.notprice} numReviews={reviews.length} price={product.price} stock={product.stock}></Detail>
         {/* <ToastContainer position="bottom-center" limit={1} /> */}
 
-        <Tabo scrollreview={scrollreview} data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} onReview={reviewhandler} alt={product.alt} reviews={reviews}></Tabo>
+        <Tabo scollhandler={scrollhandler} scrolldown={scrollreview} scrollreview={scrollreview} data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} onReview={reviewhandler} alt={product.alt} reviews={reviews}></Tabo>
 
         <Footer></Footer>
 

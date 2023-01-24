@@ -87,7 +87,6 @@ function Tabo(props) {
   const [toggleState, setToggleState] = useState(0);
   const [descrp, Setdescrp] = useState(0);
   const router=useRouter();
-  const [rat, setrat] = useState(null);
   const [value, setvalue] = useState(2);
 
   console.log(router.query)
@@ -102,6 +101,14 @@ function Tabo(props) {
     reset,
     formState: { errors },
   } = useForm();
+  useEffect(()=>{
+    if(props.scrolldown){
+
+      setToggleState(4)
+    }
+    
+
+  },[props.scrolldown,props.scollhandler])
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -154,7 +161,7 @@ function Tabo(props) {
           </button> */}
       </div>
 
-      <div className="content-tabs">
+      <div id="reviews" className="content-tabs">
         {props.data.map((data, index) => {
           // console.log("index" + index);
           // console.log("toggleState " + toggleState);
