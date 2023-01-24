@@ -30,7 +30,6 @@ const MainSeller = (props) => {
 
     //     }
     const clickhandler=(product)=>{
-      console.log("heloo from the cart");
       Cartctx.addItem({
         id:product.slug,
         slug:product.name,
