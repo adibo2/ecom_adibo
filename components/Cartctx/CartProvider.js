@@ -12,11 +12,25 @@ const Reducer=(state,action)=>{
     if(action.type==='ADD'){
         // const updatetotalamount=state.totalamount*1 + parseInt(action.payload.reduce((a, c) => a + c.amount * c.price, 0).toFixed(2));
         let updateitems;
-        if(state.items.find((item)=>item.id===action.payload.id)){
-            updateitems=state.items.map((item)=>(
-                item.id===action.payload.id ? {...item,amount:item.amount+1} : item
+        // if(state.items.find((item)=>item.id===action.payload.id)){
+        //     updateitems=state.items.map((item)=>(
+        //         item.id===action.payload.id ? {...item,amount:item.amount+1} : item
 
-            ))
+        //     ))
+        // }
+        if(state.items.find((item)=>item.id===action.payload.id)){
+            updateitems=state.items.map((item)=>{
+                if(item.amount+action.payload.amount <= item.stock)
+                {
+                    return item.id===action.payload.id ? {...item,amount:item.amount+action.payload.amount,subtotal:item.subtotal+action.payload.subtotal} : item
+                }
+                else{
+                    return item.id===action.payload.id ? {...item,amount:item.stock} : item
+
+                }
+                
+
+        })
         }
         else{
             action.payload.amount=1;
