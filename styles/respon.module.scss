@@ -38,6 +38,30 @@
             @content
         }
     }
+    @else if $breakpoint==phone1 {
+        //600PX/16
+        @media (max-width:33.5em) {
+            @content
+        }
+    }
+    @else if $breakpoint==phone2 {
+        //600PX/16
+        @media (max-width:30.5em) {
+            @content
+        }
+    }
+    @else if $breakpoint==phone3 {
+        //600PX/16
+        @media (max-width:27.5em) {
+            @content
+        }
+    }
+    @else if $breakpoint==phone4 {
+        //600PX/16
+        @media (max-width:23.5em) {
+            @content
+        }
+    }
   
   
   

@@ -7,11 +7,8 @@ import { useRouter } from 'next/router';
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
-
-
-
+import Script from 'next/script';
 import { SessionProvider, useSession } from 'next-auth/react';
-
 const progress = new ProgressBar({
   size: 4,
   color: "#FE595E",
@@ -22,8 +19,35 @@ Router.events.on("routeChangeStart", progress.start);
 Router.events.on("routeChangeComplete", progress.finish);
 Router.events.on("routeChangeError", progress.finish);
 
+{/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-GX5RHW5XHG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GX5RHW5XHG');
+</script> */}
+
 function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
   return(
+    <>
+    <Script
+    strategy='lazyOnload'
+    src={`https://www.googletagmanager.com/gtag/js?id=G-GX5RHW5XHG`}/>
+
+    <Script
+    strategy='lazyOnload'>
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GX5RHW5XHG');
+
+    `}
+    </Script>
+
+    
+
     <SessionProvider session={session}>
     <CartProvider>
     <FilterProvider>
@@ -40,6 +64,7 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
 
     </CartProvider>
     </SessionProvider>
+    </>
 
 
     

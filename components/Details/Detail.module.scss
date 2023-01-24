@@ -213,7 +213,31 @@
     font-size: 1.8rem;
     padding: 1rem 1.4rem;
 
+    width: 25%;
+  }
+  @include respons(phone1) {
+    justify-content: space-between;
+
+    font-size: 1.8rem;
+    padding: 1rem 1.4rem;
+
+    width: 30%;
+  }
+  @include respons(phone2) {
+    justify-content: space-between;
+
+    font-size: 1.8rem;
+    padding: 1rem 1.4rem;
+
     width: 34%;
+  }
+  @include respons(phone3) {
+    justify-content: space-between;
+
+    font-size: 1.8rem;
+    padding: 1rem 1.4rem;
+
+    width: 45%;
   }
   // &:hover{
   //     transform:scale(1.05,1.1);
