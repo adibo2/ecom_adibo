@@ -73,11 +73,13 @@ const WindowsDetails =  ({product,descrp}) => {
     useEffect(()=>{
        getdata();
     },[])
+
     const reviewhandler=useCallback(async ()=>{
       try {
    
         const { data } = await axios.get(`/api/product/${product._id}`);
          Setreview(data.reviews)
+         console.log("awdii");
         // console.log("data"+data)
        
 
@@ -104,6 +106,7 @@ const WindowsDetails =  ({product,descrp}) => {
   useEffect(() =>  {
    handle();
 },[handle]);
+
 const scrollhandler=()=>{
   Setscrollreview(true)
   console.log(scrollreview)
