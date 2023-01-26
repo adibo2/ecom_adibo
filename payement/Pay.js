@@ -16,6 +16,7 @@ import { getError } from "../utils/error";
 import {datana,email,optional} from "./dataPay";
 import { Fade } from "react-awesome-reveal";
 import { useController } from 'react-hook-form';
+import pay from "/public/checklist.gif"
 import {
   PayPalScriptProvider,
   PayPalButtons,
@@ -171,8 +172,6 @@ const Pay = () => {
       dispatch({ type: 'FETCH_REQUEST' });
       dispatch({type: 'MODIFY'})
 
-
-      
       router.push({
         pathname: router.pathname,
         query: { id: data._id },
@@ -464,6 +463,7 @@ const Pay = () => {
           {/* <ButtonPay></ButtonPay> */}
           <button type="submit" className={`${css.button} ${modify ? css.none : '' } `} value="submit">
             {loadingx ? 'continue to payement'  : <Loader></Loader> }
+            <Image src={pay} className={css.button__image}></Image>
           </button>
           {modify && (
             isPending ? (

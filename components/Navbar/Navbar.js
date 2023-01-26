@@ -11,6 +11,7 @@ import Link from "next/link";
 import Cartcontext from "../Cartctx/Cartcontext";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { gsap } from "gsap/dist/gsap";
+import { choix } from "./filter";
 
 
 const Navbar = () => {
@@ -21,14 +22,9 @@ const Navbar = () => {
   const CartCtx = useContext(Cartcontext);
   const [cartItems,setCartItems] =useState(0);
   const [query, setQuery] = useState('');
+  const [filterData,setFilterData] = useState([])
 
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     dropdown.current,
-  //     { y: 10, opacity: 0 },
-  //     { opacity: 1, y: 0, ease: "back(3)", duration: 0.7 }
-  //     );
-  //   }, [open]);
+
     useEffect(()=>{
       setCartItems(CartCtx.items.length)
   
@@ -68,6 +64,25 @@ const Navbar = () => {
 
 
   }
+  const changehandler=(e)=>{
+    setQuery(e.target.value)
+    const searchWord = e.target.value;
+    const newfilter=choix.filter((data)=>(
+      data.name.toLocaleLowerCase().includes(searchWord.toLocaleLowerCase())
+    ))
+    if(searchWord === ""){
+      setFilterData([])
+    }
+    else{
+      setFilterData(newfilter)
+
+    }
+
+  }
+  const pushhandler=(item)=>{
+    router.push(`/search?query=${item.name}`);
+
+  }
 
 
   return (
@@ -97,13 +112,28 @@ const Navbar = () => {
                 !active ? css["search-field-open"] : ""
               }`}
             >
+              <div className={`${css["search-field_flex"]}`}>
               <input
                 type="text"
                 className={css.input}
                 placeholder="Search..."
-                onChange={(e)=>setQuery(e.target.value)}
+                onChange={changehandler}
               />
               <FaSearch onClick={()=>searchhandler()} className={css.search__input}></FaSearch>
+
+              </div>
+            {filterData.length !=0 &&
+            
+              <div  className={css.dataresults}>
+                {filterData.map((item,index)=>(
+                  <div onClick={()=>pushhandler(item)} className={css.dataresults_div} key={index}>
+                    <p className={css.dataresults_p}>{item.name}</p>
+                    </div>
+
+                ))}
+
+              </div>
+            }
             </form>
           </div>
         </li>

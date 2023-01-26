@@ -53,7 +53,7 @@ export async function getServerSideProps({query}) {
 
       
 
-      const countProducts = await Fetch.countDocuments({ name: { $regex: searchQuery, $options: 'i', }});
+      const countProducts = await Fetch.countDocuments({ name: { $regex: RegExp(searchQuery.replace(/\s+/g, ""),'i')}});
       await db.disconnect();
     //   const products = productDocs.map(db.convertDocToObj);
     return {

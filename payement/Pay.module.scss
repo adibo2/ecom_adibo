@@ -213,17 +213,28 @@ gap: .5rem;
     border: none;
     width: 100%;
 
-
-
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     line-height: 1.2rem;
+    font-family: 'Nunito';
     outline: none;
     margin-bottom: 5rem;
     margin-top: 2rem;
     border-radius: .7rem;
     background-image: none;
     cursor: pointer;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    &__image{
+        width: 10%;
+        height: 2%;
+        aspect-ratio: 4/2;
+        object-fit: contain;
+        mix-blend-mode: color-burn;
+ 
+
+    }
     // background-color: rgb(79 70 229 / 1)
     &:hover{
         background-color: rgb(61, 55, 181);
