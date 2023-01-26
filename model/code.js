@@ -14,7 +14,14 @@ export const code_data=[{
 }
 ]
 const codeSchema=new mongoose.Schema({
-    code:{type:String,required:true},
+    code:{
+        type:String,
+        required:true
+    },
+    isUsed: {
+        type: Boolean,
+        default: false
+    },
 },
 {
     timestamps:true
