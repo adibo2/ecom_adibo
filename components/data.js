@@ -28,8 +28,7 @@ export const data_windows=[{
     name:'Windows 10 Professional Digital License',
     slug:'Windows 10 Professional Digital License',
     push:'windows',
-    // img:w10pro,
-    
+        
     index:'w1',
     img:'/img/Pro-W-10.webp',
     desc:'Windows 10 Professional Digital License',
@@ -37,8 +36,10 @@ export const data_windows=[{
     notprice:30,
     stock:8,
     alt:"Windows 10 Professional product key license ",
-    title:'Microsoft Windows 10 Professional',
-    meta:'Buy Microsoft Windows 10 Professional Product Key for the best price at instant key. Order now and download the activation key instantly'
+    title:'Get Your Hands on a Genuine Windows 10 Key at the Lowest Price',
+    meta:'Get the best deal on a Windows 10 Pro key and upgrade your operating system today. High-quality product and fast delivery guaranteed. Order now!'
+    // meta:'Buy Microsoft Windows 10 Professional Product Key for the best price at instant key. Order now and download the activation key instantly'
+
 
 },
 {
@@ -47,7 +48,7 @@ export const data_windows=[{
     index:'w2',
     push:'windows',
 
-    name:"Windows 11 Professional Digital License",
+    name:"Windows 11 Professional DigitalLicense",
     slug:"Windows 11 Professional Digital License",
     desc:"Windows 11 Professional Digital License",
     // img:w11prof,
@@ -56,8 +57,9 @@ export const data_windows=[{
     notprice:30,
     alt:"Windows 11 Professional license product key",
 
-    title:'Microsoft Windows 11 Professional',
-    meta:'Buy Microsoft Windows 11 Professional Product Key for the best price at instant key. Order now and download the activation key instantly'
+    // title:'Microsoft Windows 11 Professional',
+    title:'Upgrade to Windows 11 for the Best User Experience at an Affordable Price',
+    meta:'Get the best deal on a Windows 10 Pro key and upgrade your operating system today. High-quality product and fast delivery guaranteed. Order now!'
 
 },
 // {
@@ -75,32 +77,32 @@ export const data_windows=[{
 // },
 {
     index:'w4',
-    push:'windows',
-
-    title:' Windows 10 Enterprise Digital License',
+    title:'Unlock the full potential of Windows 11 Enterprise',
     slug:'Windows 10 Enterprise Digital License',
     stock:5,
 
     desc:"Windows 10 Enterprise Digital License",
     price:20.99,
     notprice:25,
+    push:'windows',
 
-    name:"Windows 10 Enterprise Digital License",
-    alt:"Windows 10 enterprise product key license ",
+
+    name:"Windows 10 Enterprise",
+    alt:"Windows 10 enterprise product key license",
     // img:w10en,
     img:"/img/w10entreprise.webp",
-    meta:'Buy Microsoft Windows 10 Enterprise Product Key for the best price at instant key. Order now and download the activation key instantly'
+    meta:'Upgrade to Windows 10 Enterprise and experience the latest features and security updates. Low prices and high-quality product guaranteed. Order now!'
 
 },
 {
     index:'w6',
-    push:'windows',
-
-    title:'Windows 11 Enterprise Digital License',
+    title:'Unlock the full potential of Windows 11 Enterprise',
     slug:'Windows 11 Enterprise Digital License',
     desc:"Windows 11 Enterprise Digital License",
     alt:"Windows 11 enterprise product key license ",
     stock:5,
+    push:'windows',
+
 
 
     price:24.99,
@@ -108,28 +110,27 @@ export const data_windows=[{
 
     // img:w11entreprise,
     img:'/img/win11entreprise.webp',
-
-    name:"Windows 11 Enterprise Digital License",
+    name:"Windows 11 Enterprise",
     // img:w11entreprise,
-    meta:'Buy Microsoft Windows 11 Enterprise Product Key for the best price at instant key. Order now and download the activation key instantly'
+    meta:'Upgrade to Windows 11 Enterprise and experience the latest features and security updates. Low prices and high-quality product guaranteed. Order now!'
 
 },
 {
     index:'w5',
-    push:'windows',
-
-    title:'Windows 11 Home Digital License',  
+    title:'Affordable Windows 11 Home Key for Your PC',  
     slug:'Windows 11 Home Digital License',
     desc:"Windows 11 Home Digital License",
     stock:8,
+    push:'windows',
+
 
     alt:"Windows 11 Home product key license ",
     notprice:9.99,
     price:7.99,
-    name:"WINDOWS 11 HOME Digital License",
+    name:"WINDOWS 11 HOME",
     // img:w11h,
     img:'/img/w11home.webp',
-    meta:'Buy Microsoft Windows 11 Home Product Key for the best price at instant key. Order now and download the activation key instantly'
+    meta:'Get a high-quality Windows 11 Home key at a low price. Upgrade your operating system and enjoy the latest features. Fast delivery available. Order now!'
     
 },
 ]
@@ -338,8 +339,9 @@ export const search=[
         notprice:30,
         stock:8,
         alt:"Windows 10 Professional product key license ",
-        title:'Microsoft Windows 10 Professional',
-        meta:'Buy Microsoft Windows 10 Professional Product Key for the best price at instant key. Order now and download the activation key instantly'
+        title:'Get Your Hands on a Genuine Windows 10 Key at the Lowest Price',
+        meta:'Get the best deal on a Windows 10 Pro key and upgrade your operating system today. High-quality product and fast delivery guaranteed. Order now!'
+        // meta:'Buy Microsoft Windows 10 Professional Product Key for the best price at instant key. Order now and download the activation key instantly'
     
     },
     {
@@ -357,8 +359,9 @@ export const search=[
         notprice:30,
         alt:"Windows 11 Professional license product key",
     
-        title:'Microsoft Windows 11 Professional',
-        meta:'Buy Microsoft Windows 11 Professional Product Key for the best price at instant key. Order now and download the activation key instantly'
+        // title:'Microsoft Windows 11 Professional',
+        title:'Upgrade to Windows 11 for the Best User Experience at an Affordable Price',
+        meta:'Get the best deal on a Windows 10 Pro key and upgrade your operating system today. High-quality product and fast delivery guaranteed. Order now!'
     
     },
     // {
@@ -376,7 +379,7 @@ export const search=[
     // },
     {
         index:'w4',
-        title:' Windows 10 Enterprise Digital License',
+        title:'Unlock the full potential of Windows 11 Enterprise',
         slug:'Windows 10 Enterprise Digital License',
         stock:5,
     
@@ -387,15 +390,15 @@ export const search=[
 
     
         name:"Windows10Enterprise",
-        alt:"Windows 10 enterprise product key license ",
+        alt:"Windows 10 enterprise product key license",
         // img:w10en,
         img:"/img/w10entreprise.webp",
-        meta:'Buy Microsoft Windows 10 Enterprise Product Key for the best price at instant key. Order now and download the activation key instantly'
+        meta:'Upgrade to Windows 10 Enterprise and experience the latest features and security updates. Low prices and high-quality product guaranteed. Order now!'
     
     },
     {
         index:'w6',
-        title:'Windows 11 Enterprise Digital License',
+        title:'Unlock the full potential of Windows 11 Enterprise',
         slug:'Windows 11 Enterprise Digital License',
         // desc:"Windows 11 Enterprise Digital License",
         alt:"Windows 11 enterprise product key license ",
@@ -411,12 +414,12 @@ export const search=[
         img:'/img/win11entreprise.webp',
         name:"Windows11Enterprise",
         // img:w11entreprise,
-        meta:'Buy Microsoft Windows 11 Enterprise Product Key for the best price at instant key. Order now and download the activation key instantly'
+        meta:'Upgrade to Windows 11 Enterprise and experience the latest features and security updates. Low prices and high-quality product guaranteed. Order now!'
     
     },
     {
         index:'w5',
-        title:'Windows 11 Home Digital License',  
+        title:'Affordable Windows 11 Home Key for Your PC',  
         slug:'Windows 11 Home Digital License',
         // desc:"Windows 11 Home Digital License",
         stock:8,
@@ -429,7 +432,7 @@ export const search=[
         name:"WINDOWS11HOME",
         // img:w11h,
         img:'/img/w11home.webp',
-        meta:'Buy Microsoft Windows 11 Home Product Key for the best price at instant key. Order now and download the activation key instantly'
+        meta:'Get a high-quality Windows 11 Home key at a low price. Upgrade your operating system and enjoy the latest features. Fast delivery available. Order now!'
         
     },
     {
