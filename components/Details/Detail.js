@@ -165,6 +165,9 @@ const Detail = (props) => {
                 <Image src={paypal} width={55} height={65} alt="windows keys payement with paypal"></Image>
 
             </div>
+            <div className={css.category}>
+            Category : Operating System
+            </div>
       </div>
     </div>
     </>

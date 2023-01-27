@@ -265,6 +265,9 @@ const Detailoff = (props) => {
 
 
             </div>
+            <div className={css.category}>
+            Category : Microsoft Office
+            </div>
       </div>
     </div>
     </>
