@@ -1,33 +1,14 @@
 import React, { useState,useContext } from 'react'
 import css from "./Productoff.module.scss"
 import { data_office } from '../data'
-import Image from 'next/image'
 import Item from './Itemoff'
 import { useRouter } from 'next/router'
-import Filter from '../Filter/Filter'
 import Cartcontext from '../Cartctx/Cartcontext'
 
 const Productoff = (props) => {
   const router=useRouter()
   const Cartctx=useContext(Cartcontext);
 
-    // const [add,Setadd]=useState(true);
-
-    
-    //     useEffect(()=>{
-    //         const timer=setTimeout(()=>{
-    //             Setadd(true)
-
-    //         },4000)
-    //         return () => clearTimeout(timer);
-
-    //     },[add])
-
-    
-    //     const clickhandler=()=>{
-    //         Setadd(false)
-
-    //     }
     const clickhandler=(product)=>{
       console.log("heloo from the cart");
       Cartctx.addItem({

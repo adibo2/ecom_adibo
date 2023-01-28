@@ -6,7 +6,6 @@ import user from "/public/img/user.png";
 import { useForm, Controller } from "react-hook-form";
 import Rating from "@mui/material/Rating";
 import Stack from "@mui/material/Stack";
-import axios from "axios";
 import css1 from "./../../payement/Pay.module.scss";
 import { useRouter } from "next/router";
 
@@ -85,18 +84,13 @@ const reviews = [
 ];
 function Tabo(props) {
   const [toggleState, setToggleState] = useState(0);
-  const [descrp, Setdescrp] = useState(0);
   const router=useRouter();
   const [value, setvalue] = useState(2);
 
-  console.log(router.query)
-  useEffect(()=>{
 
-  },[])
   const {
     register,
     handleSubmit,
-    watch,
     control,
     reset,
     formState: { errors },
@@ -114,12 +108,11 @@ function Tabo(props) {
     setToggleState(index);
   };
 
-  // { firstname, email,rating,note }
+
   const onSubmit = async (data) => {
     // console.log("data reviews"+data)
     props.onsubmit(data)
     reset();
-    // setrat(3)
   };
   
 
@@ -147,18 +140,7 @@ function Tabo(props) {
               Reviews ({props.reviewtaille > 0 ? (props.reviewtaille) : (0) })
               {/* ({props.reviewtaille}) */}
             </button>
-        {/* <button
-            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(2)}
-          >
-            Tab 2
-          </button>
-          <button
-            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-            onClick={() => toggleTab(3)}
-          >
-            Tab 3
-          </button> */}
+
       </div>
 
       <div id="reviews" className="content-tabs">
@@ -373,14 +355,6 @@ function Tabo(props) {
           )}
         
         />
-
-                    {/* <Stack spacing={1}>
-                      <Rating
-                        name="half-rating"
-                        defaultValue={0}
-                        precision={0.5}
-                      />
-                    </Stack> */}
                     {reviews.map((ema) => (
                       <div className={css1.pay__info_input_email} key={ema.id}>
                         <label htmlFor={ema.for} className={css1.label}>

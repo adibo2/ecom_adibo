@@ -1,7 +1,6 @@
 import React, {
   useEffect,
   useRef,
-  useLayoutEffect,
   useState,
   useContext,
 } from "react";
@@ -13,20 +12,16 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
-import FilterCtx from "./../Filterctx/FilterCtx";
 import css1 from "./../Navbar/Navbar.module.scss";
 import Cartcontext from "../Cartctx/Cartcontext";
 import { useRouter } from "next/router";
 import { AiFillCloseCircle } from "react-icons/ai";
-import logo from "/public/img/winlogo1.webp";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Filter = (props) => {
-  // const [categorie, setcategorie] = useState("microsoft_office");
   const cart = useRef();
-  const filterCtx = useContext(FilterCtx);
   const [open, Setopen] = useState(false);
   const dropdown = useRef();
   const CartCtx = useContext(Cartcontext);

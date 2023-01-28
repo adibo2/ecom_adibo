@@ -14,24 +14,19 @@ import Footer from '../../components/Footer/Footer';
 import Product from '../../model/Product';
 import Cartcontext from '../../components/Cartctx/Cartcontext';
 import axios from 'axios';
-import 'react-toastify/dist/ReactToastify.css';
 
-import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
 
 
 
 
 const WindowsDetails =  ({product,descrp}) => {
     const router=useRouter();
-    const Cartctx=useContext(Cartcontext);
     const [reviews,Setreview]=useState([]);
     const [scrollreview,Setscrollreview]=useState(false);
 
     
     const { winId }=router.query;
-    console.log("yea"+winId);
-    const handle=useCallback(async (data,date)=>{
+    const handle=useCallback(async (data)=>{
       if(!data){
         return;
       }
@@ -119,13 +114,10 @@ const scrollhandler=()=>{
 
     <Navbar></Navbar>
     <Filter></Filter>
-    <Linko href="/windows" log='Windows' product={product.title}></Linko>
-        {/* <h1>hello {officeId} </h1>
-        <Image src={windows.img} width={230} height={270} alt="windows Keys" />
-        <h1>{windows.name}</h1> */}
+    <Linko href="/windows" log='Windows' product={product.slug}></Linko>
+
         <Detail onScroll={()=>scrollhandler()} id={winId}  img={product.img} name={product.title} product={product} alt={product.alt}
         notprice={product.notprice} numReviews={reviews.length} price={product.price} stock={product.stock}></Detail>
-        {/* <ToastContainer position="bottom-center" limit={1} /> */}
 
         <Tabo scollhandler={scrollhandler} scrolldown={scrollreview} scrollreview={scrollreview} data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} onReview={reviewhandler} alt={product.alt} reviews={reviews}></Tabo>
 
@@ -159,36 +151,5 @@ export async function getServerSideProps(context) {
       },
     };
   }
-// export async function getStaticProps(context){
-//     const winId=context.params.winId.toString();
-//     // await db.connect();
-//     const products = await Product.findOne({ slug:winId }).lean();
 
-//     const windowsData=data_windows.find((el)=> el.index === winId)
-//     const descrwindows=filter_data.filter((el)=> el.id === winId)
-//     // console.log(descrwindows[0].data);
-//     // console.log(winId);
-//     return{
-//         props:{
-//             windows:windowsData,
-//             descrp:descrwindows
-//         },
-//     }
-
-// }
-// export async function getStaticPaths() {
-//     const paths=data_windows.map(win=>{
-//         return{params:{winId:win.index.toString()}}
-//     }
-    
-    
-//     )
-//     console.log(paths)
-//     return{
-//         paths,
-//         fallback:false
-//     }
- 
-
-// }
 export default WindowsDetails

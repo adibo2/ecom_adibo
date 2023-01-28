@@ -1,15 +1,7 @@
 @import "./../../styles/respon.module.scss";
 
 .Navbar{
-    // background-color: black;
     grid-column: 1/-1;
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-
-    // position: sticky;
-    // top: 0;
-    // height: 100vh;
     height: 100px;
     z-index: 90;
     padding: 2rem 6rem 2rem 6rem;
@@ -169,7 +161,6 @@ overflow-y: auto;
     margin-top: .8rem;
     display: flex;
     flex-direction: column;
-    // border-bottom: solid 1.5px #e7e7e7;
     gap: 0rem;
     &_item{
         width: 100%;
@@ -339,11 +330,7 @@ overflow-y: auto;
     padding: 0 10px 10px;
 
 }
-// --body-color: #18191A;
-// --nav-color: #242526;
-// --side-nav: #242526;
-// --text-color: #CCC;
-// --search-bar: #242526
+
 .dataresults{
     width: 24.7rem;
     height: 20rem;

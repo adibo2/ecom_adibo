@@ -1,12 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import css from "./Product.module.scss"
-import { data_windows } from '../data'
-import Image from 'next/image'
-import {AiOutlineShoppingCart} from 'react-icons/ai'
-import {BsCartCheckFill} from 'react-icons/bs'
-import gsap from "gsap";
 import Item from './Item'
-import Filter from '../Filter/Filter'
 import Cartcontext from '../Cartctx/Cartcontext'
 import { useRouter } from 'next/router'
 
