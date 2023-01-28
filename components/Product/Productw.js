@@ -14,23 +14,7 @@ const Productw = (props) => {
   const Cartctx=useContext(Cartcontext);
   const router=useRouter()
   console.log("query"+router.pathname)
-    // const [add,Setadd]=useState(true);
 
-    
-    //     useEffect(()=>{
-    //         const timer=setTimeout(()=>{
-    //             Setadd(true)
-
-    //         },4000)
-    //         return () => clearTimeout(timer);
-
-    //     },[add])
-
-    
-    //     const clickhandler=()=>{
-    //         Setadd(false)
-
-    //     }
     const clickhandler=(product)=>{
       console.log("heloo from the cart");
       Cartctx.addItem({

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400&family=Dancing+Script:wght@700&family=Mukta:wght@200;400&family=Nunito:wght@500;600&family=Poppins&display=swap');
 @import "./../../styles/respon.module.scss";
 .product {
   grid-column: 2/14;
@@ -47,8 +46,7 @@
     cursor: pointer;
     
     &:hover &-image {
-      // transform: scale(1.10)
-      // translateX(-5px);
+
       transform: scale(1.10)
       rotate(-2deg)
       translateX(-5px);
@@ -81,11 +79,7 @@
     
       color: rgb(17 24 39 / 1);
       font-size: 1.2rem;
-      // font-weight: 700;
-      // font-family: 'Cairo', sans-serif;
 
-  
-      // font-family: 'Mukta', sans-serif;
   
       font-family: 'Nunito', sans-serif;
   
