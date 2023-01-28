@@ -16,11 +16,13 @@ const Windows = (props) => {
   return (
     <>
       <Head>
-        <title>All Windows Operating System - Instant software Key</title>
+        {/* <title>All Windows Operating System - Instant software Key</title> */}
+        {/* Softwares Key - Buy your software online and start the installation immediately */}
+        <title>Shop the Best Windows Licence at the Lowest Prices</title>
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="Softwares Key - Buy your software online and start the installation immediately. 
+          content="Shop the best quality and prices on Windows licences for all types. Find the perfect licence for your needs and buy it online today.Plus, our prices are unbeatable. Shop now and save! 
           Increase your productivity today with the full version of Microsoft products. Buy office 2019 key, windows server 2019 activation key,
           windows 11 pro key, windows 10 key,MICROSOFT Windows 10 Enterprise –INSTANT DELIVERY-,MICROSOFT WINDOWS 11 HOME ,
            microsoft office 2019 home and student, windows 10 ultimate sp1 keys, buy office 2016 key"
