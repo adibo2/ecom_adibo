@@ -20,6 +20,8 @@ import {avantages_office_mac} from "./avantages";
 import {avantage_office_hS} from "./avantages";
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
+import { Link as Linko } from 'react-scroll';
+
 import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineMinus, AiOutlinePlus,AiOutlineShoppingCart,AiFillDollarCircle } from 'react-icons/ai';
 const Detailoff = (props) => {
@@ -75,6 +77,8 @@ const Detailoff = (props) => {
         <div className={css.content__h1}>
           {props.name}
         </div>
+        <div className={css.content_review}>
+
         <Stack spacing={1}>
           <Rating
             className={css.stars}
@@ -84,6 +88,11 @@ const Detailoff = (props) => {
             readOnly
           />
         </Stack>
+        <Linko data-text="reviews" to="reviews" smooth={true} spy={true} offset={-150} duration={1500}>
+        <p onClick={props.onScroll} className={css.content_review_p}>({props.numReviews ? props.numReviews : 0} reviews)</p>
+          
+          </Linko>
+          </div>
         {/* /$$$$$$$$$$$$$$$$$$$$$$$$$$$*price $$$$$$$$$$$$$$$$$$$$$*/}
 
         <div className={css["content__price"]}>

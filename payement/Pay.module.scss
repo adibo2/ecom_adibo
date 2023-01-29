@@ -63,6 +63,7 @@
                 font-weight: 500;
                 @include respons(phone){
                     margin-right: 14px;
+                    margin-left: 5px;
                 }
 
             }
@@ -204,6 +205,11 @@ background-color: rgb(254 226 226 / 1);
 display: flex;
 flex-direction: column;
 gap: .5rem;
+@include respons(phone){
+    grid-column: 1/-1;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
 }
 .button{
 

@@ -24,6 +24,8 @@ const OfficeDetail = ({office,descrp}) => {
     const router=useRouter();
     const { officeId }=router.query;
     const [reviews,Setreview]=useState([]);
+    const [scrollreview,Setscrollreview]=useState(false);
+
     
     const handle=async (data)=>{
       if(!data){
@@ -88,6 +90,10 @@ const OfficeDetail = ({office,descrp}) => {
   useEffect(() =>  {
    handle();
 },[handle]);
+const scrollhandler=()=>{
+  Setscrollreview(true)
+  console.log(scrollreview)
+}
 
 
   return (
@@ -102,12 +108,12 @@ const OfficeDetail = ({office,descrp}) => {
     <Filter></Filter>
     <Linko href="/microsoft_office" log="Microsoft Office" product={office.title}></Linko>
 
-    <Detailoff id={officeId}  img={office.img} name={office.title} office={office} alt={office.alt}
+    <Detailoff onScroll={()=>scrollhandler()} id={officeId}  img={office.img} name={office.title} office={office} alt={office.alt}
         notprice={office.notprice} price={office.price} stock={office.stock}></Detailoff>
         {/* <h1>hello {officeId} </h1>
         <Image src={office.img} width={230} height={270} alt="windows Keys" />
         <h1>{office.name}</h1> */}
-        <Taboffice data={descrp[0].data} reviewtaille={reviews.length} buy={descrp[0].data[0].buy} onsubmit={handle} onReview={reviewhandler} alt={office.alt} reviews={reviews} ></Taboffice>
+        <Taboffice scollhandler={scrollhandler} data={descrp[0].data} reviewtaille={reviews.length} scrolldown={scrollreview} scrollreview={scrollreview} buy={descrp[0].data[0].buy} onsubmit={handle} onReview={reviewhandler} alt={office.alt} reviews={reviews} ></Taboffice>
         <Footer></Footer>
 
 

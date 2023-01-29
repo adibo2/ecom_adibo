@@ -85,7 +85,7 @@ const reviews = [
 function Tabo(props) {
   const [toggleState, setToggleState] = useState(0);
   const router=useRouter();
-  const [value, setvalue] = useState(2);
+  const [value, setvalue] = useState(5);
 
 
   const {
@@ -358,7 +358,15 @@ function Tabo(props) {
                     {reviews.map((ema) => (
                       <div className={css1.pay__info_input_email} key={ema.id}>
                         <label htmlFor={ema.for} className={css1.label}>
-                          <span className={css1.span}>{ema.label}</span>
+                          <span 
+                           className={`${css1.span} ${
+                            errors.firstname || errors.email || errors.subject
+                              ? css1.invalid__label
+                              : ""
+                          } `}
+                          >
+                            {ema.label}
+                            </span>
                           <span className={css1.xo}>*</span>
                         </label>
                         <input
@@ -368,14 +376,24 @@ function Tabo(props) {
                           id={ema.for}
                           name={ema.for}
                           type="text"
-                          className={css1.input}
+                          className={`${css1.input} ${
+                            errors.note
+                              ? css1.invalid__input
+                              : ""
+                          } `}
                           autoComplete={ema.give}
                         ></input>
                       </div>
                     ))}
                     <div className={css1.pay__info_input_email}>
                       <label htmlFor="note" className={css1.label}>
-                        <span className={css1.span}>Your review</span>
+                        <span
+                         className={`${css1.span} ${
+                          errors.firstname || errors.email || errors.subject
+                            ? css1.invalid__label
+                            : ""
+                        } `}
+                         >Your review</span>
                       </label>
                       <textarea
                       rows="10" cols="50"
@@ -386,13 +404,17 @@ function Tabo(props) {
                         name="note"
                         type="text"
                         placeholder="Add your review."
-                        className={css.input}
+                        className={`${css1.input} ${
+                          errors.note
+                            ? css1.invalid__input
+                            : ""
+                        } `}
                         autoComplete="off"
                       ></textarea>
                     </div>
                     <div>
                       {/* <div className={css.error}> */}
-                      {errors.firstname && <span>*Name fileld required</span>}
+                      {/* {errors.firstname && <span>*Name fileld required</span>} */}
                       {/* {errors.lastname &&(<span>*Name fileld required</span>)}
       {errors.email &&(<span>*{errors.email?.message}</span>)}
       {errors.repeatemail &&<span>*{errors.repeatemail?.message}</span>} */}

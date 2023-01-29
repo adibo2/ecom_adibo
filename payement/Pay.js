@@ -462,8 +462,10 @@ const Pay = () => {
           </div>
           {/* <ButtonPay></ButtonPay> */}
           <button type="submit" className={`${css.button} ${modify ? css.none : '' } `} value="submit">
-            {loadingx ? 'continue to payement'  : <Loader></Loader> }
-            <Image src={pay} className={css.button__image}></Image>
+            {loadingx ? <>
+              continue to payement
+              <Image src={pay} className={css.button__image}></Image>     
+            </>  : <Loader></Loader> }
           </button>
           {modify && (
             isPending ? (
