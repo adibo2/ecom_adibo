@@ -77,7 +77,7 @@ const Contacto = () => {
     <div className={css.contact}>
         <div className={css.contact_email}>
             <div className={css.contact_email_title}>Instant License Email address</div>
-            <div className={css.emailo}>ahmedlambda@contact</div>
+            <div className={css.emailo}>clientcare@microsoftkeymarket.com</div>
 
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className={css.contact_form}>

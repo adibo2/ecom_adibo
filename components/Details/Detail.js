@@ -93,7 +93,7 @@ const Detail = (props) => {
             readOnly
           />
           <Linko data-text="reviews" to="reviews" smooth={true} spy={true} offset={-150} duration={1500}>
-        <p onClick={props.onScroll} className={css.content_review_p}>({props.numReviews} reviews)</p>
+        <p onClick={props.onScroll} className={css.content_review_p}>({props.numReviews ? props.numReviews : 0} reviews)</p>
           
           </Linko>
 

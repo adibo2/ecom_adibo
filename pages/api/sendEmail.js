@@ -175,14 +175,16 @@ export default async function handler(req, res) {
                 }</p> 
 
                 <p>Here is some video link to help you:</p>
-                <a href="https://www.youtube.com/watch?v=SfRrFKIh2x0&list=LL&index=3">How to Activate Microsoft Office Product Key ?</a>
+                <a href="https://www.youtube.com/watch?v=SfRrFKIh2x0&list=LL&index=3">How to Activate Microsoft Office Product Key ?</a>.
                 <br></br>
-                <a href="https://www.youtube.com/watch?v=_Czrjp3oG20&list=LL&index=4">How to Activate windows Keys?</a>
+                <a href="https://www.youtube.com/watch?v=_Czrjp3oG20&list=LL&index=4">How to Activate windows Keys?</a>. <br></br>
 
-                
-            
-          
-            <p>Please let us know if you have any questions.</p>
+                <p>Please let us know if you have any questions.</p>
+                <div>
+                For any problem with your key (invalid code, download problem, or other) please send us your error message (capture of your entire screen).<br></br>
+                <a href="mailto:clientcare@microsoftkeymarket.com">Contact clientcare@microsoftkeymarket.com </a> and your key will be replaced within 24 hours maximum (response within a few hours).     
+                </div>
+
             <p>Best regards,</p>
             <h4>The Store Team</h4>
           

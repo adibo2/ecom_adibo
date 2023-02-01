@@ -39,7 +39,6 @@ export default async function handler(req, res) {
         html: `<h3>Dear ${firstname} ${lastname} </h3>     
             <p>Your order details:</p>
             ${items}     
-            <p>Please let us know if you have any questions.</p>
             <p>Best regards,</p>
             <h4>The Store Team</h4>
           

@@ -18,8 +18,8 @@ export default async function handler(req, res) {
         try {
           await transporter.sendMail({
             from: email,
-            to: 'Adibbensmina1999@gmail.com',
-            subject: 'Your Order Details',
+            to: 'clientcare@microsoftkeymarket.com',
+            subject: subject,
             text: 'Thank you for confirming your email address.',
             html: `<h3>Dear ${firstname} </h3>
             <br />       

@@ -106,7 +106,7 @@ const scrollhandler=()=>{
     <Linko href="/microsoft_office" log="Microsoft Office" product={office.slug}></Linko>
 
     <Detailoff onScroll={()=>scrollhandler()} id={officeId}  img={office.img} name={office.slug} office={office} alt={office.alt}
-        notprice={office.notprice} price={office.price} stock={unused}></Detailoff>
+        notprice={office.notprice} price={office.price} numReviews={reviews.length} stock={unused}></Detailoff>
         {/* <h1>hello {officeId} </h1>
         <Image src={office.img} width={230} height={270} alt="windows Keys" />
         <h1>{office.name}</h1> */}

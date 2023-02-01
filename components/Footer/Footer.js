@@ -63,7 +63,7 @@ const Footer = () => {
             <div className={css["footer__grid-links"]}>
             <h2 className={css.h2}>CONTACT</h2>
               <ul className={css.ul}>
-                <li className={`${css.li} ${css.li_2}`}>ahmedlambda@contact</li>
+                <li className={`${css.li} ${css.li_2}`}>clientcare@microsoftkeymarket.com</li>
 
               </ul>
 
