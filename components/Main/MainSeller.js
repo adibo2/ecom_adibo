@@ -10,6 +10,7 @@ import ItemSeller from './ItemSeller'
 
 const MainSeller = (props) => {
   const Cartctx=useContext(Cartcontext);
+
   const router=useRouter()
   console.log("query"+router.pathname)
     // const [add,Setadd]=useState(true);

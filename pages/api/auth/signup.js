@@ -23,14 +23,23 @@ export default async function handler(req, res) {
   }
 
     await db.connect();
-    // User.dropIndex( { email: 1 }, { unique: true } )
+    const existingUser = await User.findOne({ email: email });
 
-    const newUser = new User({
-      firstname,
-      lastname,
-      email,
-      repeatemail,
+
+    // const newUser = new User({
+    //   firstname,
+    //   lastname,
+    //   email,
+    //   repeatemail,
   
+    // });
+    const newUser = existingUser
+  ? existingUser
+  : new User({
+    firstname,
+    lastname,
+    email,
+    repeatemail,
     });
     const user = await newUser.save();
     await db.disconnect();

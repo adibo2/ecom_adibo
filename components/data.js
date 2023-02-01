@@ -77,7 +77,7 @@ export const data_windows=[{
 // },
 {
     index:'w4',
-    title:'Unlock the full potential of Windows 11 Enterprise',
+    title:'Unlock the full potential of Windows 10 Enterprise',
     slug:'Windows 10 Enterprise Digital License',
     stock:5,
 
@@ -143,8 +143,9 @@ export const data_office=[
         name:'Office 2019 Home and Business for Mac Digital License',
         img:'/img/Microsoft-Office-2019-Home-and-Business-IMG-key.webp',
         slug:'Office 2019 Home and Business for Mac Digital License',
-        title:'Office 2019 Home and Business for Mac',
-        meta:'Buy Office 2019 Home and Business for Mac Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+        title:'Get the Best Deal on Office 2019 Home and Business Mac License - The Perfect Office License for Your Mac!',
+        meta:'Find the best quality and prices for Office 2021 Home and Business Mac license at our ecommerce store. Enjoy fast delivery and secure checkout. Buy now!',
+        // meta:'Buy Office 2019 Home and Business for Mac Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
         notprice:40.99,
         price:20.99,
         stock:5,
@@ -157,99 +158,103 @@ export const data_office=[
 
         name:'Office 2019 Professional Plus Digital License',
         img:'/img/Microsoft-Office-2019-Professional-Plus.webp',
-        title:'Office 2019 Professional Plus',
+        title:'Get the Best Office 2019 Professional Plus Digital License - The Most Versatile Office License!',
         slug:'Office 2019 Professional Plus Digital License',
+        meta:'Find the best deals on Office 2019 Professional Plus Digital License at our ecommerce store. Enjoy fast delivery and secure checkout. Buy now!',
         notprice:39.99,
-        price:10.99,
+        price:12.99,
         stock:5,
         alt:"Office 2019 Professional Plus Digital License",
-        meta:'Buy Office 2019 Professional Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+        // meta:'Buy Office 2019 Professional Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
     
     
     },
-    {
-        index:'o7',
-        push:'microsoft_office',
+    // {
+    //     index:'o7',
+    //     push:'microsoft_office',
 
-        name:'Office 2021 Professional Plus Digital License',
-        img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
-        title:'Office 2021 Professional Plus Digital License',
-        notprice:40.99,
-        price:14.99,
-        alt:"Office 2021 Professional Plus Digital License",
-        stock:5,
-        slug:'Office 2021 Professional Plus Digital License',
-        meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
+    //     name:'Office 2021 Professional Plus Digital License',
+    //     img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
+    //     title:'Shop the Best Office 2021 Professional Plus Digital License - The Most Versatile Office License',
+    //     notprice:40.99,
+    //     price:14.99,
+    //     alt:"Office 2021 Professional Plus Digital License",
+    //     stock:5,
+    //     slug:'Office 2021 Professional Plus Digital License',
+    //     meta:"Get the best quality and prices for Office 2021 Professional Plus Digital License at our ecommerce store. Enjoy fast delivery and secure checkout. Buy now!"
+    //     // meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
     
     
     
-    },
-    {
-        index:'o3',
-        push:'microsoft_office',
+    // },
+    // {
+    //     index:'o3',
+    //     push:'microsoft_office',
 
-        name:'Office 2021 Home and Business Digital License',
-        img:"/img/Microsoft-Office-2021-Home-and-Business-IMG-box.webp",
-        title:'Office 2021 Home and Business',
-        notprice:50.99,
-        price:15.99,
-        alt:"Office 2021 Home and Business",
-        stock:5,
-        slug:'Office 2021 Home and Business Digital License',
-        meta:'Buy Office 2021 Home and Business Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+    //     name:'Office 2021 Home and Business Digital License',
+    //     img:"/img/Microsoft-Office-2021-Home-and-Business-IMG-box.webp",
+    //     title:'Office 2021 Home and Business',
+    //     notprice:50.99,
+    //     price:15.99,
+    //     alt:"Office 2021 Home and Business",
+    //     stock:5,
+    //     slug:'Office 2021 Home and Business Digital License',
+    //     meta:'Buy Office 2021 Home and Business Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
     
     
-    },
+    // },
     {
         index:'o4',
         push:'microsoft_office',
 
         name:'Office 2021 Home and Business for Mac Digital License',
         img:"/img/Microsoft-Office-2021-Home-and-Business-for-Mac.webp",
-        title:'Office 2021 Home and Business',
+        title:'Get the Best Deal on Office 2021 Home and Business Mac License',
         notprice:50.99,
         price:20.99,
         slug:'Office 2021 Home and Business Mac',
         alt:"Office 2021 Home and Business for Mac",
         stock:5,
-        meta:'Buy Office 2021 Home and Business Mac Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+        meta:"Find the best quality and prices for Office 2021 Home and Business Mac license at our ecommerce store. Enjoy fast delivery and secure checkout. Buy now!"
+        // meta:'Buy Office 2021 Home and Business Mac Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
     
     },
-    {
-        index:'o5',
-        push:'microsoft_office',
+    // {
+    //     index:'o5',
+    //     push:'microsoft_office',
 
-        name:'Office 2021 Home and Student Digital License',
-        img:"/img/Microsoft-Office-2021-Home-and-Student-IMG.webp",
-        title:'Office 2021 Home and Student',
-        notprice:40.99,
-        price:14.99,
-        slug:'Office 2021 Home and Student Digital License',
-        alt:"Office 2021 Home and Student",
-        stock:5,
-        meta:'Buy Office 2021 Home and Student Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+    //     name:'Office 2021 Home and Student Digital License',
+    //     img:"/img/Microsoft-Office-2021-Home-and-Student-IMG.webp",
+    //     title:'Office 2021 Home and Student',
+    //     notprice:40.99,
+    //     price:14.99,
+    //     slug:'Office 2021 Home and Student Digital License',
+    //     alt:"Office 2021 Home and Student",
+    //     stock:5,
+    //     meta:'Buy Office 2021 Home and Student Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
-    },
-    {
-        index:'o6',
-        push:'microsoft_office',
+    // },
+    // {
+    //     index:'o6',
+    //     push:'microsoft_office',
 
-        name:'Office 2019 Professional Plus Binding License',
-        img:"/img/Microsoft-Office-2019-Professional-Plus.webp",
-        title:'Office 2019 Professional Plus Binding',
-        notprice:45.99,
-        price:19.99,
-        slug:'Office 2019 Professional Plus Binding License',
-        stock:3,
-        alt:"Office 2019 Professional Plus Binding License",
-        meta:'Buy Office 2019 Professional Plus Binding License Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+    //     name:'Office 2019 Professional Plus Binding License',
+    //     img:"/img/Microsoft-Office-2019-Professional-Plus.webp",
+    //     title:'Save Big on Office 2019 Professional Plus Binding License',
+    //     notprice:45.99,
+    //     price:19.99,
+    //     slug:'Office 2019 Professional Plus Binding License',
+    //     stock:3,
+    //     alt:"Office 2019 Professional Plus Binding License",
+    //     meta:"Find the best deals on Office 2019 Professional Plus Binding License at our ecommerce store. Enjoy fast delivery and secure checkout. Buy now!"
+    //     // meta:'Buy Office 2019 Professional Plus Binding License Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
     
     
-    }
+    // }
     
 
 ]
@@ -466,30 +471,30 @@ export const search=[
     
     
     },
-    {
-        index:'o3',
-        push:'microsoft_office',
+    // {
+    //     index:'o3',
+    //     push:'microsoft_office',
 
-        name:'Office2021HomeandBusinessDigitalLicense',
-        img:"/img/Microsoft-Office-2021-Home-and-Business-IMG-box.webp",
-        title:'Office 2021 Home and Business',
-        notprice:50.99,
-        price:15.99,
-        alt:"Office 2021 Home and Business",
-        stock:5,
-        slug:'Office 2021 Home and Business Digital License',
-        meta:'Buy Office 2021 Home and Business Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+    //     name:'Office2021HomeandBusinessDigitalLicense',
+    //     img:"/img/Microsoft-Office-2021-Home-and-Business-IMG-box.webp",
+    //     title:'Office 2021 Home and Business',
+    //     notprice:50.99,
+    //     price:15.99,
+    //     alt:"Office 2021 Home and Business",
+    //     stock:5,
+    //     slug:'Office 2021 Home and Business Digital License',
+    //     meta:'Buy Office 2021 Home and Business Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
     
     
-    },
+    // },
     {
         index:'o4',
         push:'microsoft_office',
 
         name:'Office2021HomeandBusinessforMacDigitalLicense',
         img:"/img/Microsoft-Office-2021-Home-and-Business-for-Mac.webp",
-        title:'Office 2021 Home and Business',
+        title:'Office 2021 Home and Business for Mac',
         notprice:50.99,
         price:20.99,
         slug:'Office 2021 Home and Business Mac',
@@ -499,54 +504,55 @@ export const search=[
     
     
     },
-    {
-        index:'o5',
-        push:'microsoft_office',
+    // {
+    //     index:'o5',
+    //     push:'microsoft_office',
 
-        name:'Office2021HomeandStudentDigitalLicense',
-        img:"/img/Microsoft-Office-2021-Home-and-Student-IMG.webp",
-        title:'Office 2021 Home and Student',
-        notprice:40.99,
-        price:14.99,
-        slug:'Office 2021 Home and Student Digital License',
-        alt:"Office 2021 Home and Student",
-        stock:5,
-        meta:'Buy Office 2021 Home and Student Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+    //     name:'Office2021HomeandStudentDigitalLicense',
+    //     img:"/img/Microsoft-Office-2021-Home-and-Student-IMG.webp",
+    //     title:'Office 2021 Home and Student',
+    //     notprice:40.99,
+    //     price:14.99,
+    //     slug:'Office 2021 Home and Student Digital License',
+    //     alt:"Office 2021 Home and Student",
+    //     stock:5,
+    //     meta:'Buy Office 2021 Home and Student Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
-    },
-    {
-        index:'o6',
-        push:'microsoft_office',
+    // },
+    // {
+    //     index:'o6',
+    //     push:'microsoft_office',
 
-        name:'Office2019ProfessionalPlusBindingLicense',
-        img:"/img/Microsoft-Office-2019-Professional-Plus.webp",
-        title:'Office 2019 Professional Plus Binding',
-        notprice:45.99,
-        price:19.99,
-        slug:'Office 2019 Professional Plus Binding License',
-        stock:3,
-        alt:"Office 2019 Professional Plus Binding License",
-        meta:'Buy Office 2019 Professional Plus Binding License Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+    //     name:'Office2019ProfessionalPlusBindingLicense',
+    //     img:"/img/Microsoft-Office-2019-Professional-Plus.webp",
+    //     title:'Office 2019 Professional Plus Binding',
+    //     notprice:45.99,
+    //     price:19.99,
+    //     slug:'Office 2019 Professional Plus Binding License',
+    //     stock:3,
+    //     alt:"Office 2019 Professional Plus Binding License",
+    //     meta:'Buy Office 2019 Professional Plus Binding License Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
     
     
-    }, {
-        index:'o7',
-        push:'microsoft_office',
+    // }, 
+    // {
+    //     index:'o7',
+    //     push:'microsoft_office',
 
-        name:'Office2021ProfessionalPlusDigitalLicense',
-        img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
-        title:'Office 2021 Professional Plus Digital License',
-        notprice:40.99,
-        price:14.99,
-        alt:"Office 2021 Professional Plus Digital License",
-        stock:5,
-        slug:'Office 2021 Professional Plus Digital License',
-        meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
+    //     name:'Office2021ProfessionalPlusDigitalLicense',
+    //     img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
+    //     title:'Office 2021 Professional Plus Digital License',
+    //     notprice:40.99,
+    //     price:14.99,
+    //     alt:"Office 2021 Professional Plus Digital License",
+    //     stock:5,
+    //     slug:'Office 2021 Professional Plus Digital License',
+    //     meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
     
     
     
-    },
+    // },
     
 
 ]
@@ -624,20 +630,25 @@ export const Main_seller=[
 
     },
     {
-        index:'o7',
-        name:'Office 2021 Professional Plus Digital License',
-        img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
-        title:'Office 2021 Professional Plus Digital License',
-        notprice:40.99,
-        price:14.99,
-        path:'microsoft_office/Office 2021 Professional Plus Digital License',
+        index:'o2',
+        push:'microsoft_office',
 
-        alt:"Office 2021 Professional Plus Digital License",
+
+        name:'Office 2019 Professional Plus Digital License',
+        img:'/img/Microsoft-Office-2019-Professional-Plus.webp',
+        title:'Get the Best Office 2019 Professional Plus Digital License - The Most Versatile Office License!',
+        slug:'Office 2019 Professional Plus Digital License',
+        meta:'Find the best deals on Office 2019 Professional Plus Digital License at our ecommerce store. Enjoy fast delivery and secure checkout. Buy now!',
+        notprice:39.99,
+        price:12.99,
         stock:5,
-        slug:'Office 2021 Professional Plus Digital License',
-        meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
-
+        alt:"Office 2019 Professional Plus Digital License",
+        // meta:'Buy Office 2019 Professional Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+    
+    
+    
     },
+
     {
         index:'o4',
         name:'Office 2021 Home and Business for Mac Digital License',

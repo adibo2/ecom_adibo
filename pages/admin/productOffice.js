@@ -4,10 +4,14 @@ import Navbar from '../../components/Navbar/Navbar';
 import axios from 'axios';
 import css from "../../components/admin_style/dashboard.module.scss";
 import css1 from "../../components/admin_style/order.module.scss"
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 
 const ProductOffice = () => {
     const [office,setOffice] = useState([])
+    const router=useRouter();
+
 
     useEffect(()=>{
         const fetchData = async () =>{
@@ -24,6 +28,10 @@ const ProductOffice = () => {
         console.log(office)
 
     },[])
+    const ReviewHandler=()=>{
+      router.push('')
+  
+    }
   return (
     <>
         <Navbar></Navbar>
@@ -58,9 +66,15 @@ const ProductOffice = () => {
                       <td className={css1.table_td}>
                         {order.stock}
                       </td>
-                      <td className={css1.table_td}>
+                      <td className={`${css1.table_td} ${css1.tableflex}`}>
                         {order.reviews.length}
+                        <Link href={`/admin/reviewsoffice/${order._id}`}>
+                        <button onClick={ReviewHandler} className={css1.tablebutton}>
+                          viewReviews
+                        </button>
+                        </Link>
                       </td>
+
                       <td className={css1.table_td}>
                         {order.createdAt.substring(0, 10)}
                       </td>

@@ -99,6 +99,7 @@ function Taboffice(props) {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm();
 

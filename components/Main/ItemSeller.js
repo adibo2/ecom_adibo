@@ -1,5 +1,4 @@
 import React from 'react'
-import { Main_seller } from '../data'
 import css from './../Product/Product.module.scss'
 import Image from 'next/image'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
@@ -15,6 +14,11 @@ const ItemSeller = (props) => {
         router.push('/'+props.path)
 
     }
+    const clickhandler=()=>{
+        Setadd(false)
+
+    }
+
 
 
   return (
@@ -54,8 +58,7 @@ const ItemSeller = (props) => {
     readOnly />
     </div>
     <div className={css["product__card-btn1"]} onClick={props.onClick}>
-        <button className={css.button}
-        //  onClick={()=>{clickhandler();props.onClick}}
+        <button className={css.button} onClick={()=>{clickhandler();props.onClick}}
          >
             <AiOutlineShoppingCart></AiOutlineShoppingCart>
             Add To Cart

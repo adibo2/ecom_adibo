@@ -1,15 +1,11 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { data_office } from '../../components/data';
-import Image from 'next/image';
 import Filter from '../../components/Filter/Filter';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from "../../styles/Home.module.scss";
 import Head from 'next/head'
-import Detail from '../../components/Details/Detail';
 import Linko from '../../components/Links/Linko';
 import Detailoff from '../../components/Details/Detailsoff';
-import Tabo from '../../components/UI/Tab';
 import { filter_data } from '../../components/UI/content';
 import Productoffice from '../../model/Productoffice';
 import db from '../../utils/db';
@@ -17,10 +13,11 @@ import { useState,useEffect,useContext,useCallback } from 'react';
 import Taboffice from '../../components/UI/Taboffice';
 import axios from 'axios';
 import Footer from '../../components/Footer/Footer';
+import Code from '../../model/code';
 
 
 
-const OfficeDetail = ({office,descrp}) => {
+const OfficeDetail = ({office,descrp,unused}) => {
     const router=useRouter();
     const { officeId }=router.query;
     const [reviews,Setreview]=useState([]);
@@ -99,17 +96,17 @@ const scrollhandler=()=>{
   return (
     <>
     <Head>
-      <title>{office.name}</title>
+      <title>{office.title}</title>
       <meta name='description' content={office.meta} />
     </Head>
      <div className={styles.container}>
 
     <Navbar></Navbar>
     <Filter></Filter>
-    <Linko href="/microsoft_office" log="Microsoft Office" product={office.title}></Linko>
+    <Linko href="/microsoft_office" log="Microsoft Office" product={office.slug}></Linko>
 
-    <Detailoff onScroll={()=>scrollhandler()} id={officeId}  img={office.img} name={office.title} office={office} alt={office.alt}
-        notprice={office.notprice} price={office.price} stock={office.stock}></Detailoff>
+    <Detailoff onScroll={()=>scrollhandler()} id={officeId}  img={office.img} name={office.slug} office={office} alt={office.alt}
+        notprice={office.notprice} price={office.price} stock={unused}></Detailoff>
         {/* <h1>hello {officeId} </h1>
         <Image src={office.img} width={230} height={270} alt="windows Keys" />
         <h1>{office.name}</h1> */}
@@ -134,13 +131,31 @@ export async function getServerSideProps(context) {
     
     await db.connect();
     const office = await Productoffice.findOne({ slug:officeId }).lean();
+    const codeunused=await Code.findOne({type:officeId}).lean();
+    console.log(codeunused);
+    const result = {};
+      const type = codeunused.type;
+      result[type] = {
+        total: codeunused.codes.length,
+        unused: 0,
+      }
+      
+      for (let j = 0; j < codeunused.codes.length; j++) {
+        if (!codeunused.codes[j].isUsed) {
+          result[type].unused++;
+        }
+      }
+      office.stock=result[officeId].unused;
+
     await db.disconnect();
     // console.log(ObjectId(product._id))
 
     return {
       props: {
         office: office ? db.convertDocToObj(office) : null,
-        descrp:descrp
+        descrp:descrp,
+        unused:result[officeId].unused
+
         
       },
     };

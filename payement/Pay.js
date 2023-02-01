@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import css from "./Pay.module.scss";
 import { useForm } from "react-hook-form";
-import { useState, useEffect, useContex,useReducer } from "react";
+import { useState, useEffect,useReducer } from "react";
 import { ToastContainer } from "react-toastify";
 import { signIn,useSession } from "next-auth/react";
 import { toast } from "react-toastify";
@@ -67,6 +67,9 @@ const Pay = () => {
   const [empty,Setempty]=useState(true)
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [isCheckeds, setIsCheckeds] = useState(false)
+  const [firstname, setFirstname] = useState();
+  const [lastname, setLastname] = useState();
+  const [emailx, setEmail] = useState()
   const Cartctx = useContext(Cartcontext);
   const [{loadingx,loading,error,update,order,successPay,loadingPay,loadingDeliver,successDeliver,modify},dispatch] = useReducer(reducer, {
     loading: true,
@@ -112,6 +115,9 @@ const Pay = () => {
   const onSubmit = async ({ firstname, lastname, email, repeatemail }) => {
     try {
       dispatch({ type: 'FETCH_START' });
+      setFirstname(firstname);
+      setLastname(lastname);
+      setEmail(email);
 
 
       console.log(email)
@@ -163,7 +169,7 @@ const Pay = () => {
       // Cookies.set('Cart',[]);
       // Cookies.set('total',0)
       
-      await axios.post("/api/sendEmail",{
+      await axios.post("/api/sendOrder",{
         firstname,
         lastname,
         email
@@ -258,7 +264,7 @@ const Pay = () => {
           details
         );
         dispatch({ type: 'PAY_SUCCESS', payload: data });
-        toast.success('Order is paid successgully');
+        toast.success('Order is paid successfully.Please check your email !');
       } catch (err) {
         dispatch({ type: 'PAY_FAIL', payload: getError(err) });
         toast.error(getError(err));
@@ -273,6 +279,22 @@ const Pay = () => {
     console.log("hiii")
     dispatch({ type: 'MODIFY_NOT'})
   }
+  console.log(emailx,firstname,lastname)
+  useEffect(()=>{
+
+    const OrderisPaid=async () =>{
+      if(isPaid){
+        await axios.post("/api/sendEmail",{
+          firstname,
+          lastname,
+          email:emailx,
+        })
+
+    }
+  }
+  OrderisPaid();
+
+  },[isPaid])
 
 
   if (!Cartctx) {

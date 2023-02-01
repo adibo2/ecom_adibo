@@ -19,10 +19,10 @@ export const choix=[{
 {
     name:'Office 2019 Professional Plus Digital License'
 },
+// {
+//     name:'Office 2021 Professional Plus Digital License'
+// },
 {
-    name:'Office 2021 Professional Plus Digital License'
-},
-{
-    name:'Office 2021 Home and Business Digital License'
+    name:'Office 2021 Home and Business for Mac Digital License'
 },
 ] 

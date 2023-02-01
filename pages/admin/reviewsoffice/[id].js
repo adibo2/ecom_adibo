@@ -21,7 +21,7 @@ const AdminReviews = () => {
     useEffect(()=>{
         const fetchData = async () =>{
             try{
-              const {data}=await axios.get(`/api/admin/productwindows/${productId}/reviews/kkk`)                
+              const {data}=await axios.get(`/api/admin/productOffice/${productId}/reviews/kkk`)                
                 setwindows(data)
 
             } catch (err){
@@ -37,7 +37,7 @@ const AdminReviews = () => {
           return;
         }
         try {
-          await axios.delete(`/api/admin/productwindows/${productId}/reviews/${reviewId}`);
+          await axios.delete(`/api/admin/productOffice/${productId}/reviews/${reviewId}`);
           toast.success('reviews deleted successfully');
         } catch (err) {
           toast.error(getError(err));
@@ -62,7 +62,7 @@ const AdminReviews = () => {
               <table className={css1.tableorder}>
                 <thead className={css1.table_thread}>
                   <tr>
-                    <th className={css1.table_title}>ID</th>
+                  <th className={css1.table_title}>ID</th>
                     <th className={css1.table_title}>note</th>
                     <th className={css1.table_title}>Rating</th>
                     <th className={css1.table_title}>firstname</th>
@@ -119,4 +119,3 @@ const AdminReviews = () => {
   )
 }
 export default dynamic(() => Promise.resolve(AdminReviews), { ssr: false });
-

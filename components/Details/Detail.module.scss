@@ -88,6 +88,9 @@
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     margin-top: 1.3rem;
+    @include respons(medium) {
+      justify-items: center;
+    }
   }
   &__message {
     margin-top: 2rem;
@@ -135,6 +138,7 @@
 }
 .name {
   align-self: center;
+  justify-self: center;
   font-size: 1.1rem;
   line-height: 1.3rem;
   color: rgb(31 41 55 / 0.8);
@@ -295,6 +299,10 @@
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
   margin-top: 1.3rem;
+  @include respons(medium) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-items: center;
+  }
 }
 .category{
   padding: 0rem 0rem 2.5rem 0;

@@ -74,9 +74,9 @@ const Detailoff = (props) => {
         />
       </div>
       <div className={css.content}>
-        <div className={css.content__h1}>
+        <h1 className={css.content__h1}>
           {props.name}
-        </div>
+        </h1>
         <div className={css.content_review}>
 
         <Stack spacing={1}>

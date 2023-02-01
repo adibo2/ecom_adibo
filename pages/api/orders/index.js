@@ -12,12 +12,49 @@ const handler = async (req, res) => {
     console.log("sld"+user.email)
 
     await db.connect();
-    const newOrder = new Order({
-      ...req.body,
-      user: user._id,
-    });
+    const existingOrder = await Order.findOne({ user: user._id });
+    // if (!existingOrder) {
+    //   const newOrder = new Order({
+    //     ...req.body,
+    //     user: user._id,
+    //   });
+    // if (!existingOrder) {
+    //   const newOrder = new Order({
+    //     ...req.body,
+    //     user: user._id,
+    //   });
+    
+    //   const order = await newOrder.save();
+    // res.status(201).send(order);
+    // } else {
+    //   existingOrder.orderItems = [...req.body.orderItems];
+    //   existingOrder.totalPrice = [...req.body.totalPrice];
+
+
+    //   const updatedOrder = await existingOrder.save();
+    //   res.status(200).send(updatedOrder);
+    // }
+
+if (existingOrder) {
+  existingOrder.orderItems = req.body.orderItems;
+  existingOrder.totalPrice = req.body.totalPrice;
+
+  const updatedOrder = await existingOrder.save();
+  res.status(200).send(updatedOrder);
+  return;
+}
+
+const newOrder = new Order({
+  ...req.body,
+  user: user._id,
+});
+
+const order = await newOrder.save();
+res.status(201).send(order);
+    
+    
+
   
-    const order = await newOrder.save();
-    res.status(201).send(order);
+    
   };
   export default handler;

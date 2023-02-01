@@ -15,9 +15,9 @@ const office = (props) => {
   return (
     <>
      <Head>
-        <title>Microsoft Office Packages - Instant software Key</title>
+        <title>Get Your Hands on the Best Microsoft Office Digital Licence - Instant software Key</title>
         <meta charSet="utf-8" />
-        <meta name="description" content="microsoft office keys liscence" />
+        <meta name="description" content="Find the Best Quality and Price for Microsoft Office Digital Licences, including Office 2019 Home and Business for Mac Digital License, Office 2019 Professional Plus Digital License, Office 2021 Professional Plus Digital License, Office 2021 Home and Business Mac. Fast Delivery Guaranteed. Click to Shop Now!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
     

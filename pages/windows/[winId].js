@@ -1,4 +1,4 @@
-import React, { useContext, useState,useEffect,useCallback } from 'react'
+import React, { useState,useEffect,useCallback } from 'react'
 import { useRouter } from 'next/router'
 import Filter from "../../components/Filter/Filter";
 import styles from "../../styles/Home.module.scss";
@@ -12,14 +12,14 @@ import Tabo from '../../components/UI/Tab';
 import { filter_data } from '../../components/UI/content';
 import Footer from '../../components/Footer/Footer';
 import Product from '../../model/Product';
-import Cartcontext from '../../components/Cartctx/Cartcontext';
 import axios from 'axios';
+import Code from '../../model/code';
 
 
 
 
 
-const WindowsDetails =  ({product,descrp}) => {
+const WindowsDetails =  ({product,descrp,unused}) => {
     const router=useRouter();
     const [reviews,Setreview]=useState([]);
     const [scrollreview,Setscrollreview]=useState(false);
@@ -101,7 +101,6 @@ const WindowsDetails =  ({product,descrp}) => {
 },[handle]);
 const scrollhandler=()=>{
   Setscrollreview(true)
-  console.log(scrollreview)
 }
 
   return (
@@ -116,8 +115,11 @@ const scrollhandler=()=>{
     <Filter></Filter>
     <Linko href="/windows" log='Windows' product={product.slug}></Linko>
 
-        <Detail onScroll={()=>scrollhandler()} id={winId}  img={product.img} name={product.title} product={product} alt={product.alt}
-        notprice={product.notprice} numReviews={reviews.length} price={product.price} stock={product.stock}></Detail>
+        <Detail onScroll={()=>scrollhandler()} id={winId}  img={product.img} name={product.slug} product={product} alt={product.alt}
+        notprice={product.notprice} numReviews={reviews.length} price={product.price} 
+        // stock={product.stock}
+        stock={unused}
+        ></Detail>
 
         <Tabo scollhandler={scrollhandler} scrolldown={scrollreview} scrollreview={scrollreview} data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} onReview={reviewhandler} alt={product.alt} reviews={reviews}></Tabo>
 
@@ -138,15 +140,33 @@ export async function getServerSideProps(context) {
     
     
     await db.connect();
-    console.log(descrwindows)
     const product = await Product.findOne({ slug:winId }).lean();
+    const codeunused=await Code.findOne({type:winId}).lean();
+    console.log(codeunused);
+    const result = {};
+      const type = codeunused.type;
+      result[type] = {
+        total: codeunused.codes.length,
+        unused: 0,
+      }
+      
+      for (let j = 0; j < codeunused.codes.length; j++) {
+        if (!codeunused.codes[j].isUsed) {
+          result[type].unused++;
+        }
+      }
+    
+    console.log("lmfdsmlfklskflskflsfsjfksfjksfjslkfjsk");
+    console.log(result);
+    product.stock=result[winId].unused;
     await db.disconnect();
     // console.log(ObjectId(product._id))
 
     return {
       props: {
         product: product ? db.convertDocToObj(product) : null,
-        descrp:descrwindows
+        descrp:descrwindows,
+        unused:result[winId].unused
         
       },
     };

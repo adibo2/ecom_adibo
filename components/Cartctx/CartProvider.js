@@ -20,9 +20,9 @@ const Reducer=(state,action)=>{
         // }
         if(state.items.find((item)=>item.id===action.payload.id)){
             updateitems=state.items.map((item)=>{
-                if(item.amount+action.payload.amount <= item.stock)
+                if(item.amount+1 <= item.stock)
                 {
-                    return item.id===action.payload.id ? {...item,amount:item.amount+action.payload.amount,subtotal:item.subtotal+action.payload.subtotal} : item
+                    return item.id===action.payload.id ? {...item,amount:item.amount+1,subtotal:item.subtotal+action.payload.subtotal} : item
                 }
                 else{
                     return item.id===action.payload.id ? {...item,amount:item.stock} : item
