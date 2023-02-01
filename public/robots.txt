@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /search
+Disallow: /admin
+Disallow: /checkout
+Allow: /
+
+Sitemap: https://www.microsoftkeymarket.com/sitemap.xml
