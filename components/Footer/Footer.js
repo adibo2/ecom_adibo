@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
         <hr className={css.hr}></hr>
         <div className={css.sous}>
-          <span>© 2022 Instant License™. All Rights Reserved. </span>
+          <span>© 2022 Microsoft Key Market™. All Rights Reserved. </span>
         </div>
         
     </footer>
