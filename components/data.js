@@ -632,6 +632,7 @@ export const Main_seller=[
     {
         index:'o2',
         push:'microsoft_office',
+        path:'microsoft_office/Office 2019 Professional Plus Digital License',
 
 
         name:'Office 2019 Professional Plus Digital License',
@@ -651,18 +652,21 @@ export const Main_seller=[
 
     {
         index:'o4',
+        push:'microsoft_office',
+
         name:'Office 2021 Home and Business for Mac Digital License',
         img:"/img/Microsoft-Office-2021-Home-and-Business-for-Mac.webp",
-        title:'Office 2021 Home and Business',
+        title:'Get the Best Deal on Office 2021 Home and Business Mac License',
         notprice:50.99,
-        price:20.99,
-        path:'microsoft_office/Office 2021 Home and Business',
+        path:'microsoft_office/Office 2021 Home and Business Mac',
 
+        price:20.99,
         slug:'Office 2021 Home and Business Mac',
         alt:"Office 2021 Home and Business for Mac",
         stock:5,
-        meta:'Buy Office 2021 Home and Business Mac Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
+        meta:"Find the best quality and prices for Office 2021 Home and Business Mac license at our ecommerce store. Enjoy fast delivery and secure checkout. Buy now!"
+        // meta:'Buy Office 2021 Home and Business Mac Digital License Plus Product Key for the best price at instant key activation key for Office 2019 Home and Business for Mac, the most recent and full version. Instant software Key',
     
-
+    
     },
 ]
