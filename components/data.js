@@ -58,8 +58,8 @@ export const data_windows=[{
     alt:"Windows 11 Professional license product key",
 
     // title:'Microsoft Windows 11 Professional',
-    title:'Upgrade to Windows 11 for the Best User Experience at an Affordable Price',
-    meta:'Get the best deal on a Windows 10 Pro key and upgrade your operating system today. High-quality product and fast delivery guaranteed. Order now!'
+    title:'Upgrade to Windows 11 Professional for the Best User Experience at an Affordable Price',
+    meta:'Get the best deal on a Windows 11 Professional key and upgrade your operating system today. High-quality product and fast delivery guaranteed. Order now!'
 
 },
 // {
