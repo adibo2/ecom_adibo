@@ -1,3 +1,5 @@
+@import "./../../styles/respon.module.scss";
+
 .footer{
     grid-column: 1/-1;
     // background-color: #112949;
@@ -62,9 +64,11 @@
 
             }
             .li{
-                font-size: 1.575rem;
+                font-size: 1.545rem;
                 line-height: 1.25rem;
+                line-break: auto;
                 margin-bottom: 1.58rem;
+                
                 cursor: pointer;
                 transition: all .5s;
 
