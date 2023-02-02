@@ -18,6 +18,7 @@ const Windows = (props) => {
       <Head>
         {/* <title>All Windows Operating System - Instant software Key</title> */}
         {/* Softwares Key - Buy your software online and start the installation immediately */}
+        <meta name="google-site-verification" content="dpPDh7LfkIRY4cl7V6XswrTaKGaKPDn5gKCdSroy3Qs" />
         <title>Shop the Best Windows Licence at the Lowest Prices</title>
         <meta charSet="utf-8" />
         <meta
