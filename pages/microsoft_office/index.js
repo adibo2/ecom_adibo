@@ -7,6 +7,7 @@ import db from '../../utils/db';
 import styles from "./../../styles/Home.module.scss";
 import Head from "next/head";
 import Productoffice from '../../model/Productoffice';
+import Code from '../../model/code';
 
 
 
@@ -36,6 +37,21 @@ const office = (props) => {
 export async function getServerSideProps() {
   await db.connect();
   const products = await Productoffice.find().lean();
+  const codeunused=await Code.find({}).lean();
+
+  for (let i = 0; i < codeunused.length; i++) {
+    let type = codeunused[i].type;
+    let unused = codeunused[i].codes.length;
+    console.log(type, unused);
+    for (let j = 0; j < products.length; j++) {
+        if (products[j].slug === type) {
+            // unused -= products[j].stock;
+            products[j].stock = unused;
+            await Productoffice.updateOne({ slug: type }, { stock: unused });
+            break;
+        }
+    }
+}
 
 
   return {
