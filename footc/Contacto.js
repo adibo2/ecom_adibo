@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
+import Loader from '../utils/Loader';
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -35,11 +36,13 @@ const contact=[{
 
 
 const Contacto = () => {
+  const [loader,Setloader]=useState(false)
     const { register,reset, handleSubmit, watch, formState: { errors } } = useForm();
  
 
     const onSubmit = async ({firstname,email,subject,note}) => {
       try {
+        Setloader(true)
         await axios.post("/api/sendContact",{
           firstname,
           email,
@@ -48,6 +51,7 @@ const Contacto = () => {
         })
         toast.success("We have received your complaint and our team is working on resolving the issue", {});
         reset();
+        Setloader(false)
 
 
 
@@ -141,7 +145,9 @@ const Contacto = () => {
           <input type="checkbox" className={css1.terms_check}/>
           <div className={css1.terms_text}>I consent to having this website store my submitted information so they can respond to my inquiry<span className={css1.xo}>*</span></div>
         </div>
-        <button type="submit" className={css.button}>Send message</button>
+        <button type="submit" className={css.button}>
+          {!loader ? 'Send message' : <Loader></Loader>}
+          </button>
 
         </form>
     </div>
