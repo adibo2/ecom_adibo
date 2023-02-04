@@ -170,24 +170,24 @@ export const data_office=[
     
     
     },
-    // {
-    //     index:'o7',
-    //     push:'microsoft_office',
+    {
+        index:'o7',
+        push:'microsoft_office',
 
-    //     name:'Office 2021 Professional Plus Digital License',
-    //     img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
-    //     title:'Shop the Best Office 2021 Professional Plus Digital License - The Most Versatile Office License',
-    //     notprice:40.99,
-    //     price:14.99,
-    //     alt:"Office 2021 Professional Plus Digital License",
-    //     stock:5,
-    //     slug:'Office 2021 Professional Plus Digital License',
-    //     meta:"Get the best quality and prices for Office 2021 Professional Plus Digital License at our ecommerce store. Enjoy fast delivery and secure checkout. Buy now!"
-    //     // meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
+        name:'Office 2021 Professional Plus Digital License',
+        img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
+        title:'Shop the Best Office 2021 Professional Plus Digital License - The Most Versatile Office License',
+        notprice:40.99,
+        price:14.99,
+        alt:"Office 2021 Professional Plus Digital License",
+        stock:5,
+        slug:'Office 2021 Professional Plus Digital License',
+        meta:"Get the best quality and prices for Office 2021 Professional Plus Digital License for the lowest price and instant delivery at our ecommerce store,the most recent and full version. Enjoy fast delivery and secure checkout. Buy now!"
+        // meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
     
     
     
-    // },
+    },
     // {
     //     index:'o3',
     //     push:'microsoft_office',
@@ -536,23 +536,23 @@ export const search=[
     
     
     // }, 
-    // {
-    //     index:'o7',
-    //     push:'microsoft_office',
+    {
+        index:'o7',
+        push:'microsoft_office',
 
-    //     name:'Office2021ProfessionalPlusDigitalLicense',
-    //     img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
-    //     title:'Office 2021 Professional Plus Digital License',
-    //     notprice:40.99,
-    //     price:14.99,
-    //     alt:"Office 2021 Professional Plus Digital License",
-    //     stock:5,
-    //     slug:'Office 2021 Professional Plus Digital License',
-    //     meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
+        name:'Office2021ProfessionalPlusDigitalLicense',
+        img:"/img/Microsoft-Office-2021-Professional-Plus-IMG-License-Product-Key.webp",
+        title:'Office 2021 Professional Plus Digital License',
+        notprice:40.99,
+        price:14.99,
+        alt:"Office 2021 Professional Plus Digital License",
+        stock:5,
+        slug:'Office 2021 Professional Plus Digital License',
+        meta:'Buy Office 2021 Professional Plus Digital License Plus Product Key for the best price at instant key activation key for Office 2021 Professional Plus Digital License, the most recent and full version. Instant software Key',
     
     
     
-    // },
+    },
     
 
 ]

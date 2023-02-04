@@ -63,17 +63,6 @@ about the security of personal data collected by  <span className={css.span}>Ins
         
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
 
