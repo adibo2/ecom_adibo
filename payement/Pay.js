@@ -293,6 +293,8 @@ const Pay = () => {
     }
   }
   OrderisPaid();
+       Cookies.set('Cart',[]);
+      Cookies.set('total',0)
 
   },[isPaid])
 
