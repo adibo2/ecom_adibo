@@ -18,13 +18,13 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     box-sizing: border-box;
 
-    font-size: 68.5%; //  10/16=62.5%  -> 1rem=10px
+    font-size: 68.5% !important;  //  10/16=62.5%  -> 1rem=10px
     @include respons (medium){
-      font-size: 62%;
+      font-size: 62% !important;
 
     }
     @include respons(small){
-      font-size: 50%;
+      font-size: 50% !important;
     }
 
   
