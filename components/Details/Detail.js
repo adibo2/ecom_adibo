@@ -39,7 +39,7 @@ const Detail = (props) => {
     Cartctx.addDetail({
       id:product.slug,
 
-      slug:product.name,
+      slug:product.slug,
       price:product.price,
       amount:count,
       // count:count,
