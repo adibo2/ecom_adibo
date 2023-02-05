@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar/Navbar'
 import Filter from '../components/Filter/Filter'
 import styles from "../styles/Home.module.scss";
 import Infox from '../components/info/Infox';
-import Main from '../components/Main/Main';
 import MainPage from '../components/Main/Main';
 import NavSeller from '../components/Main/NavSeller';
 import Footer from '../components/Footer/Footer';
