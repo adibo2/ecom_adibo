@@ -1,6 +1,7 @@
 import '../styles/globals.scss'
-import FilterCtx from '../components/Filterctx/FilterCtx'
 import FilterProvider from '../components/Filterctx/FilterProvider'
+import Head from "next/head";
+
 import CartProvider from '../components/Cartctx/CartProvider'
 import "./../components/UI/Tab.css";
 import { useRouter } from 'next/router';
@@ -31,6 +32,11 @@ Router.events.on("routeChangeError", progress.finish);
 function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
   return(
     <>
+    <Head>
+       
+        <link rel="icon" href="/win.webp" />
+      </Head>
+    
     <Script
     id='myscript'
     strategy='lazyOnload'

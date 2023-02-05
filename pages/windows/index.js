@@ -29,7 +29,6 @@ const Windows = (props) => {
           content="Buy Microsoft Windows 11 Professional Product Key for the best price at instant key. Order now and download the activation key instantly"
         /> */}
         <meta property="og:site_name" content="Instant software key" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className={styles.container}>
