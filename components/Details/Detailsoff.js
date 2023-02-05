@@ -35,7 +35,7 @@ const Detailoff = (props) => {
     console.log("heloo from the cart");
     Cartctx.addDetail({
       id:office.slug,
-      slug:office.name,
+      slug:office.slug,
       price:office.price,
       amount:count,
       // count:count,
