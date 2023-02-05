@@ -20,88 +20,135 @@ import Code from '../../model/code';
 
 
 const WindowsDetails =  ({product,descrp,unused}) => {
-    const router=useRouter();
-    const [reviews,Setreview]=useState([]);
-    const [scrollreview,Setscrollreview]=useState(false);
+//     const router=useRouter();
+//     const [reviews,Setreview]=useState([]);
+//     const [scrollreview,Setscrollreview]=useState(false);
 
     
-    const { winId }=router.query;
-    const handle=useCallback(async (data)=>{
-      if(!data){
-        return;
-      }
-      if(data){
+//     const { winId }=router.query;
+//     const handle=useCallback(async (data)=>{
+//       if(!data){
+//         return;
+//       }
+//       if(data){
 
-        const { firstname, email,rating,note }=data
+//         const { firstname, email,rating,note }=data
 
-        try {
+//         try {
+//       await axios.post(`/api/product/${product._id}`, {
+//         firstname,
+//         rating,
+//         email,
+//         note,
+//       });
+//       // console.log("data"+data)
+//       // const  datax = await axios.get(`/api/product/${product._id}`);
+
+    
+//       Setreview(prev=>{
+//         const updategoals = [...prev];
+//         updategoals.unshift(data)
+//         return updategoals;
+
+//       })
+//       reviewhandler()
+      
+//     } catch (err) {
+//       console.log(err);
+//     }
+  
+//       }
+
+//     })
+//     const getdata=async ()=>{
+//       const { data } = await axios.get(`/api/product/${product._id}`);
+//       Setreview(data.reviews)
+
+//     }
+//     useEffect(()=>{
+//        getdata();
+//     },[])
+//     const reviewhandler=useCallback(async ()=>{
+//       try {
+   
+//         const { data } = await axios.get(`/api/product/${product._id}`);
+//          Setreview(data.reviews)
+//         // console.log("data"+data)
+       
+
+
+//         // console.log(data.reviews.length)
+//       } catch (err) {
+//         console.log(err);
+//       }
+      
+      
+//     },[handle])
+//     useEffect(()=>{
+//       async function fetchBooks() {
+
+//         const { data } = await axios.get(`/api/product/${product._id}`)
+//         Setreview(data.reviews)
+//     }
+//     fetchBooks();
+      
+
+//     },[])
+    
+ 
+//   useEffect(() =>  {
+//    handle();
+// },[handle]);
+// const scrollhandler=()=>{
+//   Setscrollreview(true)
+// }
+const router = useRouter();
+const [reviews, setReviews] = useState([]);
+const [scrollreview, setScrollreview] = useState(false);
+
+const { winId } = router.query;
+
+useEffect(() => {
+  (async () => {
+    try {
+      const { data } = await axios.get(`/api/product/${product._id}`);
+      setReviews(data.reviews);
+    } catch (err) {
+      console.log(err);
+    }
+  })();
+}, []);
+
+const handle = useCallback(
+  async (data) => {
+    if (!data) {
+      return;
+    }
+
+    const { firstname, email, rating, note } = data;
+
+    try {
       await axios.post(`/api/product/${product._id}`, {
         firstname,
         rating,
         email,
         note,
       });
-      // console.log("data"+data)
-      // const  datax = await axios.get(`/api/product/${product._id}`);
-
-    
-      Setreview(prev=>{
-        const updategoals = [...prev];
-        updategoals.unshift(data)
-        return updategoals;
-
-      })
-      reviewhandler()
-      
+      setReviews((prev) => {
+        const updateGoals = [...prev];
+        updateGoals.unshift(data);
+        return updateGoals;
+      });
     } catch (err) {
       console.log(err);
     }
-  
-      }
+  },
+  []
+);
 
-    })
-    const getdata=async ()=>{
-      const { data } = await axios.get(`/api/product/${product._id}`);
-      Setreview(data.reviews)
-
-    }
-    useEffect(()=>{
-       getdata();
-    },[])
-    const reviewhandler=useCallback(async ()=>{
-      try {
-   
-        const { data } = await axios.get(`/api/product/${product._id}`);
-         Setreview(data.reviews)
-        // console.log("data"+data)
-       
-
-
-        // console.log(data.reviews.length)
-      } catch (err) {
-        console.log(err);
-      }
-      
-      
-    },[handle])
-    useEffect(()=>{
-      async function fetchBooks() {
-
-        const { data } = await axios.get(`/api/product/${product._id}`)
-        Setreview(data.reviews)
-    }
-    fetchBooks();
-      
-
-    },[])
-    
- 
-  useEffect(() =>  {
-   handle();
-},[handle]);
-const scrollhandler=()=>{
-  Setscrollreview(true)
-}
+const scrollHandler = useCallback(() => {
+  setScrollreview(true);
+}, []);
 
   return (
     <>
@@ -115,13 +162,15 @@ const scrollhandler=()=>{
     <Filter></Filter>
     <Linko href="/windows" log='Windows' product={product.slug}></Linko>
 
-        <Detail onScroll={()=>scrollhandler()} id={winId}  img={product.img} name={product.slug} product={product} alt={product.alt}
+        <Detail onScroll={()=>scrollHandler()} id={winId}  img={product.img} name={product.slug} product={product} alt={product.alt}
         notprice={product.notprice} numReviews={reviews.length} price={product.price} 
         // stock={product.stock}
         stock={unused}
         ></Detail>
 
-        <Tabo scollhandler={scrollhandler} scrolldown={scrollreview} scrollreview={scrollreview} data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} onReview={reviewhandler} alt={product.alt} reviews={reviews}></Tabo>
+        <Tabo scollhandler={scrollHandler} scrolldown={scrollreview} scrollreview={scrollreview} data={descrp[0].data} reviewtaille={reviews.length} onsubmit={handle} 
+        // onReview={reviewhandler} 
+        alt={product.alt} reviews={reviews}></Tabo>
 
         <Footer></Footer>
 

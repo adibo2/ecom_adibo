@@ -145,7 +145,7 @@ function Taboffice(props) {
           className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
           onClick={() => {
             toggleTab(4);
-            props.onReview();
+            // props.onReview();
           }}
         >
 

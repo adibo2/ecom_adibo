@@ -18,79 +18,127 @@ import Code from '../../model/code';
 
 
 const OfficeDetail = ({office,descrp,unused}) => {
-    const router=useRouter();
-    const { officeId }=router.query;
-    const [reviews,Setreview]=useState([]);
-    const [scrollreview,Setscrollreview]=useState(false);
+//     const router=useRouter();
+//     const { officeId }=router.query;
+//     const [reviews,Setreview]=useState([]);
+//     const [scrollreview,Setscrollreview]=useState(false);
 
     
-    const handle=async (data)=>{
-      if(!data){
-        return;
-      }
-      if(data){
+//     const handle=async (data)=>{
+//       if(!data){
+//         return;
+//       }
+//       if(data){
 
-        const { firstname, email,rating,note }=data
+//         const { firstname, email,rating,note }=data
 
-        try {
+//         try {
+//       await axios.post(`/api/office/${office._id}`, {
+//         firstname,
+//         rating,
+//         email,
+//         note,
+//       });
+//       // console.log(data)
+      
+//       Setreview(prev=>{
+//         const updategoals = [...prev];
+//         updategoals.unshift(data)
+//         return updategoals;
+
+//       })
+//       reviewhandler()
+
+
+//     } catch (err) {
+//       console.log(err);
+//     }
+  
+//       }
+
+//     }
+//     const reviewhandler=useCallback(async ()=>{
+//       try {
+   
+//         const { data } = await axios.get(`/api/office/${office._id}`);
+//         Setreview(data.reviews)
+
+
+//         console.log(data.reviews.length)
+//       } catch (err) {
+//         console.log(err);
+//       }
+      
+      
+//     })
+//     useEffect(()=>{
+//       async function fetchBooks() {
+
+//         const { data } = await axios.get(`/api/office/${office._id}`);
+//         Setreview(data.reviews)
+
+
+//     }
+//     fetchBooks();
+      
+
+//     },[])
+ 
+//   useEffect(() =>  {
+//    handle();
+// },[handle]);
+// const scrollhandler=()=>{
+//   Setscrollreview(true)
+//   console.log(scrollreview)
+// }
+
+const router = useRouter();
+const [reviews, setReviews] = useState([]);
+const [scrollreview, setScrollreview] = useState(false);
+
+const { officeId } = router.query;
+
+useEffect(() => {
+  (async () => {
+    try {
+      const { data } = await axios.get(`/api/office/${office._id}`);
+      setReviews(data.reviews);
+    } catch (err) {
+      console.log(err);
+    }
+  })();
+}, []);
+
+const handle = useCallback(
+  async (data) => {
+    if (!data) {
+      return;
+    }
+
+    const { firstname, email, rating, note } = data;
+
+    try {
       await axios.post(`/api/office/${office._id}`, {
         firstname,
         rating,
         email,
         note,
       });
-      // console.log(data)
-      
-      Setreview(prev=>{
-        const updategoals = [...prev];
-        updategoals.unshift(data)
-        return updategoals;
-
-      })
-      reviewhandler()
-
-
+      setReviews((prev) => {
+        const updateGoals = [...prev];
+        updateGoals.unshift(data);
+        return updateGoals;
+      });
     } catch (err) {
       console.log(err);
     }
-  
-      }
+  },
+  []
+);
 
-    }
-    const reviewhandler=useCallback(async ()=>{
-      try {
-   
-        const { data } = await axios.get(`/api/office/${office._id}`);
-        Setreview(data.reviews)
-
-
-        console.log(data.reviews.length)
-      } catch (err) {
-        console.log(err);
-      }
-      
-      
-    })
-    useEffect(()=>{
-      async function fetchBooks() {
-
-        const { data } = await axios.get(`/api/office/${office._id}`);
-        Setreview(data.reviews)
-
-
-    }
-    fetchBooks();
-      
-
-    },[])
- 
-  useEffect(() =>  {
-   handle();
-},[handle]);
-const scrollhandler=()=>{
-  Setscrollreview(true)
-  console.log(scrollreview)
-}
+const scrollHandler = useCallback(() => {
+  setScrollreview(true);
+}, []);
 
 
   return (
@@ -105,12 +153,14 @@ const scrollhandler=()=>{
     <Filter></Filter>
     <Linko href="/microsoft_office" log="Microsoft Office" product={office.slug}></Linko>
 
-    <Detailoff onScroll={()=>scrollhandler()} id={officeId}  img={office.img} name={office.slug} office={office} alt={office.alt}
+    <Detailoff onScroll={()=>scrollHandler()} id={officeId}  img={office.img} name={office.slug} office={office} alt={office.alt}
         notprice={office.notprice} price={office.price} numReviews={reviews.length} stock={unused}></Detailoff>
         {/* <h1>hello {officeId} </h1>
         <Image src={office.img} width={230} height={270} alt="windows Keys" />
         <h1>{office.name}</h1> */}
-        <Taboffice scollhandler={scrollhandler} data={descrp[0].data} reviewtaille={reviews.length} scrolldown={scrollreview} scrollreview={scrollreview} buy={descrp[0].data[0].buy} onsubmit={handle} onReview={reviewhandler} alt={office.alt} reviews={reviews} ></Taboffice>
+        <Taboffice scollhandler={scrollHandler} data={descrp[0].data} reviewtaille={reviews.length} scrolldown={scrollreview} scrollreview={scrollreview} buy={descrp[0].data[0].buy} onsubmit={handle}
+        //  onReview={reviewhandler} 
+         alt={office.alt} reviews={reviews} ></Taboffice>
         <Footer></Footer>
 
 
@@ -160,33 +210,5 @@ export async function getServerSideProps(context) {
       },
     };
   }
-// export async function getStaticProps(context){
-//     const offId=context.params.officeId.toString();
-//     const officeData=data_office.find((el)=> el.index === offId)
-//     const descrwindows=filter_data.filter((el)=> el.id === offId)
 
-//     return{
-//         props:{
-//             office:officeData,
-//             descrp:descrwindows
-
-//         },
-//     }
-
-// }
-// export async function getStaticPaths() {
-//     const paths=data_office.map(off=>{
-//         return{params:{officeId:off.index.toString()}}
-//     }
-    
-    
-//     )
-//     console.log(paths)
-//     return{
-//         paths,
-//         fallback:false
-//     }
- 
-
-// }
 export default OfficeDetail

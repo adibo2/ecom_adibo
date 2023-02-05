@@ -2,7 +2,6 @@ import React, { useContext,useState } from "react";
 import Image from "next/image";
 import css from "./Detail.module.scss";
 import Rating from "@mui/material/Rating";
-import Stack from "@mui/material/Stack";
 import message from "/public/img/New-Message.webp";
 import { avantages_windows } from "./avantages";
 import visas from "/public/img/visas.svg";
@@ -11,7 +10,6 @@ import discover from "/public/img/discover.svg"
 import paypal from "/public/img/paypal.svg"
 import css1 from "./../Footer/Footer.module.scss"
 import { useRouter } from "next/router";
-import { avantage_office } from "./avantages";
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

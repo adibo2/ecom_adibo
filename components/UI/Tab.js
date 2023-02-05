@@ -135,7 +135,9 @@ function Tabo(props) {
             <button
               key={4}
               className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-              onClick={() => {toggleTab(4); props.onReview()}}
+              onClick={() => {toggleTab(4); 
+                // props.onReview()
+              }}
             >
               Reviews ({props.reviewtaille > 0 ? (props.reviewtaille) : (0) })
               {/* ({props.reviewtaille}) */}

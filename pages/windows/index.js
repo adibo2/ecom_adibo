@@ -5,9 +5,7 @@ import Productw from "../../components/Product/Productw";
 import Product from "../../model/Product";
 import styles from "../../styles/Home.module.scss";
 import db from "../../utils/db";
-import { Html, Main, NextScript } from "next/document";
 import Code from "../../model/code";
-import { makeSupply } from "../../utils/makeSupply";
 import Footer from "../../components/Footer/Footer";
 
 const Windows = (props) => {
@@ -61,28 +59,7 @@ export async function getServerSideProps() {
         }
     }
 }
-// for (let i = 0; i < codeWindows.length; i++) {
-//   const productType = codeWindows[i].type;
-//   for (let j = 0; j < codeWindows[i].codes.length; j++) {
-//     const productCode = codeWindows[i].codes[j].code;
-//     const isUsed = false; // assuming the product is unused
-//     if (!isUsed) {
-//       // find the matching slug from products
-//       const matchingProduct = products.find(
-//         product => product.slug === productType
-//       );
-//       if (matchingProduct) {
-//         // decrement the unused value by 1
-//         matchingProduct.stock -= 1;
-        
-//         // save the updated product
-//         await matchingProduct.save();
-//       }
-//     }
-//   }
-// }
 
-  console.log(products.map(db.convertDocToObj));
   return {
     props: {
       products:products.map(db.convertDocToObj),
