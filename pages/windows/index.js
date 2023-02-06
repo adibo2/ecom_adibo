@@ -14,12 +14,13 @@ const Windows = (props) => {
       <Head>
         {/* <title>All Windows Operating System - Instant software Key</title> */}
         {/* Softwares Key - Buy your software online and start the installation immediately */}
+        <meta charset="UTF-8" />
         <title>Shop the Best Windows Licence at the Lowest Prices</title>
-        <meta charSet="utf-8" />
         <meta
           name="description"
           content="Shop the best quality and prices on Windows licences for all types. Find the perfect licence for your needs and buy it online today.Plus, our prices are unbeatable. Shop now and save! "
         />
+        <meta name="next" content="https://www.microsoftkeymarket.com/microsoft_office"></meta>
       <meta name="keywords" content="Windows License, Microsoft License, Operating System License, PC License" />
 
       <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"></meta>

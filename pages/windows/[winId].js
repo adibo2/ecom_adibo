@@ -139,6 +139,7 @@ const WindowsDetails = ({ product, descrp, unused }) => {
   return (
     <>
       <Head>
+      <meta charset="UTF-8" />
         <title>{product.title}</title>
         <meta name="description" content={product.meta} />
         <meta name="keywords" content={product.slug} />
@@ -152,7 +153,8 @@ const WindowsDetails = ({ product, descrp, unused }) => {
           property="product:title"
           content={product.slug}
         />
-        
+
+
         <meta
           property="product:description"
           content={product.meta}

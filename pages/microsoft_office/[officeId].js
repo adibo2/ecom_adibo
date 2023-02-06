@@ -144,6 +144,7 @@ const scrollHandler = useCallback(() => {
   return (
     <>
     <Head>
+    <meta charset="UTF-8" />
       <title>{office.title}</title>
       <meta name='description' content={office.meta} />
 

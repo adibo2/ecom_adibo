@@ -14,8 +14,8 @@ const App = () => {
   return (
     <>
     <Head>
+    <meta charset="UTF-8" />
         <title>Microsoft Key Market | Authentic Windows and Office Keys</title>
-        <meta charSet="utf-8" />
         <meta
           name="description"
           content="If you are looking for a genuine site to buy software keys windows 10 or 11 Professional or microsoft office  online, you have come to the right place.we have it all. Find the perfect match for your needs and budget today. Simple call to action to shop now."
