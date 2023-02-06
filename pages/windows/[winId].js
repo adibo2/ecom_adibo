@@ -189,8 +189,11 @@ export async function getServerSideProps(context) {
     
     
     await db.connect();
-    const product = await Product.findOne({ slug:winId }).lean();
-    const codeunused=await Code.findOne({type:winId}).lean();
+    const [product, codeunused] = await Promise.all([
+      Product.findOne({ slug: winId }).lean(),
+      Code.findOne({ type: winId }).lean()
+    ]);
+    
     console.log(codeunused);
     const result = {};
       const type = codeunused.type;
