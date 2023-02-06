@@ -139,7 +139,7 @@ const WindowsDetails = ({ product, descrp, unused }) => {
   return (
     <>
       <Head>
-        <title>{product.title}</title>
+        {/* <title>{product.title}</title> */}
         <meta name="description" content={product.meta} />
         <meta name="keywords" content={product.slug} />
         <meta property="product:brand" content={product.slug} />
