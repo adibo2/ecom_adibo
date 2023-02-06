@@ -163,9 +163,10 @@ const scrollHandler = useCallback(() => {
           property="product:description"
           content={office.meta}
         />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"></meta>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"></meta>
 
-<meta name="googlebot" content="index, follow"></meta>
-<meta name="robots" content="index, follow"></meta>
+
     </Head>
      <div className={styles.container}>
 
