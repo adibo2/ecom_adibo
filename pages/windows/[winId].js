@@ -15,7 +15,7 @@ import Product from "../../model/Product";
 import axios from "axios";
 import Code from "../../model/code";
 
-const WindowsDetails = ({ product, descrp, unused }) => {
+const WindowsDetails = ({ product, descrp, unused,nombre }) => {
   //     const router=useRouter();
   //     const [reviews,Setreview]=useState([]);
   //     const [scrollreview,Setscrollreview]=useState(false);
@@ -176,7 +176,8 @@ const WindowsDetails = ({ product, descrp, unused }) => {
           product={product}
           alt={product.alt}
           notprice={product.notprice}
-          numReviews={reviews.length}
+          // numReviews={reviews.length}
+          numReviews={nombre}
           price={product.price}
           // stock={product.stock}
           stock={unused}
@@ -211,6 +212,7 @@ export async function getServerSideProps(context) {
     Code.findOne({ type: winId }).lean(),
   ]);
 
+  console.log(product.reviews.map((rev)=>rev));
   console.log(codeunused);
   const result = {};
   const type = codeunused.type;
@@ -233,6 +235,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
+      nombre:product.reviews.map((rev)=>rev).length,
       product: product ? db.convertDocToObj(product) : null,
       descrp: descrwindows,
       unused: result[winId].unused,
