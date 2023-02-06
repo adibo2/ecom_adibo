@@ -146,7 +146,23 @@ const scrollHandler = useCallback(() => {
     <Head>
       <title>{office.title}</title>
       <meta name='description' content={office.meta} />
+
       <meta name="keywords" content={office.slug} />
+        <meta property="product:brand" content={office.slug} />
+        <meta property="product:condition" content="new" />
+        <meta property="product:price:amount" content={office.price} />
+        <meta property="product:price:currency" content="USD" />
+        <meta property="product:availability" content="instant" />
+        <meta property="product:category" content="Software" />
+        <meta
+          property="product:title"
+          content={office.slug}
+        />
+        
+        <meta
+          property="product:description"
+          content={office.meta}
+        />
 
 <meta name="googlebot" content="index, follow"></meta>
 <meta name="robots" content="index, follow"></meta>
