@@ -155,6 +155,10 @@ const scrollHandler = useCallback(() => {
     <Head>
       <title>{product.title}</title>
       <meta name='description' content={product.meta} />
+      <meta name="keywords" content={product.slug} />
+
+<meta name="googlebot" content="index, follow"></meta>
+<meta name="robots" content="index, follow"></meta>
     </Head>
      <div className={styles.container_detail}>
 

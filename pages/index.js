@@ -14,12 +14,16 @@ const App = () => {
   return (
     <>
     <Head>
-        <title>Buy Software Keys Online, Keys Software | Instant Key</title>
+        <title>Microsoft Key Market | Authentic Windows and Office Keys</title>
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="If you are looking for a genuine site to buy software keys windows 10 or 11 Professional or microsoft office  online, you have come to the right place.we have it all. Find the perfect match for your needs and budget today. Simple call to action to shop now. Instant Key provides a wide range of keys for different paid software at the lowest price and fast delivery with secure checkout."
+          content="If you are looking for a genuine site to buy software keys windows 10 or 11 Professional or microsoft office  online, you have come to the right place.we have it all. Find the perfect match for your needs and budget today. Simple call to action to shop now."
         />
+          <meta name="keywords" content="Windows, Operating System, Microsoft, PC,Microsoft Office, Office Suite" />
+          <meta name="googlebot" content="index, follow"></meta>
+          <meta name="robots" content="index, follow"></meta>
+
         <meta property="og:site_name" content="Instant software key" />
       </Head>
     

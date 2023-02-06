@@ -18,11 +18,12 @@ const Windows = (props) => {
         <meta charSet="utf-8" />
         <meta
           name="description"
-          content="Shop the best quality and prices on Windows licences for all types. Find the perfect licence for your needs and buy it online today.Plus, our prices are unbeatable. Shop now and save! 
-          Increase your productivity today with the full version of Microsoft products. Buy office 2019 key, windows server 2019 activation key,
-          windows 11 pro key, windows 10 key,MICROSOFT Windows 10 Enterprise –INSTANT DELIVERY-,MICROSOFT WINDOWS 11 HOME ,
-           microsoft office 2019 home and student, windows 10 ultimate sp1 keys, buy office 2016 key"
+          content="Shop the best quality and prices on Windows licences for all types. Find the perfect licence for your needs and buy it online today.Plus, our prices are unbeatable. Shop now and save! "
         />
+      <meta name="keywords" content="Windows License, Microsoft License, Operating System License, PC License" />
+
+          <meta name="googlebot" content="index, follow"></meta>
+          <meta name="robots" content="index, follow"></meta>
 
         {/* <meta
           name="description"

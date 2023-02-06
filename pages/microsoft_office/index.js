@@ -22,6 +22,10 @@ const office = (props) => {
           name="description"
           content="Find the Best Quality and Price for Microsoft Office Digital Licences, including Office 2019 Home and Business for Mac Digital License, Office 2019 Professional Plus Digital License, Office 2021 Professional Plus Digital License, Office 2021 Home and Business Mac. Fast Delivery Guaranteed. Click to Shop Now!"
         />
+          <meta name="keywords" content="Microsoft Office License, Office Suite License, Word License, Excel License, PowerPoint License, Outlook License" />
+
+<meta name="googlebot" content="index, follow"></meta>
+<meta name="robots" content="index, follow"></meta>
       </Head>
 
       <div className={styles.container}>
