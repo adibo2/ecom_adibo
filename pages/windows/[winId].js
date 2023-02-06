@@ -148,10 +148,10 @@ const WindowsDetails = ({ product, descrp, unused }) => {
         <meta property="product:price:currency" content="USD" />
         <meta property="product:availability" content="instant" />
         <meta property="product:category" content="Software" />
-        {/* <meta
+        <meta
           property="product:title"
           content={product.slug}
-        /> */}
+        />
         
         <meta
           property="product:description"
