@@ -43,21 +43,34 @@ const Windows = (props) => {
 };
 export async function getServerSideProps() {
   await db.connect();
-  const products = await Product.find().lean();
-  const codeWindows=await Code.find({}).lean();
-  for (let i = 0; i < codeWindows.length; i++) {
-    let type = codeWindows[i].type;
-    let unused = codeWindows[i].codes.length;
-    console.log(type, unused);
-    for (let j = 0; j < products.length; j++) {
-        if (products[j].slug === type) {
-            // unused -= products[j].stock;
-            products[j].stock = unused;
-            await Product.updateOne({ slug: type }, { stock: unused });
-            break;
-        }
-    }
-}
+  const produits = await Promise.all([
+    Product.find().lean(),
+    Code.find({}).lean()
+  ]);
+  const [products, codeWindows] = produits;
+
+//   for (let i = 0; i < codeWindows.length; i++) {
+//     let type = codeWindows[i].type;
+//     let unused = codeWindows[i].codes.length;
+//     console.log(type, unused);
+//     for (let j = 0; j < products.length; j++) {
+//         if (products[j].slug === type) {
+//             // unused -= products[j].stock;
+//             products[j].stock = unused;
+//             await Product.updateOne({ slug: type }, { stock: unused });
+//             break;
+//         }
+//     }
+// }
+const codeWindowsMap = codeWindows.reduce((map, code) => {
+  map[code.type] = code.codes.length;
+  return map;
+  }, {});
+  
+  products.forEach(async product => {
+  const unused = codeWindowsMap[product.slug] || 0;
+  await Product.updateOne({ slug: product.slug }, { stock: unused });
+  });
 
   return {
     props: {

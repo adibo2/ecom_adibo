@@ -35,22 +35,24 @@ const office = (props) => {
 };
 export async function getServerSideProps() {
   await db.connect();
-  const products = await Productoffice.find().lean();
-  const codeunused = await Code.find({}).lean();
 
-  for (let i = 0; i < codeunused.length; i++) {
-    let type = codeunused[i].type;
-    let unused = codeunused[i].codes.length;
-    console.log(type, unused);
-    for (let j = 0; j < products.length; j++) {
-      if (products[j].slug === type) {
-        // unused -= products[j].stock;
-        products[j].stock = unused;
-        await Productoffice.updateOne({ slug: type }, { stock: unused });
-        break;
-      }
-    }
-  }
+
+  const produits = await Promise.all([
+    Productoffice.find().lean(),
+    Code.find({}).lean()
+  ]);
+  const [products, codeWindows] = produits;
+
+
+  const codeWindowsMap = codeWindows.reduce((map, code) => {
+    map[code.type] = code.codes.length;
+    return map;
+    }, {});
+    
+    products.forEach(async product => {
+    const unused = codeWindowsMap[product.slug] || 0;
+    await Productoffice.updateOne({ slug: product.slug }, { stock: unused });
+    });
 
 
   return {
