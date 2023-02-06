@@ -33,6 +33,7 @@ function MyApp({ Component, pageProps:{ session, ...pageProps } }) {
   return(
     <>
     <Head>
+    <meta name="msvalidate.01" content="412C2584AEDECB815DC20AC2B22B9F1A" />
        
         <link rel="icon" href="/win.webp" />
       </Head>
