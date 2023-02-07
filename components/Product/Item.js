@@ -31,6 +31,7 @@ const Item = (props) => {
 
     const clickhandler=()=>{
         Setadd(false)
+        router.push('/CartP')
 
     }
 

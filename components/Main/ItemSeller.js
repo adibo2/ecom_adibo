@@ -15,6 +15,8 @@ const ItemSeller = (props) => {
 
     }
     const clickhandler=()=>{
+        router.push('/CartP')
+
         Setadd(false)
 
     }

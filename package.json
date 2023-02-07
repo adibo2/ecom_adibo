@@ -46,5 +46,18 @@
   "devDependencies": {
     "react-hook-form": "^7.42.1",
     "twilio": "^3.83.4"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adibo2/ecom_adibo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adibo2/ecom_adibo/issues"
+  },
+  "homepage": "https://github.com/adibo2/ecom_adibo#readme"
 }
