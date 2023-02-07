@@ -74,13 +74,13 @@ const Filter = (props) => {
     router.push('/checkout')
   }
   return (
-    <div className={`${css.filter} ${active ? css.active : css.notactive}`}>
+    <header className={`${css.filter} ${active ? css.active : css.notactive}`}>
       <div className={css.toggle_button} onClick={toggleIsLoading}>
         <span className={css.bar}></span>
         <span className={css.bar}></span>
         <span class={css.bar}></span>
       </div>
-      <div className={`${css.filter__flex} ${active ? css.active2 : ""}`}>
+      <nav className={`${css.filter__flex} ${active ? css.active2 : ""}`}>
         {data_filter.map((filter) => (
           <Link href={filter.url} key={filter.id}>
             <div
@@ -96,7 +96,7 @@ const Filter = (props) => {
             </div>
           </Link>
         ))}
-      </div>
+      </nav>
 
       <div className={css.filter__icon} ref={cart}>
         {/* <Link href="CartP"> */}
@@ -172,7 +172,7 @@ const Filter = (props) => {
           </>
         )}
       </div>
-    </div>
+    </header>
   );
 };
 

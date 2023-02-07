@@ -6,7 +6,7 @@ import css from './Linko.module.scss';
 
 const Linko = (props) => {
   return (
-    <div className={css.Linko}>
+    <nav className={css.Linko}>
         <div className={css.Linko__flex}>
         <Link href="/" className={css.link}>
             <AiFillHome className={css.svgs}></AiFillHome>
@@ -28,7 +28,7 @@ const Linko = (props) => {
 
         </div>
         
-    </div>
+    </nav>
   )
 }
 

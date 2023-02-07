@@ -67,7 +67,7 @@ const Detail = (props) => {
     <>
       <ToastContainer style={{ fontSize: "1.3rem" }} position="bottom-center" limit={1} />
 
-    <div className={css.details}>
+    <section className={css.details}>
       <div className={css.image}>
         <Image
           src={props.img}
@@ -167,7 +167,7 @@ const Detail = (props) => {
             Category : Operating System
             </div>
       </div>
-    </div>
+    </section>
     </>
   );
 };

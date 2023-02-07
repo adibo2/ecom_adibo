@@ -26,7 +26,7 @@ const Productw = (props) => {
     }
 
   return (
-    <div className={css.product}>
+    <main className={css.product}>
       {router.pathname === '/search' ? <div></div>
       :
       <>
@@ -48,7 +48,7 @@ const Productw = (props) => {
             ))}
 
         </div>
-    </div>
+    </main>
   )
   
 }

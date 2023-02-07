@@ -27,7 +27,7 @@ const Productoff = (props) => {
 
   return (
     
-    <div className={css.product}>
+    <main className={css.product}>
        {router.pathname === '/search' ? <div></div>
       :
       <>
@@ -50,7 +50,7 @@ const Productoff = (props) => {
             ))}
 
         </div>
-    </div>
+    </main>
   )
 }
 

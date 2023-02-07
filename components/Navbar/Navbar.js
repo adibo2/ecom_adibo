@@ -86,7 +86,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className={css.Navbar}>
+    <header className={css.Navbar}>
       <Link href="/" className={css["Navbar__logo"]}>
         <Image
           src={logo}
@@ -214,7 +214,7 @@ const Navbar = () => {
           </>
         )}
       </ul>
-    </nav>
+    </header>
   );
 };
 
