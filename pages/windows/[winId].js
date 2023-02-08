@@ -15,7 +15,7 @@ import Product from "../../model/Product";
 import axios from "axios";
 import Code from "../../model/code";
 
-const WindowsDetails = ({ product, descrp, unused,nombre }) => {
+const WindowsDetails = ({ product, descrp, unused,reviewsF }) => {
   //     const router=useRouter();
   //     const [reviews,Setreview]=useState([]);
   //     const [scrollreview,Setscrollreview]=useState(false);
@@ -97,16 +97,7 @@ const WindowsDetails = ({ product, descrp, unused,nombre }) => {
 
   const { winId } = router.query;
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await axios.get(`/api/product/${product._id}`);
-        setReviews(data.reviews);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, []);
+
 
   const handle = useCallback(async (data) => {
     if (!data) {
@@ -131,6 +122,16 @@ const WindowsDetails = ({ product, descrp, unused,nombre }) => {
       console.log(err);
     }
   }, []);
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axios.get(`/api/product/${product._id}`);
+        setReviews(data.reviews);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [handle]);
 
   const scrollHandler = useCallback(() => {
     setScrollreview(true);
@@ -177,7 +178,7 @@ const WindowsDetails = ({ product, descrp, unused,nombre }) => {
           alt={product.alt}
           notprice={product.notprice}
           // numReviews={reviews.length}
-          numReviews={nombre}
+          numReviews={reviewsF.length}
           price={product.price}
           // stock={product.stock}
           stock={unused}
@@ -188,7 +189,7 @@ const WindowsDetails = ({ product, descrp, unused,nombre }) => {
           scrolldown={scrollreview}
           scrollreview={scrollreview}
           data={descrp[0].data}
-          reviewtaille={reviews.length}
+          reviewtaille={reviewsF.length}
           onsubmit={handle}
           // onReview={reviewhandler}
           alt={product.alt}
@@ -204,6 +205,7 @@ export async function getServerSideProps(context) {
   // const { params } = context;
   // const { slug } = params;
   const winId = context.params.winId.toString();
+
   const descrwindows = filter_data.filter((el) => el.id === winId);
 
   await db.connect();
@@ -211,6 +213,7 @@ export async function getServerSideProps(context) {
     Product.findOne({ slug: winId }).lean(),
     Code.findOne({ type: winId }).lean(),
   ]);
+
 
   console.log(product.reviews.map((rev)=>rev));
   console.log(codeunused);
@@ -226,6 +229,10 @@ export async function getServerSideProps(context) {
       result[type].unused++;
     }
   }
+  console.log(product._id);
+
+  const res = await fetch(`https://www.microsoftkeymarket.com/api/product/${product._id}`);
+  const data = await res.json();
 
   console.log("lmfdsmlfklskflskflsfsjfksfjksfjslkfjsk");
   console.log(result);
@@ -235,9 +242,9 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      nombre:product.reviews.map((rev)=>rev).length,
       product: product ? db.convertDocToObj(product) : null,
       descrp: descrwindows,
+      reviewsF: data.reviews,
       unused: result[winId].unused,
     },
   };
