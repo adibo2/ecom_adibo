@@ -16,10 +16,12 @@ import {FaCheck} from "react-icons/fa"
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from "next/router";
 const Summary = (props) => {
   const {items}=useContext(Cartcontext);
   const Cartctx=useContext(Cartcontext);
   const [count,Setcount]=useState(1);
+  const router=useRouter()
 
  
   const onAddCart=(item)=>{
@@ -51,6 +53,17 @@ const Summary = (props) => {
 }
 const onClear=(item,id)=>{
   Cartctx.clear(item,id)
+}
+const clickhandler=(item)=>{
+  let path = '';
+  if (item.toLowerCase().includes("windows")) {
+    path = `windows/${item}`;
+  } else if (item.toLowerCase().includes("office")) {
+    path = `microsoft_office/${item}`;
+  }
+  router.push(path);
+  console.log(item);
+
 }
 
   return (
@@ -100,7 +113,7 @@ const onClear=(item,id)=>{
         <hr className={css.hr}></hr>
         {items.map((item,index)=>(
         <div key={index} className={css.summary__product_details}>
-          <div className={css["summary__product_details-image"]}>
+          <div onClick={()=>clickhandler(item.slug)} className={css["summary__product_details-image"]}>
             <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item,item.id)}></AiFillCloseCircle>
             <Image src={item.img} width={90} height={80} alt="windows Keys"></Image>           
               <p className={css.p}>{item.slug}</p>
