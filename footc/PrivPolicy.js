@@ -49,7 +49,7 @@ Google may also transfer this information to third parties where required to do 
         </div>
         <h3 className={css.h3}>VIEW, MODIFY OR DELETE DATA</h3>
         <div className={css.Police__info_title}>
-        You have the right to access, correct or delete your personal data. You can send arequest for inspection, correction or removal to clientcare@instant-license.com . 
+        You have the right to access, correct or delete your personal data. You can send arequest for inspection, correction or removal to     clientcare@microsoftkeymarket.com . 
         <span className={css.span}>Microsoft Key Market</span> will respond to your request as soon as possible, but within four weeks.
         
         </div>
@@ -59,7 +59,7 @@ Google may also transfer this information to third parties where required to do 
         unauthorized access, unwanted disclosure and unauthorized changes. The website of  <span className={css.span}>Microsoft Key Market</span> uses a reliable SSL 
         certificate to ensure that your personal information does not fall into the wrong hands.
 If you have the impression that your data is not properly secured or there are indications of misuse, or if you want more information 
-about the security of personal data collected by  <span className={css.span}>Microsoft Key Market</span>, please contact  <span className={css.span}>Microsoft Key Market</span> at clientcare@instant-license.com .
+about the security of personal data collected by  <span className={css.span}>Microsoft Key Market</span>, please contact  <span className={css.span}>Microsoft Key Market</span> at clientcare@microsoftkeymarket.com .
         
         </div>
 
