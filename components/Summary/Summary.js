@@ -143,12 +143,12 @@ const clickhandler=(item)=>{
         <div className={css.summary__productmobile}>
           {items.map((item,index)=>(
             <div key={index} className={css.summary__productmobile}>
-            <div className={css["summary__productmobile-image"]}>
+            <div onClick={()=>clickhandler(item.slug)} className={css["summary__productmobile-image"]}>
             <AiFillCloseCircle size="2.6rem" className={css.icon} onClick={()=>onClear(item,item.id)}></AiFillCloseCircle>           
             <Image src={item.img} width={90} height={80} alt="windows Keys"></Image>
             </div>
             <hr className={css.hrmobile}></hr>
-            <div className={css["summary__productmobile-product"]}>
+            <div onClick={()=>clickhandler(item.slug)} className={css["summary__productmobile-product"]}>
             <h3 className={css.h3_1}>Product</h3>
             <p className={css.p}>{item.slug}</p>
             </div>
