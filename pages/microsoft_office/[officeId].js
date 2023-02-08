@@ -118,15 +118,14 @@ const OfficeDetail = ({ office, descrp, unused, reviewsF }) => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/office/${office._id}`);
-       const data = await res.json();
-        console.log(data);
+        const { data } = await axios.get(`/api/office/${office._id}`);
         setReviews(data.reviews);
       } catch (err) {
         console.log(err);
       }
     })();
   }, [handle]);
+
 
   const scrollHandler = useCallback(() => {
     setScrollreview(true);
@@ -193,6 +192,7 @@ const OfficeDetail = ({ office, descrp, unused, reviewsF }) => {
           //  onReview={reviewhandler}
           alt={office.alt}
           reviews={reviews}
+
         ></Taboffice>
         <Footer></Footer>
       </div>
