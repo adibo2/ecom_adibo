@@ -204,7 +204,7 @@ const WindowsDetails = ({ product, descrp, unused,reviewsF }) => {
 export async function getServerSideProps(context) {
   // const { params } = context;
   // const { slug } = params;
-  const winId = context.params.winId.toString();
+  const winId = context.params.winId.toString().replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());;
 
   const descrwindows = filter_data.filter((el) => el.id === winId);
 
@@ -215,8 +215,6 @@ export async function getServerSideProps(context) {
   ]);
 
 
-  console.log(product.reviews.map((rev)=>rev));
-  console.log(codeunused);
   const result = {};
   const type = codeunused.type;
   result[type] = {
