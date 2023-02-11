@@ -6,7 +6,7 @@ const Accordion = () => {
     const [selected, Setselected] =useState(null);
     const data=[{
         question:'How come your prices are so low?',
-        answer:<>At Instant License, we understand that you may be hesitant to use our service; I mean how is it possible that we can offer you the latest Office and Windows packages at such low prices? <br /> <br />
+        answer:<>At Microsoft Key Market, we understand that you may be hesitant to use our service; I mean how is it possible that we can offer you the latest Office and Windows packages at such low prices? <br /> <br />
         We buy large volumes of licences for all products worldwide (China, America, Eastern Bloc and Europe) from companies that have overstock or unused licences in order to get the lowest possible price. We also buy the licences that are no longer used from companies that have failed. We also have minimal overhead costs, such as no operational costs for a shop and do everything digitally. <br /> <br />
         By moving large quantities both in purchases and sales, we can also keep our margins very low to the benefit of the consumer.<br></br> <br />
         Dealers who have a contract with Microsoft are obliged to charge set prices. We do not do this and do not have a contract with Microsoft. Therefore, we can also stay below the set prices.<br></br> <br />
@@ -69,14 +69,14 @@ const Accordion = () => {
     },
     {
         question:<>{" Why can't I activate my license? "}</> ,
-        answer:<>{"Instant License sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select Telephone activation and follow the procedure.<br></br><br></br>We give you a 100% license guarantee. We guarantee that if you buy a license from us, you will get an optimal working license from us.<br></br><br />In the meantime, you can always download a fully functional trial version of the software product of your choice from our download page."}
+        answer:<>{"Microsoft Key Market sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select Telephone activation and follow the procedure.<br></br><br></br>We give you a 100% license guarantee. We guarantee that if you buy a license from us, you will get an optimal working license from us.<br></br><br />In the meantime, you can always download a fully functional trial version of the software product of your choice from our download page."}
 
         </>
 
     },
     {
         question:'What is telephone activation (Office)?',
-        answer:<>Instant License sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select "Telephone activation" and follow the procedure.
+        answer:<>Microsoft Key Market sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select "Telephone activation" and follow the procedure.
         <br></br><br></br><br></br>
         —————-
         <br></br><br></br><br></br>
@@ -89,7 +89,7 @@ const Accordion = () => {
     },
     {
         question:'What is telephone activation (Windows)?',
-        answer:<>Instant License sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select "Telephone activation" and follow the procedure.
+        answer:<>Microsoft Key Market sometimes sells pre-owned licenses. This means that we sell licenses that were previously activated, but are no longer active due to hardware replacement or failure of the company. These licenses are then reactivated. Now it is possible that the re-activation was not successful via the Internet. These licenses then still work by re-activation over the phone. Select "Telephone activation" and follow the procedure.
         <br></br><br></br><br></br>
         —————-
         <br></br><br></br><br></br>
