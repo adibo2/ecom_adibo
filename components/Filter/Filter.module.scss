@@ -20,7 +20,8 @@
     justify-content:center;
     align-items: center;
     gap: 20rem;
-    background-color: #242445;
+    // background-color: #242445;
+    background-color: rgb(51 65 85 / 1);
     // background-color: rgb(177, 18, 18);
 
         top: 0;
@@ -29,7 +30,7 @@
     position: sticky;
     top: 0;
     z-index: 39;
-    height: 7rem;
+    height: 6rem;
     @include respons(medium){
         height: 6rem;
     }
@@ -92,7 +93,7 @@
             content: "";
             background: hsl(142 90% 61%);
             position: absolute;
-            bottom: -16.5px;
+            bottom: -9.5px;
 
             left: 10px;
             height: 2px;
@@ -117,9 +118,11 @@
       
         &-p{
             display: inline-block;
-            font-size: 1.2rem;
+            font-size: 1.27rem;
             font-weight: bold;
             color: #f7f7f7;
+            font-family: 'Nunito', sans-serif;
+
 
         }
 
@@ -167,7 +170,7 @@
         content: "";
         background: hsl(142 90% 61%);
         position: absolute;
-        bottom: -16.5px;
+        bottom: -10.5px;
         left: 10px;
         height: 2px;
         // transform: scale3d(1,1,1);

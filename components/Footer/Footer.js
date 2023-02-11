@@ -56,6 +56,11 @@ const Footer = () => {
                 <li className={css.li}>Return & Refund</li>
 
                 </Link>
+                <Link href="/About">
+                <li className={css.li}>About Us</li>
+
+                </Link>
+
 
               </ul>
 
