@@ -37,7 +37,7 @@
                 font-size: 1.8rem;
                 // color: rgb(37 99 235 / 1);
                 color: #1BAB6E;
-                font-weight: 700;
+                font-weight: 500;
                 font-size: 1.8rem;
                 font-family: 'Nunito';
                line-height: 2rem;
@@ -45,7 +45,7 @@
             }
             &-desc{
                 font-size: 1.4rem;
-                font-weight: 400;
+                font-weight: 300;
                 text-align: center;
                 font-family: 'Inconsolata', monospace;
 
@@ -79,7 +79,7 @@
     
     color: #6F6F6F;
     font-family: "Lato", Sans-serif;
-    font-weight: bold;
+    font-weight: 500;
     @include respons(medium){
        padding-right: 1rem;
        padding-left:1rem;

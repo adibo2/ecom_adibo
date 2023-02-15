@@ -1,16 +1,12 @@
 import React from 'react'
-import Image from "next/image";
 import Filter from "../components/Filter/Filter";
 import Navbar from "../components/Navbar/Navbar";
 import Productw from "../components/Product/Productw";
 import Fetch from '../model/search';
 import styles from "../styles/Home.module.scss";
-import { data_windows } from "../components/data";
 import db from "../utils/db";
-import { Html, Main, NextScript } from "next/document";
 import Footer from "../components/Footer/Footer";
-import Search from "../components/UI/Search";
-import Productoff from '../components/Office/Productoff';
+
 import Count from '../components/UI/Count';
 import { useRouter } from 'next/router';
 
